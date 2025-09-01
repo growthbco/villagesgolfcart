@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - The Villages Golf Cart Rentals | Complete Rental Solutions</title>
+    <meta name="description" content="Explore our complete range of golf cart rental services in The Villages. From daily rentals to monthly packages, we have the perfect solution for your needs.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Flowbite -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.0.0/dist/flowbite.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="theme_golf_cart.css">
+    
+    <style>
+        .friendly-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .friendly-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .bubble-button {
+            background: linear-gradient(135deg, #146ff8 0%, #0ea5e9 100%);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .bubble-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -3px rgba(20, 111, 248, 0.3);
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .service-card:hover {
+            border-color: #146ff8;
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+        
+        .package-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #146ff8, #0ea5e9);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: #146ff8;
+            color: white;
+            padding: 8px 40px;
+            transform: rotate(45deg);
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+        <!-- Global Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 wave-border">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo and Brand -->
+                <div class="flex items-center space-x-3">
+                    <div class="bg-[#146ff8] p-3 rounded float-animation">
+                        <i data-lucide="car" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-[#333333]">Villages Cart Rentals</h1>
+                        <p class="text-xs text-[#146ff8] font-semibold">By Masters Golf Cars LLC</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="golf_cart_3_friendly_local.html" class="hover:text-[#146ff8] transition font-medium">Home</a>
+                    <a href="about-us.html" class="hover:text-[#146ff8] transition font-medium">About Us</a>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 hover:text-[#146ff8] transition font-medium">
+                            <span>Services</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu -->
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="services.html" class="block px-4 py-2 text-sm text-[#146ff8] font-semibold">
+                                    <i data-lucide="settings" class="w-4 h-4 inline mr-2"></i>
+                                    All Services
+                                </a>
+                                <div class="border-t border-gray-100 my-1"></div>
+                                <a href="3-day-golf-cart-rental-villages.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="calendar" class="w-4 h-4 inline mr-2"></i>
+                                    3-Day Rentals
+                                </a>
+                                <a href="weekly-golf-cart-rental-villages.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="calendar-days" class="w-4 h-4 inline mr-2"></i>
+                                    Weekly Rentals
+                                </a>
+                                <a href="monthly-golf-cart-rental-villages.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="calendar-range" class="w-4 h-4 inline mr-2"></i>
+                                    Monthly Rentals
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Carts Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 hover:text-[#146ff8] transition font-medium">
+                            <span>Carts</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu -->
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="2-passenger-golf-cart.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="users" class="w-4 h-4 inline mr-2"></i>
+                                    2-Passenger Cart
+                                </a>
+                                <a href="4-passenger-golf-cart.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="users" class="w-4 h-4 inline mr-2"></i>
+                                    4-Passenger Cart
+                                </a>
+                                <a href="6-passenger-golf-cart.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="users" class="w-4 h-4 inline mr-2"></i>
+                                    6-Passenger Cart
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="gallery.html" class="hover:text-[#146ff8] transition font-medium">Gallery</a>
+                    <a href="faq.html" class="hover:text-[#146ff8] transition font-medium">FAQ</a>
+                    <a href="contact.html" class="hover:text-[#146ff8] transition font-medium">Contact</a>
+                </div>
+                
+                <!-- Contact and CTA -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="tel:352-555-0123" class="text-[#146ff8] font-semibold hover:text-[#0ea5e9] transition">
+                        📞 352-555-0123
+                    </a>
+                    <a href="golf_cart_3_friendly_local.html#pricing" class="bubble-button text-white px-6 py-2 font-semibold">
+                        Book Now
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-[#333333] hover:text-[#146ff8] transition">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+                <div class="py-4 space-y-3">
+                    <a href="golf_cart_3_friendly_local.html" class="block px-4 py-2 hover:text-[#146ff8] transition">Home</a>
+                    <a href="about-us.html" class="block px-4 py-2 hover:text-[#146ff8] transition">About Us</a>
+                    
+                    <!-- Mobile Services Section -->
+                    <div class="space-y-2">
+                        <div class="px-4 py-2 font-medium text-[#333333]">Services</div>
+                        <a href="services.html" class="block px-8 py-2 text-sm text-[#146ff8] font-semibold">All Services</a>
+                        <a href="3-day-golf-cart-rental-villages.html" class="block px-8 py-2 text-sm hover:text-[#146ff8] transition">3-Day Rentals</a>
+                        <a href="weekly-golf-cart-rental-villages.html" class="block px-8 py-2 text-sm hover:text-[#146ff8] transition">Weekly Rentals</a>
+                        <a href="monthly-golf-cart-rental-villages.html" class="block px-8 py-2 text-sm hover:text-[#146ff8] transition">Monthly Rentals</a>
+                    </div>
+                    
+                    <a href="gallery.html" class="block px-4 py-2 hover:text-[#146ff8] transition">Gallery</a>
+                    <a href="faq.html" class="block px-4 py-2 hover:text-[#146ff8] transition">FAQ</a>
+                    <a href="contact.html" class="block px-4 py-2 hover:text-[#146ff8] transition">Contact</a>
+                    
+                    <div class="border-t border-gray-200 pt-3 mt-3">
+                        <a href="tel:352-555-0123" class="block px-4 py-2 text-[#146ff8] font-semibold">
+                            📞 352-555-0123
+                        </a>
+                        <a href="golf_cart_3_friendly_local.html#pricing" class="block mx-4 mt-2 bubble-button text-white px-6 py-2 font-semibold text-center">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-[#f1fffa] to-[#ccfccb]">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-6 text-[#333333]">Our Services 🚀</h1>
+            <p class="text-xl text-[#666666] max-w-3xl mx-auto leading-relaxed">
+                From quick weekend getaways to extended monthly rentals, we offer flexible solutions 
+                that fit your lifestyle and budget. Every service includes our signature personal touch.
+            </p>
+        </div>
+    </section>
+
+    <!-- Core Rental Services -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-[#333333]">Core Rental Services</h2>
+                <p class="text-[#666666] text-lg">Choose the perfect rental option for your needs</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="service-card friendly-card p-8 text-center">
+                    <div class="feature-icon bg-[#f8f9fa] rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="users" class="w-12 h-12 text-[#146ff8]"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-4 text-[#333333]">2-Passenger Carts</h3>
+                    <p class="text-[#666666] mb-6">Perfect for couples and solo adventures. Compact, efficient, and easy to maneuver through all Villages locations.</p>
+                    <ul class="text-left text-[#666666] space-y-2 mb-6">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Compact design</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Easy parking</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Fuel efficient</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Perfect for shopping</li>
+                    </ul>
+                    <div class="text-center">
+                        <p class="text-2xl font-bold text-[#146ff8] mb-2">Starting at $209.63</p>
+                        <p class="text-sm text-[#666666]">3-day minimum rental</p>
+                    </div>
+                </div>
+                
+                <div class="service-card friendly-card p-8 text-center package-card">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <div class="feature-icon bg-[#f8f9fa] rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="users" class="w-12 h-12 text-[#146ff8]"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-4 text-[#333333]">4-Passenger Carts</h3>
+                    <p class="text-[#666666] mb-6">Our most popular choice! Ideal for families and small groups. Comfortable seating with room for groceries and golf clubs.</p>
+                    <ul class="text-left text-[#666666] space-y-2 mb-6">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Family friendly</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Extra storage space</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Golf club holders</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Comfortable seating</li>
+                    </ul>
+                    <div class="text-center">
+                        <p class="text-2xl font-bold text-[#146ff8] mb-2">Starting at $231.13</p>
+                        <p class="text-sm text-[#666666]">3-day minimum rental</p>
+                    </div>
+                </div>
+                
+                <div class="service-card friendly-card p-8 text-center">
+                    <div class="feature-icon bg-[#f8f9fa] rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="users" class="w-12 h-12 text-[#146ff8]"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-4 text-[#333333]">6-Passenger Carts</h3>
+                    <p class="text-[#666666] mb-6">Perfect for group adventures! Spacious design ideal for family outings, golf foursomes, or social gatherings.</p>
+                    <ul class="text-left text-[#666666] space-y-2 mb-6">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Group transportation</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Maximum comfort</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Ample storage</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Social seating</li>
+                    </ul>
+                    <div class="text-center">
+                        <p class="text-2xl font-bold text-[#146ff8] mb-2">Starting at $263.38</p>
+                        <p class="text-sm text-[#666666]">3-day minimum rental</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rental Duration Options -->
+    <section class="py-16 bg-[#f8f9fa]">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-[#333333]">Flexible Rental Durations</h2>
+                <p class="text-[#666666] text-lg">Choose the rental period that works best for your stay</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="friendly-card p-8 text-center">
+                    <div class="bg-[#146ff8] text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="calendar" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-4 text-[#333333]">3-Day Minimum</h3>
+                    <p class="text-[#666666] mb-4">Perfect for weekend getaways and short visits. Our most popular option for guests and weekend residents.</p>
+                    <div class="space-y-2 text-left max-w-sm mx-auto">
+                        <div class="flex justify-between">
+                            <span>Base Rate:</span>
+                            <span class="font-semibold">$175 - $225</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Fuel Surcharge:</span>
+                            <span class="font-semibold">$20</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Tax (8.25%):</span>
+                            <span class="font-semibold">Included</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-[#146ff8] font-semibold mt-4">Perfect for weekend getaways!</p>
+                </div>
+                
+                <div class="friendly-card p-8 text-center package-card">
+                    <div class="popular-badge">BEST VALUE</div>
+                    <div class="bg-green-500 text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="calendar" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-4 text-[#333333]">Weekly Rentals</h3>
+                    <p class="text-[#666666] mb-4">Great value for vacation stays! Save money while enjoying extended access to your golf cart.</p>
+                    <div class="space-y-2 text-left max-w-sm mx-auto">
+                        <div class="flex justify-between">
+                            <span>Base Rate:</span>
+                            <span class="font-semibold">$210 - $275</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Fuel Surcharge:</span>
+                            <span class="font-semibold">$20</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Tax (8.25%):</span>
+                            <span class="font-semibold">Included</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-green-600 font-semibold mt-4">Save money with weekly rates!</p>
+                </div>
+                
+                <div class="friendly-card p-8 text-center">
+                    <div class="bg-orange-500 text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="calendar" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-4 text-[#333333]">Monthly Rentals</h3>
+                    <p class="text-[#666666] mb-4">Best value for extended stays! Perfect for snowbirds and long-term visitors to The Villages.</p>
+                    <div class="space-y-2 text-left max-w-sm mx-auto">
+                        <div class="flex justify-between">
+                            <span>Base Rate:</span>
+                            <span class="font-semibold">$465 - $700</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Fuel Surcharge:</span>
+                            <span class="font-semibold">$20</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Tax (8.25%):</span>
+                            <span class="font-semibold">Included</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-orange-600 font-semibold mt-4">Maximum savings for long stays!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-[#333333]">Additional Services</h2>
+                <p class="text-[#666666] text-lg">We go above and beyond to make your experience perfect</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div class="friendly-card p-6 text-center">
+                    <div class="bg-[#f8f9fa] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="truck" class="w-8 h-8 text-[#146ff8]"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-[#333333]">Free Delivery</h3>
+                    <p class="text-sm text-[#666666]">We deliver to all Villages locations at no extra cost. Your cart will be waiting when you arrive!</p>
+                </div>
+                
+                <div class="friendly-card p-6 text-center">
+                    <div class="bg-[#f8f9fa] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="clock" class="w-8 h-8 text-[#146ff8]"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-[#333333]">Flexible Pickup</h3>
+                    <p class="text-sm text-[#666666]">Early morning or late evening pickup available. We work around your schedule!</p>
+                </div>
+                
+                <div class="friendly-card p-6 text-center">
+                    <div class="bg-[#f8f9fa] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-[#146ff8]"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-[#333333]">Insurance Included</h3>
+                    <p class="text-sm text-[#666666]">Comprehensive coverage included with every rental. Drive with peace of mind!</p>
+                </div>
+                
+                <div class="friendly-card p-6 text-center">
+                    <div class="bg-[#f8f9fa] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="phone" class="w-8 h-8 text-[#146ff8]"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-[#333333]">24/7 Support</h3>
+                    <p class="text-sm text-[#666666]">Emergency support available anytime. We're here when you need us!</p>
+                </div>
+                
+                <div class="friendly-card p-6 text-center">
+                    <div class="bg-[#f8f9fa] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="map" class="w-8 h-8 text-[#146ff8]"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-[#333333]">Villages Guide</h3>
+                    <p class="text-sm text-[#666666]">Free map and guide to The Villages included with every rental. Discover hidden gems!</p>
+                </div>
+                
+                <div class="friendly-card p-6 text-center">
+                    <div class="bg-[#f8f9fa] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="wrench" class="w-8 h-8 text-[#146ff8]"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-[#333333]">Maintenance</h3>
+                    <p class="text-sm text-[#666666]">All carts are maintained to the highest standards. Clean, safe, and reliable!</p>
+                </div>
+                
+                <div class="friendly-card p-6 text-center">
+                    <div class="bg-[#f8f9fa] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="credit-card" class="w-8 h-8 text-[#146ff8]"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-[#333333]">Easy Payment</h3>
+                    <p class="text-sm text-[#666666]">Multiple payment options available. Cash, credit card, or check accepted!</p>
+                </div>
+                
+                <div class="friendly-card p-6 text-center">
+                    <div class="bg-[#f8f9fa] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="heart" class="w-8 h-8 text-[#146ff8]"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-[#333333]">Personal Touch</h3>
+                    <p class="text-sm text-[#666666]">We remember your preferences and treat you like family. That's the Happy Carts way!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Packages -->
+    <section class="py-16 bg-gradient-to-br from-[#f1fffa] to-[#ccfccb]">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-[#333333]">Special Packages & Deals</h2>
+                <p class="text-[#666666] text-lg">Exclusive offers for our valued customers</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="friendly-card p-8">
+                    <div class="text-center mb-6">
+                        <div class="bg-[#146ff8] text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🎉</span>
+                        </div>
+                        <h3 class="font-bold text-2xl mb-2 text-[#333333]">First-Time Customer</h3>
+                        <p class="text-[#666666]">Welcome to The Villages! Get 10% off your first rental.</p>
+                    </div>
+                    <ul class="space-y-2 text-[#666666] mb-6">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>10% discount on first rental</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Free Villages guidebook</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Priority booking for future rentals</li>
+                    </ul>
+                    <div class="text-center">
+                        <p class="text-sm text-[#146ff8] font-semibold">Just mention "First Time" when booking!</p>
+                    </div>
+                </div>
+                
+                <div class="friendly-card p-8">
+                    <div class="text-center mb-6">
+                        <div class="bg-green-500 text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">👥</span>
+                        </div>
+                        <h3 class="font-bold text-2xl mb-2 text-[#333333]">Group Discounts</h3>
+                        <p class="text-[#666666]">Rent multiple carts and save big!</p>
+                    </div>
+                    <ul class="space-y-2 text-[#666666] mb-6">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>2-3 carts: 15% off total</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>4+ carts: 20% off total</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Perfect for family reunions</li>
+                    </ul>
+                    <div class="text-center">
+                        <p class="text-sm text-[#146ff8] font-semibold">Great for family gatherings!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Services Section -->
+    <section class="py-16 bg-[#f8f9fa]">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Explore Our Complete Service Offerings 🚗</h2>
+                <p class="text-gray-600">From rental durations to cart types, discover everything we offer</p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Rental Durations -->
+                    <div class="friendly-card p-6 text-center">
+                        <div class="bg-[#146ff8] text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="calendar" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Rental Durations</h3>
+                        <div class="space-y-3 text-sm">
+                            <a href="3-day-golf-cart-rental-villages.html" class="block text-[#146ff8] hover:underline">3-Day Rentals</a>
+                            <a href="weekly-golf-cart-rental-villages.html" class="block text-[#146ff8] hover:underline">Weekly Rentals</a>
+                            <a href="monthly-golf-cart-rental-villages.html" class="block text-[#146ff8] hover:underline">Monthly Rentals</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Cart Types -->
+                    <div class="friendly-card p-6 text-center">
+                        <div class="bg-[#10b981] text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="users" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Cart Types</h3>
+                        <div class="space-y-3 text-sm">
+                            <a href="2-passenger-golf-cart.html" class="block text-[#146ff8] hover:underline">2-Passenger Carts</a>
+                            <a href="4-passenger-golf-cart.html" class="block text-[#146ff8] hover:underline">4-Passenger Carts</a>
+                            <a href="6-passenger-golf-cart.html" class="block text-[#146ff8] hover:underline">6-Passenger Carts</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Resources -->
+                    <div class="friendly-card p-6 text-center">
+                        <div class="bg-[#f59e0b] text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="help-circle" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">More Resources</h3>
+                        <div class="space-y-3 text-sm">
+                            <a href="gallery.html" class="block text-[#146ff8] hover:underline">View Our Fleet</a>
+                            <a href="faq.html" class="block text-[#146ff8] hover:underline">Frequently Asked Questions</a>
+                            <a href="about-us.html" class="block text-[#146ff8] hover:underline">About Our Family</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-8">
+                    <p class="text-gray-600">Need help choosing? <a href="contact.html" class="text-[#146ff8] hover:underline font-semibold">Contact us</a> for personalized assistance!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-[#333333]">Ready to Experience Our Services?</h2>
+                <p class="text-[#666666] text-lg mb-8">
+                    Get your custom quote today and discover why thousands of Villages residents choose Happy Carts for their golf cart rental needs.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="golf_cart_3_friendly_local.html#pricing" class="bubble-button text-white px-8 py-4 text-lg font-semibold">
+                        Get Your Quote Now! 🎉
+                    </a>
+                    <a href="contact.html" class="bg-gray-200 text-[#333333] px-8 py-4 text-lg font-semibold rounded hover:bg-gray-300 transition">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#333333] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-[#146ff8] rounded-full flex items-center justify-center">
+                            <span class="text-white text-lg">🛺</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Happy Carts</h3>
+                            <p class="text-sm text-gray-400">The Villages Golf Cart Rentals</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Family-owned since 2010, serving The Villages with pride and personal service.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="golf_cart_3_friendly_local.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="about-us.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Services</a></li>
+                        <li><a href="gallery.html" class="hover:text-white transition">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="golf_cart_3_friendly_local.html#pricing" class="hover:text-white transition">Pricing</a></li>
+                        <li><a href="faq.html" class="hover:text-white transition">FAQ</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <p>📞 352-555-0123</p>
+                        <p>📧 rentals@happycarts.com</p>
+                        <p>🕒 7 AM - 7 PM Daily</p>
+                        <p>📍 Serving All Villages Locations</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">&copy; 2024 Happy Carts - The Villages Golf Cart Rentals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+    <!-- Mobile Menu JavaScript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileMenuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    });
+    </script>
+</body>
