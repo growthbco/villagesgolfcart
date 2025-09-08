@@ -878,19 +878,19 @@
                 <div class="friendly-card p-8">
                     <h2 class="text-2xl font-bold text-center mb-6">Ready to Roll? 🛺</h2>
                     
-                    <form class="space-y-4">
+                    <form name="booking" netlify class="space-y-4">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-semibold mb-2">Your Name</label>
-                                <input type="text" placeholder="John Smith" class="w-full px-4 py-3 rounded-full border-2 border-[#ccfccb] focus:border-[#96e6b3] outline-none">
+                                <input type="text" name="name" placeholder="John Smith" class="w-full px-4 py-3 rounded-full border-2 border-[#ccfccb] focus:border-[#96e6b3] outline-none">
                             </div>
                             <div>
                                 <label class="block text-sm font-semibold mb-2">Phone Number</label>
-                                <input type="tel" placeholder="(352) 555-0123" class="w-full px-4 py-3 rounded-full border-2 border-[#ccfccb] focus:border-[#96e6b3] outline-none">
+                                <input type="tel" name="phone" placeholder="(352) 555-0123" class="w-full px-4 py-3 rounded-full border-2 border-[#ccfccb] focus:border-[#96e6b3] outline-none">
                             </div>
                             <div>
                                 <label class="block text-sm font-semibold mb-2">Pick Your Cart</label>
-                                <select class="w-full px-4 py-3 rounded-full border-2 border-[#ccfccb] focus:border-[#96e6b3] outline-none">
+                                <select name="cart-type" class="w-full px-4 py-3 rounded-full border-2 border-[#ccfccb] focus:border-[#96e6b3] outline-none">
                                     <option>Cozy 2-Seater</option>
                                     <option>Family 4-Seater</option>
                                     <option>Party 6-Seater</option>
@@ -899,7 +899,7 @@
                             </div>
                             <div>
                                 <label class="block text-sm font-semibold mb-2">How Long?</label>
-                                <select class="w-full px-4 py-3 rounded-full border-2 border-[#ccfccb] focus:border-[#96e6b3] outline-none">
+                                <select name="duration" class="w-full px-4 py-3 rounded-full border-2 border-[#ccfccb] focus:border-[#96e6b3] outline-none">
                                     <option>Just 1 Day</option>
                                     <option>3 Days</option>
                                     <option>1 Week (Save 10%!)</option>
@@ -911,12 +911,12 @@
                         
                         <div>
                             <label class="block text-sm font-semibold mb-2">When Do You Need It?</label>
-                            <input type="date" class="w-full px-4 py-3 rounded-full border-2 border-[#ccfccb] focus:border-[#96e6b3] outline-none">
+                            <input type="date" name="date" class="w-full px-4 py-3 rounded-full border-2 border-[#ccfccb] focus:border-[#96e6b3] outline-none">
                         </div>
                         
                         <div>
                             <label class="block text-sm font-semibold mb-2">Special Requests? Tell Us!</label>
-                            <textarea placeholder="Need a specific color? Birthday surprise? Let us know!" class="w-full px-4 py-3 rounded-2xl border-2 border-[#ccfccb] focus:border-[#96e6b3] outline-none" rows="3"></textarea>
+                            <textarea name="special-requests" placeholder="Need a specific color? Birthday surprise? Let us know!" class="w-full px-4 py-3 rounded-2xl border-2 border-[#ccfccb] focus:border-[#96e6b3] outline-none" rows="3"></textarea>
                         </div>
                         
                         <button type="submit" class="w-full bubble-button text-white py-4 text-lg font-semibold">
@@ -1178,22 +1178,22 @@
     <div class="fixed bottom-6 right-6 z-50" id="booking-widget">
         <div class="mb-4 bg-white rounded-2xl shadow-xl p-4 hidden" id="quick-booking">
             <h4 class="font-bold mb-3 text-[#568259]">Quick Book! 🛺</h4>
-            <form class="space-y-3">
-                <select class="w-full px-3 py-2 rounded-full border text-sm">
+            <form name="quick-booking" netlify class="space-y-3">
+                <select name="cart-type" class="w-full px-3 py-2 rounded-full border text-sm">
                     <option>Pick Your Cart 🛺</option>
                     <option>Cozy 2-Seater - 3 days min $209.63</option>
                     <option>Family 4-Seater - 3 days min $231.13 ⭐</option>
                     <option>Party 6-Seater - 3 days min $263.38</option>
                 </select>
                 <div class="flex gap-2">
-                    <input type="date" class="flex-1 px-3 py-2 rounded-full border text-sm">
-                    <select class="flex-1 px-3 py-2 rounded-full border text-sm">
+                    <input type="date" name="date" class="flex-1 px-3 py-2 rounded-full border text-sm">
+                    <select name="duration" class="flex-1 px-3 py-2 rounded-full border text-sm">
                         <option>1 Day</option>
                         <option>3 Days</option>
                         <option>1 Week</option>
                     </select>
                 </div>
-                <input type="tel" placeholder="Your Phone 📞" class="w-full px-3 py-2 rounded-full border text-sm">
+                <input type="tel" name="phone" placeholder="Your Phone 📞" class="w-full px-3 py-2 rounded-full border text-sm">
                 <button type="submit" class="w-full bubble-button text-white py-2 font-semibold text-sm">
                     Book Now! 🎉
                 </button>
