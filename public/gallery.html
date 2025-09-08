@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - The Villages Golf Cart Rentals | See Our Carts & Happy Customers</title>
+    <meta name="description" content="Browse our gallery of golf carts, happy customers, and beautiful Villages scenes. See why thousands choose Golf Cart Rentals The Villages FL for their golf cart rental needs.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Flowbite -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.0.0/dist/flowbite.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="theme_golf_cart.css">
+    
+    <style>
+        .friendly-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .friendly-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .bubble-button {
+            background: linear-gradient(135deg, #146ff8 0%, #0ea5e9 100%);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .bubble-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -3px rgba(20, 111, 248, 0.3);
+        }
+        
+        .gallery-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(20, 111, 248, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .filter-button {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .filter-button.active {
+            border-color: #146ff8;
+            background-color: #146ff8;
+            color: white;
+        }
+        
+        .filter-button:hover {
+            border-color: #146ff8;
+            color: #146ff8;
+        }
+        
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+        <!-- Global Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 wave-border">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo and Brand -->
+                <div class="flex items-center space-x-3">
+                    <div class="bg-[#146ff8] p-3 rounded float-animation">
+                        <i data-lucide="car" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-[#333333]">Villages Golf Cart Rentals</h1>
+                        <p class="text-xs text-[#146ff8] font-semibold">Proudly Serving The Villages since 1999</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="index.html" class="hover:text-[#146ff8] transition font-medium">Home</a>
+                    <a href="about-us.html" class="hover:text-[#146ff8] transition font-medium">About Us</a>
+                                        <!-- Services Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 hover:text-[#146ff8] transition font-medium">
+                            <span>Services</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu -->
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="services.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="settings" class="w-4 h-4 inline mr-2"></i>
+                                    All Services
+                                </a>
+                                <div class="border-t border-gray-100 my-1"></div>
+                                <a href="3-day-golf-cart-rental-villages.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="calendar" class="w-4 h-4 inline mr-2"></i>
+                                    3-Day Rentals
+                                </a>
+                                <a href="weekly-golf-cart-rental-villages.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="calendar-days" class="w-4 h-4 inline mr-2"></i>
+                                    Weekly Rentals
+                                </a>
+                                <a href="monthly-golf-cart-rental-villages.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="calendar-range" class="w-4 h-4 inline mr-2"></i>
+                                    Monthly Rentals
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Carts Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 hover:text-[#146ff8] transition font-medium">
+                            <span>Carts</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu -->
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="2-passenger-golf-cart.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="users" class="w-4 h-4 inline mr-2"></i>
+                                    2-Passenger Cart
+                                </a>
+                                <a href="4-passenger-golf-cart.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="users" class="w-4 h-4 inline mr-2"></i>
+                                    4-Passenger Cart
+                                </a>
+                                <a href="6-passenger-golf-cart.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="users" class="w-4 h-4 inline mr-2"></i>
+                                    6-Passenger Cart
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="gallery.html" class="text-[#146ff8] font-semibold">Gallery</a>
+                    <a href="faq.html" class="hover:text-[#146ff8] transition font-medium">FAQ</a>
+                    <a href="contact.html" class="hover:text-[#146ff8] transition font-medium">Contact</a>
+                </div>
+                
+                <!-- Contact and CTA -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="tel:352-555-0123" class="text-[#146ff8] font-semibold hover:text-[#0ea5e9] transition">
+                        📞 352-555-0123
+                    </a>
+                    <a href="index.html#pricing" class="bubble-button text-white px-6 py-2 font-semibold">
+                        Book Now
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-[#333333] hover:text-[#146ff8] transition">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+                <div class="py-4 space-y-3">
+                    <a href="index.html" class="block px-4 py-2 hover:text-[#146ff8] transition">Home</a>
+                    <a href="about-us.html" class="block px-4 py-2 hover:text-[#146ff8] transition">About Us</a>
+                                        <!-- Services Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 hover:text-[#146ff8] transition font-medium">
+                            <span>Services</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu -->
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="services.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="settings" class="w-4 h-4 inline mr-2"></i>
+                                    All Services
+                                </a>
+                                <div class="border-t border-gray-100 my-1"></div>
+                                <a href="3-day-golf-cart-rental-villages.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="calendar" class="w-4 h-4 inline mr-2"></i>
+                                    3-Day Rentals
+                                </a>
+                                <a href="weekly-golf-cart-rental-villages.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="calendar-days" class="w-4 h-4 inline mr-2"></i>
+                                    Weekly Rentals
+                                </a>
+                                <a href="monthly-golf-cart-rental-villages.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="calendar-range" class="w-4 h-4 inline mr-2"></i>
+                                    Monthly Rentals
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="gallery.html" class="block px-4 py-2 hover:text-[#146ff8] transition">Gallery</a>
+                    <a href="faq.html" class="block px-4 py-2 hover:text-[#146ff8] transition">FAQ</a>
+                    <a href="contact.html" class="block px-4 py-2 hover:text-[#146ff8] transition">Contact</a>
+                    <a href="monthly-golf-cart-rental-villages.html" class="block px-4 py-2 hover:text-[#146ff8] transition">Monthly Rentals</a>
+                    <a href="weekly-golf-cart-rental-villages.html" class="block px-4 py-2 hover:text-[#146ff8] transition">Weekly Rentals</a>
+                    <a href="3-day-golf-cart-rental-villages.html" class="block px-4 py-2 hover:text-[#146ff8] transition">Daily Rentals</a>
+                    <div class="border-t border-gray-200 pt-3 mt-3">
+                        <a href="tel:352-555-0123" class="block px-4 py-2 text-[#146ff8] font-semibold">
+                            📞 352-555-0123
+                        </a>
+                        <a href="index.html#pricing" class="block mx-4 mt-2 bubble-button text-white px-6 py-2 font-semibold text-center">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-[#f1fffa] to-[#ccfccb]">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-6 text-[#333333]">Our Gallery 📸</h1>
+            <p class="text-xl text-[#666666] max-w-3xl mx-auto leading-relaxed">
+                Take a look at our beautiful golf carts, happy customers, and the amazing Villages lifestyle. 
+                Every picture tells a story of fun, freedom, and family!
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <section class="py-8 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="filter-button active px-6 py-3 rounded-lg font-semibold" data-filter="all">
+                    All Photos
+                </button>
+                <button class="filter-button px-6 py-3 rounded-lg font-semibold" data-filter="carts">
+                    Our Carts
+                </button>
+                <button class="filter-button px-6 py-3 rounded-lg font-semibold" data-filter="customers">
+                    Happy Customers
+                </button>
+                <button class="filter-button px-6 py-3 rounded-lg font-semibold" data-filter="villages">
+                    Villages Life
+                </button>
+                <button class="filter-button px-6 py-3 rounded-lg font-semibold" data-filter="team">
+                    Our Team
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="py-16 bg-[#f8f9fa]">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- Golf Cart Images -->
+                <div class="gallery-item" data-category="carts">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="images/golf-carts/2-seater-blue-golf-cart-lake-view.png" alt="Beautiful Blue 2-Passenger Golf Cart by The Lake - Perfect for Couples" class="w-full h-64 object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">🛺</div>
+                                <div class="font-bold">2-Passenger Cart</div>
+                                <div class="text-sm">Perfect for couples</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="carts">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" alt="4-Passenger Golf Cart" class="w-full h-64 object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">🛺</div>
+                                <div class="font-bold">4-Passenger Cart</div>
+                                <div class="text-sm">Most popular choice</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="carts">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" alt="6-Passenger Golf Cart" class="w-full h-64 object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">🛺</div>
+                                <div class="font-bold">6-Passenger Cart</div>
+                                <div class="text-sm">Group adventures</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Customer Photos -->
+                <div class="gallery-item" data-category="customers">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=face" alt="Happy Customer" class="w-full h-64 object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">😊</div>
+                                <div class="font-bold">Happy Customer</div>
+                                <div class="text-sm">Bob from Spanish Springs</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="customers">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=300&fit=crop&crop=face" alt="Happy Customer" class="w-full h-64 object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">😊</div>
+                                <div class="font-bold">Happy Customer</div>
+                                <div class="text-sm">Margaret from Lake Sumter</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="customers">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop&crop=face" alt="Happy Customer" class="w-full h-64 object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">😊</div>
+                                <div class="font-bold">Happy Customer</div>
+                                <div class="text-sm">Tom from Brownwood</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Villages Life -->
+                <div class="gallery-item" data-category="villages">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop" alt="Spanish Springs Square" class="w-full h-64 object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">🏛️</div>
+                                <div class="font-bold">Spanish Springs</div>
+                                <div class="text-sm">Historic square</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="villages">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop" alt="Lake Sumter Landing" class="w-full h-64 object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">🌊</div>
+                                <div class="font-bold">Lake Sumter</div>
+                                <div class="text-sm">Waterfront views</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="villages">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop" alt="Golf Course" class="w-full h-64 object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">⛳</div>
+                                <div class="font-bold">Golf Courses</div>
+                                <div class="text-sm">Perfect for golfing</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Photos -->
+                <div class="gallery-item" data-category="team">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=face" alt="Bob Masters" class="w-full h-64 object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">👨‍💼</div>
+                                <div class="font-bold">Bob Masters</div>
+                                <div class="text-sm">Founder & CEO</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="team">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=300&fit=crop&crop=face" alt="Susan Masters" class="w-full h-64 object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">👩‍💼</div>
+                                <div class="font-bold">Susan Masters</div>
+                                <div class="text-sm">Operations Manager</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="team">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop&crop=face" alt="Mike Masters" class="w-full h-64 object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">👨‍🔧</div>
+                                <div class="font-bold">Mike Masters</div>
+                                <div class="text-sm">Fleet Manager</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- More Cart Photos -->
+                <div class="gallery-item" data-category="carts">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" alt="Cart Maintenance" class="w-full h-64 object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">🔧</div>
+                                <div class="font-bold">Cart Maintenance</div>
+                                <div class="text-sm">Keeping them perfect</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="carts">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" alt="Cart Delivery" class="w-full h-64 object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">🚚</div>
+                                <div class="font-bold">Cart Delivery</div>
+                                <div class="text-sm">Right to your door</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="carts">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" alt="Cart Fleet" class="w-full h-64 object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">🛺</div>
+                                <div class="font-bold">Our Fleet</div>
+                                <div class="text-sm">50+ carts available</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-[#333333]">What Our Customers Say</h2>
+                <p class="text-[#666666] text-lg">Real stories from real customers who love our service</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="testimonial-card friendly-card p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-[#f8f9fa] rounded-full flex items-center justify-center mr-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Bob R." class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#333333]">Bob R.</h4>
+                            <p class="text-sm text-[#666666]">Spanish Springs</p>
+                            <div class="flex text-yellow-400">
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-[#666666] italic">
+                        "Our team are the sweetest! They delivered our cart with a bow on it for our anniversary. 
+                        Will never rent anywhere else! The cart was spotless and ran perfectly."
+                    </p>
+                </div>
+                
+                <div class="testimonial-card friendly-card p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-[#f8f9fa] rounded-full flex items-center justify-center mr-4">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face" alt="Margaret K." class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#333333]">Margaret K.</h4>
+                            <p class="text-sm text-[#666666]">Lake Sumter Landing</p>
+                            <div class="flex text-yellow-400">
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-[#666666] italic">
+                        "Best value in The Villages, hands down! Their 3-day minimum pricing is perfect for weekend 
+                        getaways. Plus they threw in a free Villages map for us newcomers. So thoughtful!"
+                    </p>
+                </div>
+                
+                <div class="testimonial-card friendly-card p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-[#f8f9fa] rounded-full flex items-center justify-center mr-4">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face" alt="Frank D." class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#333333]">Frank D.</h4>
+                            <p class="text-sm text-[#666666]">Brownwood</p>
+                            <div class="flex text-yellow-400">
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-[#666666] italic">
+                        "Had a flat tire at 7pm - Bob came out himself to fix it! This is what community service 
+                        looks like. They really care about their customers and it shows."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-gradient-to-br from-[#f1fffa] to-[#ccfccb]">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-[#333333]">Ready to Join Our Happy Customers?</h2>
+                <p class="text-[#666666] text-lg mb-8">
+                    See yourself in our next gallery update! Book your golf cart today and start creating 
+                    amazing memories in The Villages.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="index.html#pricing" class="bubble-button text-white px-8 py-4 text-lg font-semibold">
+                        Book Your Cart Today! 🎉
+                    </a>
+                    <a href="contact.html" class="bg-white text-[#333333] px-8 py-4 text-lg font-semibold rounded hover:bg-gray-100 transition">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#333333] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-[#146ff8] rounded-full flex items-center justify-center">
+                            <span class="text-white text-lg">🛺</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Golf Cart Rentals The Villages FL</h3>
+                            <p class="text-sm text-gray-400">The Villages Golf Cart Rentals</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Professional service since 1999, serving The Villages with pride and personal service.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="about-us.html" class="hover:text-white transition">About Us</a></li>
+                        <li>                    <!-- Services Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 hover:text-[#146ff8] transition font-medium">
+                            <span>Services</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu -->
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="services.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="settings" class="w-4 h-4 inline mr-2"></i>
+                                    All Services
+                                </a>
+                                <div class="border-t border-gray-100 my-1"></div>
+                                <a href="3-day-golf-cart-rental-villages.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="calendar" class="w-4 h-4 inline mr-2"></i>
+                                    3-Day Rentals
+                                </a>
+                                <a href="weekly-golf-cart-rental-villages.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="calendar-days" class="w-4 h-4 inline mr-2"></i>
+                                    Weekly Rentals
+                                </a>
+                                <a href="monthly-golf-cart-rental-villages.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f8f9fa] hover:text-[#146ff8] transition">
+                                    <i data-lucide="calendar-range" class="w-4 h-4 inline mr-2"></i>
+                                    Monthly Rentals
+                                </a>
+                            </div>
+                        </div>
+                    </div></li>
+                        <li><a href="gallery.html" class="hover:text-white transition">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html#pricing" class="hover:text-white transition">Pricing</a></li>
+                        <li><a href="faq.html" class="hover:text-white transition">FAQ</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <p>📞 352-555-0123</p>
+                        <p>📧 rentals@golfcartrentalsthevillagesfl.com</p>
+                        <p>🕒 7 AM - 7 PM Daily</p>
+                        <p>📍 Serving All Villages Locations</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">&copy; 2024 Golf Cart Rentals The Villages FL - The Villages Golf Cart Rentals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div class="modal-overlay" id="image-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <img id="modal-image" src="" alt="" class="max-w-full max-h-full object-contain">
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Gallery filtering
+        document.querySelectorAll('.filter-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.dataset.filter;
+                
+                // Update active button
+                document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter gallery items
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Image modal functionality
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', function() {
+                const modal = document.getElementById('image-modal');
+                const modalImg = document.getElementById('modal-image');
+                
+                modalImg.src = this.src;
+                modalImg.alt = this.alt;
+                modal.classList.add('active');
+            });
+        });
+        
+        function closeModal() {
+            document.getElementById('image-modal').classList.remove('active');
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('image-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+    <!-- Mobile Menu JavaScript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileMenuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    });
+    </script>
+</body>
