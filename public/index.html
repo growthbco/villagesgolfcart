@@ -752,7 +752,7 @@
         let basePrice = 0;
         let durationMultiplier = 1;
         
-        // Exact pricing table (base rate without fuel/tax)
+        // UPDATED 2025-09-09: Exact pricing table (base rate without fuel/tax)
         const pricing = {
             '2-passenger': {
                 '3-day': 175,
@@ -770,6 +770,9 @@
                 'monthly': 700
             }
         };
+        
+        // Force cache refresh - version 2.1
+        console.log('Pricing calculator loaded - version 2.1');
         
         function selectCart(cartType) {
             selectedCart = cartType;
@@ -864,8 +867,11 @@
             // Get exact price from pricing table
             const subtotal = pricing[selectedCart][selectedDuration.duration];
             const fuel = 20;
-            const tax = (subtotal + fuel) * 0.075;
+            const tax = (subtotal + fuel) * 0.075; // 7.5% tax rate
             const total = subtotal + fuel + tax;
+            
+            // Debug logging
+            console.log(`Calculator v2.1 - ${selectedCart} ${selectedDuration.duration}: base=${subtotal}, fuel=${fuel}, tax=${tax.toFixed(2)}, total=${total.toFixed(2)}`);
             
             document.getElementById('cart-summary').textContent = `${selectedCart.charAt(0).toUpperCase() + selectedCart.slice(1)} Cart for ${selectedDuration.description}`;
             document.getElementById('delivery-summary').textContent = `Free delivery to ${document.getElementById('delivery-location').options[document.getElementById('delivery-location').selectedIndex].text}`;
