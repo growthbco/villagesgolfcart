@@ -1256,68 +1256,13 @@
         </div>
     </footer>
     
-    <!-- Quick Booking Widget -->
-    <div class="fixed bottom-6 right-6 z-50" id="booking-widget">
-        <div class="mb-4 bg-white rounded-2xl shadow-xl p-4 hidden" id="quick-booking">
-            <h4 class="font-bold mb-3 text-[#568259]">Quick Book! 🛺</h4>
-            <form name="quick-booking" netlify class="space-y-3">
-                <select name="cart-type" class="w-full px-3 py-2 rounded-full border text-sm">
-                    <option>Pick Your Cart 🛺</option>
-                    <option>Cozy 2-Seater - 3 days min $209.63</option>
-                    <option>Family 4-Seater - 3 days min $231.13 ⭐</option>
-                    <option>Party 6-Seater - 3 days min $263.38</option>
-                </select>
-                <div class="flex gap-2">
-                    <input type="date" name="date" class="flex-1 px-3 py-2 rounded-full border text-sm">
-                    <select name="duration" class="flex-1 px-3 py-2 rounded-full border text-sm">
-                        <option>1 Day</option>
-                        <option>3 Days</option>
-                        <option>1 Week</option>
-                    </select>
-                </div>
-                <input type="tel" name="phone" placeholder="Your Phone 📞" class="w-full px-3 py-2 rounded-full border text-sm">
-                <button type="submit" class="w-full bubble-button text-white py-2 font-semibold text-sm">
-                    Book Now! 🎉
-                </button>
-            </form>
-        </div>
-        
-        <!-- Chat Button -->
-        <button class="bubble-button text-white p-4 shadow-xl flex items-center gap-2" onclick="toggleBooking()">
-            <i data-lucide="message-circle" class="w-6 h-6" id="chat-icon"></i>
-            <i data-lucide="calendar" class="w-6 h-6 hidden" id="book-icon"></i>
-            <span class="font-semibold" id="button-text">Chat!</span>
-        </button>
-    </div>
-    
-    <script>
-        function toggleBooking() {
-            const bookingForm = document.getElementById('quick-booking');
-            const chatIcon = document.getElementById('chat-icon');
-            const bookIcon = document.getElementById('book-icon');
-            const buttonText = document.getElementById('button-text');
-            
-            if (bookingForm.classList.contains('hidden')) {
-                bookingForm.classList.remove('hidden');
-                chatIcon.classList.add('hidden');
-                bookIcon.classList.remove('hidden');
-                buttonText.textContent = 'Close';
-            } else {
-                bookingForm.classList.add('hidden');
-                chatIcon.classList.remove('hidden');
-                bookIcon.classList.add('hidden');
-                buttonText.textContent = 'Chat!';
-            }
-        }
-        
-        // Auto-close after 30 seconds
-        setTimeout(() => {
-            const bookingForm = document.getElementById('quick-booking');
-            if (!bookingForm.classList.contains('hidden')) {
-                toggleBooking();
-            }
-        }, 30000);
+    <!-- LeadConnector Chat Widget -->
+    <script 
+      src="https://widgets.leadconnectorhq.com/loader.js"  
+      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
+      data-widget-id="68c096bf7bf8b350700b6d0c">
     </script>
+    
     
     <script>
         // Initialize Lucide icons
