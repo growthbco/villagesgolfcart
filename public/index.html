@@ -791,6 +791,7 @@
                 if (currentStep === 3) {
                     document.getElementById('next-btn').textContent = 'Calculate Price →';
                     document.getElementById('next-btn').onclick = calculatePrice;
+                    document.getElementById('next-btn').classList.remove('hidden');
                 }
                 
                 if (currentStep === 4) {
@@ -799,7 +800,11 @@
                 }
                 
                 document.getElementById('prev-btn').classList.remove('hidden');
-                document.getElementById('next-btn').classList.add('hidden');
+                
+                // Only hide next button if NOT on step 3
+                if (currentStep !== 3) {
+                    document.getElementById('next-btn').classList.add('hidden');
+                }
                 
                 // Re-initialize icons after DOM update
                 setTimeout(() => lucide.createIcons(), 100);
