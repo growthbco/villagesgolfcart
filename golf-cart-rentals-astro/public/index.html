@@ -598,23 +598,21 @@
                         <div class="calculator-step" id="step-1">
                             <h3 class="text-2xl font-bold mb-6 text-center text-[#333333]">How many people will be riding? 👥</h3>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <button class="cart-option p-6 border-2 border-gray-200 rounded-lg hover:border-[#146ff8] hover:bg-[#f8f9fa] transition" onclick="selectCart('2-passenger', 175)">
-                                    <img src="images/golf-carts/2-seater-blue-golf-cart-lake-view.png" 
-                                         alt="2-Passenger Golf Cart" 
-                                         class="w-16 h-16 object-cover rounded-lg mx-auto mb-3">
+                                <button class="cart-option p-6 border-2 border-gray-200 rounded-lg hover:border-[#146ff8] hover:bg-[#f8f9fa] transition" onclick="selectCart('2-passenger')">
+                                    <i data-lucide="users" class="w-12 h-12 text-[#146ff8] mx-auto mb-3"></i>
                                     <h4 class="font-bold text-lg mb-2">2 People</h4>
                                     <p class="text-sm text-gray-600">Perfect for couples</p>
                                     <a href="2-passenger-golf-cart.html" class="text-xs text-[#146ff8] hover:underline mt-2 inline-block" onclick="event.stopPropagation()">Learn More →</a>
                                 </button>
-                                <button class="cart-option p-6 border-2 border-gray-200 rounded-lg hover:border-[#146ff8] hover:bg-[#f8f9fa] transition" onclick="selectCart('4-passenger', 195)">
+                                <button class="cart-option p-6 border-2 border-gray-200 rounded-lg hover:border-[#146ff8] hover:bg-[#f8f9fa] transition" onclick="selectCart('4-passenger')">
                                     <i data-lucide="users" class="w-12 h-12 text-[#146ff8] mx-auto mb-3"></i>
                                     <h4 class="font-bold text-lg mb-2">2-4 People</h4>
                                     <p class="text-sm text-gray-600">Most popular choice</p>
                                     <span class="bg-[#146ff8] text-white px-2 py-1 text-xs rounded mt-2 inline-block">MOST POPULAR</span>
                                     <a href="4-passenger-golf-cart.html" class="text-xs text-[#146ff8] hover:underline mt-2 inline-block" onclick="event.stopPropagation()">Learn More →</a>
                                 </button>
-                                <button class="cart-option p-6 border-2 border-gray-200 rounded-lg hover:border-[#146ff8] hover:bg-[#f8f9fa] transition" onclick="selectCart('6-passenger', 225)">
-                                    <i data-lucide="username" class="w-12 h-12 text-[#146ff8] mx-auto mb-3"></i>
+                                <button class="cart-option p-6 border-2 border-gray-200 rounded-lg hover:border-[#146ff8] hover:bg-[#f8f9fa] transition" onclick="selectCart('6-passenger')">
+                                    <i data-lucide="users-round" class="w-12 h-12 text-[#146ff8] mx-auto mb-3"></i>
                                     <h4 class="font-bold text-lg mb-2">5-6 People</h4>
                                     <p class="text-sm text-gray-600">Group adventures</p>
                                     <a href="6-passenger-golf-cart.html" class="text-xs text-[#146ff8] hover:underline mt-2 inline-block" onclick="event.stopPropagation()">Learn More →</a>
@@ -625,28 +623,88 @@
                         <!-- Step 2: Duration -->
                         <div class="calculator-step hidden" id="step-2">
                             <h3 class="text-2xl font-bold mb-6 text-center text-[#333333]">How long do you need it? 📅</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <button class="duration-option p-6 border-2 border-gray-200 rounded-lg hover:border-[#146ff8] hover:bg-[#f8f9fa] transition" onclick="selectDuration('3-day', 1, 'Perfect for weekend getaway')">
+                            
+                            <!-- Duration Selection Cards -->
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                                <!-- Daily Rental -->
+                                <div class="duration-card p-6 border-2 border-gray-200 rounded-lg bg-white">
                                     <i data-lucide="calendar" class="w-12 h-12 text-[#146ff8] mx-auto mb-3"></i>
-                                    <h4 class="font-bold text-lg mb-2">3 Days</h4>
-                                    <p class="text-sm text-gray-600">Weekend special</p>
-                                    <p class="text-xs text-[#146ff8] font-semibold">Minimum rental</p>
-                                    <a href="3-day-golf-cart-rental-villages.html" class="text-xs text-[#146ff8] hover:underline mt-2 inline-block" onclick="event.stopPropagation()">Learn More →</a>
-                                </button>
-                                <button class="duration-option p-6 border-2 border-gray-200 rounded-lg hover:border-[#146ff8] hover:bg-[#f8f9fa] transition" onclick="selectDuration('weekly', 1.2, 'Great value for vacation')">
-                                    <i data-lucide="calendar" class="w-12 h-12 text-[#146ff8] mx-auto mb-3"></i>
-                                    <h4 class="text-lg mb-2">1 Week</h4>
-                                    <p class="text-sm text-gray-600">Best value option</p>
-                                    <span class="bg-green-500 text-white px-2 py-1 text-xs rounded mt-2 inline-block">SAVE $$</span>
-                                    <a href="weekly-golf-cart-rental-villages.html" class="text-xs text-[#146ff8] hover:underline mt-2 inline-block" onclick="event.stopPropagation()">Learn More →</a>
-                                </button>
-                                <button class="duration-option p-6 border-2 border-gray-200 rounded-lg hover:border-[#146ff8] hover:bg-[#f8f9fa] transition" onclick="selectDuration('monthly', 2.65, 'Long-term discount')">
-                                    <i data-lucide="calendar" class="w-12 h-12 text-[#146ff8] mx-auto mb-3"></i>
-                                    <h4 class="font-bold text-lg mb-2">1 Month</h4>
-                                    <p class="text-sm text-gray-600">Extended stay</p>
-                                    <span class="bg-orange-500 text-white px-2 py-1 text-xs rounded mt-2 inline-block">BEST DEAL</span>
-                                    <a href="monthly-golf-cart-rental-villages.html" class="text-xs text-[#146ff8] hover:underline mt-2 inline-block" onclick="event.stopPropagation()">Learn More →</a>
-                                </button>
+                                    <h4 class="font-bold text-lg mb-2 text-center">Daily Rental</h4>
+                                    <p class="text-sm text-gray-600 text-center mb-4">Perfect for short trips</p>
+                                    <div class="flex items-center justify-center space-x-3">
+                                        <button onclick="adjustQuantity('days', -1)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                            <span class="text-xl">−</span>
+                                        </button>
+                                        <div class="text-center">
+                                            <input type="number" id="days-quantity" value="0" min="0" max="30" onchange="updateDurationDisplay()" class="w-16 text-center text-xl font-bold border-2 border-gray-300 rounded-lg">
+                                            <p class="text-xs text-gray-600 mt-1">Days</p>
+                                        </div>
+                                        <button onclick="adjustQuantity('days', 1)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                            <span class="text-xl">+</span>
+                                        </button>
+                                    </div>
+                                    <p class="text-xs text-[#146ff8] font-semibold text-center mt-3">Min. 3 days</p>
+                                    <a href="3-day-golf-cart-rental-villages.html" class="text-xs text-[#146ff8] hover:underline mt-2 inline-block w-full text-center">Learn More →</a>
+                                </div>
+                                
+                                <!-- Weekly Rental -->
+                                <div class="duration-card p-6 border-2 border-gray-200 rounded-lg bg-white">
+                                    <i data-lucide="calendar-range" class="w-12 h-12 text-[#146ff8] mx-auto mb-3"></i>
+                                    <h4 class="font-bold text-lg mb-2 text-center">Weekly Rental</h4>
+                                    <p class="text-sm text-gray-600 text-center mb-4">Best value option</p>
+                                    <div class="flex items-center justify-center space-x-3">
+                                        <button onclick="adjustQuantity('weeks', -1)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                            <span class="text-xl">−</span>
+                                        </button>
+                                        <div class="text-center">
+                                            <input type="number" id="weeks-quantity" value="0" min="0" max="52" onchange="updateDurationDisplay()" class="w-16 text-center text-xl font-bold border-2 border-gray-300 rounded-lg">
+                                            <p class="text-xs text-gray-600 mt-1">Weeks</p>
+                                        </div>
+                                        <button onclick="adjustQuantity('weeks', 1)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                            <span class="text-xl">+</span>
+                                        </button>
+                                    </div>
+                                    <span class="bg-green-500 text-white px-2 py-1 text-xs rounded mt-3 inline-block w-full text-center">SAVE $$</span>
+                                    <a href="weekly-golf-cart-rental-villages.html" class="text-xs text-[#146ff8] hover:underline mt-2 inline-block w-full text-center">Learn More →</a>
+                                </div>
+                                
+                                <!-- Monthly Rental -->
+                                <div class="duration-card p-6 border-2 border-gray-200 rounded-lg bg-white">
+                                    <i data-lucide="calendar-days" class="w-12 h-12 text-[#146ff8] mx-auto mb-3"></i>
+                                    <h4 class="font-bold text-lg mb-2 text-center">Monthly Rental</h4>
+                                    <p class="text-sm text-gray-600 text-center mb-4">Extended stay</p>
+                                    <div class="flex items-center justify-center space-x-3">
+                                        <button onclick="adjustQuantity('months', -1)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                            <span class="text-xl">−</span>
+                                        </button>
+                                        <div class="text-center">
+                                            <input type="number" id="months-quantity" value="0" min="0" max="12" onchange="updateDurationDisplay()" class="w-16 text-center text-xl font-bold border-2 border-gray-300 rounded-lg">
+                                            <p class="text-xs text-gray-600 mt-1">Months</p>
+                                        </div>
+                                        <button onclick="adjustQuantity('months', 1)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                            <span class="text-xl">+</span>
+                                        </button>
+                                    </div>
+                                    <span class="bg-orange-500 text-white px-2 py-1 text-xs rounded mt-3 inline-block w-full text-center">BEST DEAL</span>
+                                    <a href="monthly-golf-cart-rental-villages.html" class="text-xs text-[#146ff8] hover:underline mt-2 inline-block w-full text-center">Learn More →</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Duration Summary -->
+                            <div class="bg-[#f8f9fa] rounded-lg p-4 mb-4 hidden" id="duration-summary">
+                                <p class="text-center text-lg font-semibold text-[#333333]">Total Duration: <span id="total-duration-text" class="text-[#146ff8]">Select duration above</span></p>
+                            </div>
+                            
+                            <!-- Quick Selection Buttons -->
+                            <div class="text-center">
+                                <p class="text-sm text-gray-600 mb-3">Quick selections:</p>
+                                <div class="flex flex-wrap justify-center gap-2">
+                                    <button onclick="setQuickDuration(3, 0, 0)" class="px-4 py-2 bg-gray-100 hover:bg-[#146ff8] hover:text-white rounded-full text-sm transition">3 Days (Min)</button>
+                                    <button onclick="setQuickDuration(0, 1, 0)" class="px-4 py-2 bg-gray-100 hover:bg-[#146ff8] hover:text-white rounded-full text-sm transition">1 Week</button>
+                                    <button onclick="setQuickDuration(0, 2, 0)" class="px-4 py-2 bg-gray-100 hover:bg-[#146ff8] hover:text-white rounded-full text-sm transition">2 Weeks</button>
+                                    <button onclick="setQuickDuration(0, 0, 1)" class="px-4 py-2 bg-gray-100 hover:bg-[#146ff8] hover:text-white rounded-full text-sm transition">1 Month</button>
+                                    <button onclick="setQuickDuration(0, 0, 3)" class="px-4 py-2 bg-gray-100 hover:bg-[#146ff8] hover:text-white rounded-full text-sm transition">3 Months</button>
+                                </div>
                             </div>
                         </div>
                         
@@ -697,10 +755,10 @@
                                         </div>
                                         <div class="flex justify-between">
                                             <span>Fuel Surcharge:</span>
-                                            <span>$20.00</span>
+                                            <span id="fuel-charge">$20.00</span>
                                         </div>
                                         <div class="flex justify-between">
-                                            <span>Tax (8.25%):</span>
+                                            <span>Tax (7.5%):</span>
                                             <span id="tax-amount">$22.28</span>
                                         </div>
                                         <div class="border-t-2 border-[#146ff8] pt-2 flex justify-between font-bold text-lg">
@@ -753,10 +811,36 @@
         let selectedDuration = null;
         let basePrice = 0;
         let durationMultiplier = 1;
+        let durationQuantities = {
+            days: 0,
+            weeks: 0,
+            months: 0
+        };
         
-        function selectCart(cartType, price) {
+        // UPDATED 2025-09-09: Exact pricing table (base rate without fuel/tax)
+        const pricing = {
+            '2-passenger': {
+                '3-day': 175,
+                'weekly': 210,
+                'monthly': 465
+            },
+            '4-passenger': {
+                '3-day': 195,
+                'weekly': 250,
+                'monthly': 575
+            },
+            '6-passenger': {
+                '3-day': 225,
+                'weekly': 275,
+                'monthly': 700
+            }
+        };
+        
+        // Force cache refresh - version 2.1
+        console.log('Pricing calculator loaded - version 2.1');
+        
+        function selectCart(cartType) {
             selectedCart = cartType;
-            basePrice = price;
             document.querySelectorAll('.cart-option').forEach(btn => {
                 btn.classList.remove('border-[#146ff8]', 'bg-[#f8f9fa]');
                 btn.classList.add('border-gray-200');
@@ -765,9 +849,99 @@
             document.getElementById('next-btn').classList.remove('hidden');
         }
         
-        function selectDuration(duration, multiplier, description) {
-            selectedDuration = {duration, multiplier, description};
-            durationMultiplier = multiplier;
+        function adjustQuantity(type, change) {
+            const input = document.getElementById(`${type}-quantity`);
+            let newValue = parseInt(input.value) + change;
+            
+            // Enforce minimum and maximum values
+            if (type === 'days') {
+                newValue = Math.max(0, Math.min(30, newValue));
+            } else if (type === 'weeks') {
+                newValue = Math.max(0, Math.min(52, newValue));
+            } else if (type === 'months') {
+                newValue = Math.max(0, Math.min(12, newValue));
+            }
+            
+            input.value = newValue;
+            durationQuantities[type] = newValue;
+            updateDurationDisplay();
+        }
+        
+        function setQuickDuration(days, weeks, months) {
+            document.getElementById('days-quantity').value = days;
+            document.getElementById('weeks-quantity').value = weeks;
+            document.getElementById('months-quantity').value = months;
+            durationQuantities.days = days;
+            durationQuantities.weeks = weeks;
+            durationQuantities.months = months;
+            updateDurationDisplay();
+        }
+        
+        function updateDurationDisplay() {
+            const days = parseInt(document.getElementById('days-quantity').value) || 0;
+            const weeks = parseInt(document.getElementById('weeks-quantity').value) || 0;
+            const months = parseInt(document.getElementById('months-quantity').value) || 0;
+            
+            durationQuantities.days = days;
+            durationQuantities.weeks = weeks;
+            durationQuantities.months = months;
+            
+            // Calculate total days for validation
+            const totalDays = days + (weeks * 7) + (months * 30);
+            
+            // Build duration text
+            let durationParts = [];
+            if (months > 0) durationParts.push(`${months} month${months > 1 ? 's' : ''}`);
+            if (weeks > 0) durationParts.push(`${weeks} week${weeks > 1 ? 's' : ''}`);
+            if (days > 0) durationParts.push(`${days} day${days > 1 ? 's' : ''}`);
+            
+            const summaryDiv = document.getElementById('duration-summary');
+            const durationText = document.getElementById('total-duration-text');
+            
+            if (totalDays >= 3) {
+                // Valid duration selected
+                summaryDiv.classList.remove('hidden');
+                durationText.textContent = durationParts.join(' + ') || 'No duration selected';
+                durationText.classList.remove('text-red-500');
+                document.getElementById('next-btn').classList.remove('hidden');
+                
+                // Highlight active duration cards
+                document.querySelectorAll('.duration-card').forEach(card => {
+                    card.classList.remove('border-[#146ff8]', 'bg-[#f8f9fa]');
+                    card.classList.add('border-gray-200');
+                });
+                
+                if (days > 0) {
+                    document.querySelectorAll('.duration-card')[0].classList.add('border-[#146ff8]', 'bg-[#f8f9fa]');
+                }
+                if (weeks > 0) {
+                    document.querySelectorAll('.duration-card')[1].classList.add('border-[#146ff8]', 'bg-[#f8f9fa]');
+                }
+                if (months > 0) {
+                    document.querySelectorAll('.duration-card')[2].classList.add('border-[#146ff8]', 'bg-[#f8f9fa]');
+                }
+            } else if (totalDays > 0) {
+                // Duration selected but below minimum
+                summaryDiv.classList.remove('hidden');
+                durationText.textContent = `${durationParts.join(' + ')} (Minimum 3 days required)`;
+                durationText.classList.add('text-red-500');
+                document.getElementById('next-btn').classList.add('hidden');
+            } else {
+                // No duration selected
+                summaryDiv.classList.add('hidden');
+                document.getElementById('next-btn').classList.add('hidden');
+                
+                // Reset card styling
+                document.querySelectorAll('.duration-card').forEach(card => {
+                    card.classList.remove('border-[#146ff8]', 'bg-[#f8f9fa]');
+                    card.classList.add('border-gray-200');
+                });
+            }
+        }
+        
+        function selectDuration(duration, description) {
+            // This function is kept for backwards compatibility but not used in new UI
+            selectedDuration = {duration, description};
             document.querySelectorAll('.duration-option').forEach(btn => {
                 btn.classList.remove('border-[#146ff8]', 'bg-[#f8f9fa]');
                 btn.classList.add('border-gray-200');
@@ -791,6 +965,7 @@
                 if (currentStep === 3) {
                     document.getElementById('next-btn').textContent = 'Calculate Price →';
                     document.getElementById('next-btn').onclick = calculatePrice;
+                    document.getElementById('next-btn').classList.remove('hidden');
                 }
                 
                 if (currentStep === 4) {
@@ -799,7 +974,14 @@
                 }
                 
                 document.getElementById('prev-btn').classList.remove('hidden');
-                document.getElementById('next-btn').classList.add('hidden');
+                
+                // Only hide next button if NOT on step 3
+                if (currentStep !== 3) {
+                    document.getElementById('next-btn').classList.add('hidden');
+                }
+                
+                // Re-initialize icons after DOM update
+                setTimeout(() => lucide.createIcons(), 100);
             }
         }
         
@@ -838,14 +1020,61 @@
                 return;
             }
             
-            const subtotal = basePrice * durationMultiplier;
+            // Calculate price based on selected quantities
+            const days = durationQuantities.days;
+            const weeks = durationQuantities.weeks;
+            const months = durationQuantities.months;
+            
+            let subtotal = 0;
+            let durationText = [];
+            
+            // Calculate monthly cost
+            if (months > 0) {
+                const monthlyRate = pricing[selectedCart]['monthly'];
+                subtotal += monthlyRate * months;
+                durationText.push(`${months} month${months > 1 ? 's' : ''}`);
+            }
+            
+            // Calculate weekly cost
+            if (weeks > 0) {
+                const weeklyRate = pricing[selectedCart]['weekly'];
+                subtotal += weeklyRate * weeks;
+                durationText.push(`${weeks} week${weeks > 1 ? 's' : ''}`);
+            }
+            
+            // Calculate daily cost
+            if (days > 0) {
+                // For daily rentals, use the 3-day minimum price for first 3 days
+                if (days <= 3) {
+                    subtotal += pricing[selectedCart]['3-day'];
+                    durationText.push(`${days} day${days > 1 ? 's' : ''} (3-day minimum)`);
+                } else {
+                    // First 3 days at minimum price, then daily rate for additional days
+                    subtotal += pricing[selectedCart]['3-day'];
+                    const additionalDays = days - 3;
+                    const dailyRate = selectedCart === '2-passenger' ? 20 : 
+                                      selectedCart === '4-passenger' ? 25 : 35;
+                    subtotal += dailyRate * additionalDays;
+                    durationText.push(`${days} days`);
+                }
+            }
+            
             const fuel = 20;
-            const tax = (subtotal + fuel) * 0.0825;
+            const tax = (subtotal + fuel) * 0.075; // 7.5% tax rate
             const total = subtotal + fuel + tax;
             
-            document.getElementById('cart-summary').textContent = `${selectedCart.charAt(0).toUpperCase() + selectedCart.slice(1)} Cart for ${selectedDuration.description}`;
+            // Format cart type for display
+            const cartDisplay = selectedCart.replace('-', ' ').split(' ').map(word => 
+                word.charAt(0).toUpperCase() + word.slice(1)
+            ).join(' ');
+            
+            // Debug logging
+            console.log(`Calculator v3.0 - ${selectedCart}: days=${days}, weeks=${weeks}, months=${months}, subtotal=${subtotal}, fuel=${fuel}, tax=${tax.toFixed(2)}, total=${total.toFixed(2)}`);
+            
+            document.getElementById('cart-summary').textContent = `${cartDisplay} Cart for ${durationText.join(' + ')}`;
             document.getElementById('delivery-summary').textContent = `Free delivery to ${document.getElementById('delivery-location').options[document.getElementById('delivery-location').selectedIndex].text}`;
             document.getElementById('base-rate').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('fuel-charge').textContent = `$${fuel.toFixed(2)}`;
             document.getElementById('tax-amount').textContent = `$${tax.toFixed(2)}`;
             document.getElementById('total-price').textContent = `$${total.toFixed(2)}`;
             
@@ -862,6 +1091,25 @@
             selectedDuration = null;
             basePrice = 0;
             durationMultiplier = 1;
+            durationQuantities = {
+                days: 0,
+                weeks: 0,
+                months: 0
+            };
+            
+            // Reset quantity inputs
+            if (document.getElementById('days-quantity')) {
+                document.getElementById('days-quantity').value = 0;
+            }
+            if (document.getElementById('weeks-quantity')) {
+                document.getElementById('weeks-quantity').value = 0;
+            }
+            if (document.getElementById('months-quantity')) {
+                document.getElementById('months-quantity').value = 0;
+            }
+            if (document.getElementById('duration-summary')) {
+                document.getElementById('duration-summary').classList.add('hidden');
+            }
             
             document.querySelectorAll('.calculator-step').forEach(step => step.classList.add('hidden'));
             document.getElementById('step-1').classList.remove('hidden');
@@ -879,7 +1127,7 @@
             document.getElementById('next-btn').textContent = 'Next →';
             document.getElementById('next-btn').onclick = nextStep;
             
-            document.querySelectorAll('.cart-option, .duration-option').forEach(btn => {
+            document.querySelectorAll('.cart-option, .duration-option, .duration-card').forEach(btn => {
                 btn.classList.remove('border-[#146ff8]', 'bg-[#f8f9fa]');
                 btn.classList.add('border-gray-200');
             });
@@ -1225,71 +1473,19 @@
         </div>
     </footer>
     
-    <!-- Quick Booking Widget -->
-    <div class="fixed bottom-6 right-6 z-50" id="booking-widget">
-        <div class="mb-4 bg-white rounded-2xl shadow-xl p-4 hidden" id="quick-booking">
-            <h4 class="font-bold mb-3 text-[#568259]">Quick Book! 🛺</h4>
-            <form name="quick-booking" netlify class="space-y-3">
-                <select name="cart-type" class="w-full px-3 py-2 rounded-full border text-sm">
-                    <option>Pick Your Cart 🛺</option>
-                    <option>Cozy 2-Seater - 3 days min $209.63</option>
-                    <option>Family 4-Seater - 3 days min $231.13 ⭐</option>
-                    <option>Party 6-Seater - 3 days min $263.38</option>
-                </select>
-                <div class="flex gap-2">
-                    <input type="date" name="date" class="flex-1 px-3 py-2 rounded-full border text-sm">
-                    <select name="duration" class="flex-1 px-3 py-2 rounded-full border text-sm">
-                        <option>1 Day</option>
-                        <option>3 Days</option>
-                        <option>1 Week</option>
-                    </select>
-                </div>
-                <input type="tel" name="phone" placeholder="Your Phone 📞" class="w-full px-3 py-2 rounded-full border text-sm">
-                <button type="submit" class="w-full bubble-button text-white py-2 font-semibold text-sm">
-                    Book Now! 🎉
-                </button>
-            </form>
-        </div>
-        
-        <!-- Chat Button -->
-        <button class="bubble-button text-white p-4 shadow-xl flex items-center gap-2" onclick="toggleBooking()">
-            <i data-lucide="message-circle" class="w-6 h-6" id="chat-icon"></i>
-            <i data-lucide="calendar" class="w-6 h-6 hidden" id="book-icon"></i>
-            <span class="font-semibold" id="button-text">Chat!</span>
-        </button>
-    </div>
-    
-    <script>
-        function toggleBooking() {
-            const bookingForm = document.getElementById('quick-booking');
-            const chatIcon = document.getElementById('chat-icon');
-            const bookIcon = document.getElementById('book-icon');
-            const buttonText = document.getElementById('button-text');
-            
-            if (bookingForm.classList.contains('hidden')) {
-                bookingForm.classList.remove('hidden');
-                chatIcon.classList.add('hidden');
-                bookIcon.classList.remove('hidden');
-                buttonText.textContent = 'Close';
-            } else {
-                bookingForm.classList.add('hidden');
-                chatIcon.classList.remove('hidden');
-                bookIcon.classList.add('hidden');
-                buttonText.textContent = 'Chat!';
-            }
-        }
-        
-        // Auto-close after 30 seconds
-        setTimeout(() => {
-            const bookingForm = document.getElementById('quick-booking');
-            if (!bookingForm.classList.contains('hidden')) {
-                toggleBooking();
-            }
-        }, 30000);
+    <!-- LeadConnector Chat Widget -->
+    <script 
+      src="https://widgets.leadconnectorhq.com/loader.js"  
+      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
+      data-widget-id="68c096bf7bf8b350700b6d0c">
     </script>
     
+    
     <script>
-        lucide.createIcons();
+        // Initialize Lucide icons
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+        });
         
         // Hero Slider JavaScript
         let currentSlide = 0;
