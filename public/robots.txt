@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://golfcartrentalthevillagesfl.com/sitemap.xml
+
+# Block admin and private directories
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /.env

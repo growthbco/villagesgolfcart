@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- Main Pages -->
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/</loc>
+    <lastmod>2024-12-12T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/about-us.html</loc>
+    <lastmod>2024-12-12T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/services.html</loc>
+    <lastmod>2024-12-12T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/contact.html</loc>
+    <lastmod>2024-12-12T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/gallery.html</loc>
+    <lastmod>2024-12-12T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/faq.html</loc>
+    <lastmod>2024-12-12T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/terms.html</loc>
+    <lastmod>2024-12-12T10:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Cart Type Pages -->
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/2-passenger-golf-cart.html</loc>
+    <lastmod>2024-12-12T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/4-passenger-golf-cart.html</loc>
+    <lastmod>2024-12-12T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/6-passenger-golf-cart.html</loc>
+    <lastmod>2024-12-12T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Rental Duration Pages -->
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/3-day-golf-cart-rental-villages.html</loc>
+    <lastmod>2024-12-12T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/weekly-golf-cart-rental-villages.html</loc>
+    <lastmod>2024-12-12T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/monthly-golf-cart-rental-villages.html</loc>
+    <lastmod>2024-12-12T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>
