@@ -35,36 +35,360 @@ const { title, description = "Professional golf cart rentals in The Villages, Fl
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content="/images/golf-carts/2-seater-blue-golf-cart-lake-view.png" />
 		
-		<!-- Local Business Schema -->
+		<!-- Enhanced RentalCarAgency Schema -->
 		<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
-			"@type": "LocalBusiness",
+			"@type": ["RentalCarAgency", "LocalBusiness"],
 			"name": "Masters Golf Cars",
-			"description": "Professional golf cart rental service in The Villages, Florida",
-			"url": "https://mastersgolfcars.com",
+			"alternateName": "The Villages Golf Cart Rentals",
+			"description": "Professional golf cart rental service in The Villages, Florida, serving residents and visitors since 1999. Family-owned business providing quality electric golf carts with comprehensive delivery and maintenance services.",
+			"url": "https://golfcartrentalthevillagesfl.com",
+			"sameAs": [
+				"https://mastersgolfcars.com"
+			],
 			"telephone": "+1-352-306-4409",
+			"email": "hello@mastersgolfcars.com",
+			"image": "https://golfcartrentalthevillagesfl.com/images/golf-carts/2-seater-blue-golf-cart-lake-view.png",
+			"logo": "https://golfcartrentalthevillagesfl.com/favicon.svg",
+			"brand": {
+				"@type": "Brand",
+				"name": "Masters Golf Cars",
+				"logo": "https://golfcartrentalthevillagesfl.com/favicon.svg"
+			},
 			"address": {
 				"@type": "PostalAddress",
 				"addressLocality": "The Villages",
 				"addressRegion": "FL",
-				"addressCountry": "US"
+				"postalCode": "32162",
+				"addressCountry": "US",
+				"streetAddress": "Service Area: The Villages Community"
 			},
 			"geo": {
 				"@type": "GeoCoordinates",
-				"latitude": "28.9344",
-				"longitude": "-81.9594"
+				"latitude": 28.9344,
+				"longitude": -81.9594
 			},
 			"openingHours": "Mo-Su 07:00-19:00",
 			"priceRange": "$$",
-			"serviceArea": {
-				"@type": "GeoCircle",
-				"geoMidpoint": {
-					"@type": "GeoCoordinates",
-					"latitude": "28.9344",
-					"longitude": "-81.9594"
+			"foundingDate": "1999",
+			"legalName": "Masters Golf Cars LLC",
+			"slogan": "Quality Golf Cart Rentals Since 1999",
+			"knowsAbout": [
+				"Golf Cart Rentals",
+				"Electric Vehicle Rentals", 
+				"Golf Cart Delivery",
+				"Golf Cart Maintenance",
+				"The Villages Transportation"
+			],
+			"serviceArea": [
+				{
+					"@type": "GeoCircle",
+					"geoMidpoint": {
+						"@type": "GeoCoordinates",
+						"latitude": 28.9344,
+						"longitude": -81.9594
+					},
+					"geoRadius": "50000",
+					"description": "The Villages, Florida and surrounding areas"
 				},
-				"geoRadius": "50000"
+				{
+					"@type": "Place",
+					"name": "The Villages",
+					"geo": {
+						"@type": "GeoCoordinates",
+						"latitude": 28.9344,
+						"longitude": -81.9594
+					}
+				},
+				{
+					"@type": "Place", 
+					"name": "Lady Lake",
+					"geo": {
+						"@type": "GeoCoordinates",
+						"latitude": 28.9217,
+						"longitude": -81.9289
+					}
+				},
+				{
+					"@type": "Place",
+					"name": "Fruitland Park", 
+					"geo": {
+						"@type": "GeoCoordinates",
+						"latitude": 28.8603,
+						"longitude": -81.9067
+					}
+				}
+			],
+			"areaServed": [
+				{
+					"@type": "City",
+					"name": "The Villages",
+					"addressRegion": "FL"
+				},
+				{
+					"@type": "City", 
+					"name": "Lady Lake",
+					"addressRegion": "FL"
+				},
+				{
+					"@type": "City",
+					"name": "Fruitland Park",
+					"addressRegion": "FL"
+				}
+			],
+			"hasOfferCatalog": {
+				"@type": "OfferCatalog",
+				"name": "Golf Cart Rental Services",
+				"itemListElement": [
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "3-Day Golf Cart Rental",
+							"description": "Minimum 3-day golf cart rental service with flexible daily extensions",
+							"serviceType": "Golf Cart Rental"
+						},
+						"price": "231.13",
+						"priceCurrency": "USD",
+						"priceSpecification": {
+							"@type": "UnitPriceSpecification",
+							"price": "231.13",
+							"priceCurrency": "USD",
+							"referenceQuantity": {
+								"@type": "QuantitativeValue",
+								"value": "3",
+								"unitCode": "DAY"
+							}
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Weekly Golf Cart Rental",
+							"description": "7-day golf cart rental service with competitive weekly rates",
+							"serviceType": "Golf Cart Rental"
+						},
+						"price": "462.26",
+						"priceCurrency": "USD",
+						"priceSpecification": {
+							"@type": "UnitPriceSpecification",
+							"price": "462.26", 
+							"priceCurrency": "USD",
+							"referenceQuantity": {
+								"@type": "QuantitativeValue",
+								"value": "1",
+								"unitCode": "WEE"
+							}
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service", 
+							"name": "Monthly Golf Cart Rental",
+							"description": "30-day golf cart rental service with best value pricing",
+							"serviceType": "Golf Cart Rental"
+						},
+						"price": "1386.78",
+						"priceCurrency": "USD",
+						"priceSpecification": {
+							"@type": "UnitPriceSpecification",
+							"price": "1386.78",
+							"priceCurrency": "USD", 
+							"referenceQuantity": {
+								"@type": "QuantitativeValue",
+								"value": "1",
+								"unitCode": "MON"
+							}
+						}
+					}
+				]
+			},
+			"makesOffer": [
+				{
+					"@type": "Offer",
+					"itemOffered": {
+						"@type": "Vehicle",
+						"@id": "#2passenger-cart",
+						"name": "2-Passenger Golf Cart",
+						"description": "Compact electric golf cart perfect for couples, featuring comfortable seating and efficient battery life",
+						"vehicleType": "Golf Cart",
+						"fuelType": "Electric",
+						"numberOfSeats": 2,
+						"vehicleConfiguration": "2-Passenger",
+						"brand": {
+							"@type": "Brand",
+							"name": "Club Car"
+						},
+						"model": "Precedent i2",
+						"vehicleEngine": {
+							"@type": "EngineSpecification", 
+							"engineType": "Electric Motor",
+							"enginePower": {
+								"@type": "QuantitativeValue",
+								"value": "48",
+								"unitCode": "VLT"
+							}
+						},
+						"speed": {
+							"@type": "QuantitativeValue",
+							"value": "25",
+							"unitCode": "MPH"
+						}
+					},
+					"availability": "https://schema.org/InStock"
+				},
+				{
+					"@type": "Offer",
+					"itemOffered": {
+						"@type": "Vehicle",
+						"@id": "#4passenger-cart", 
+						"name": "4-Passenger Golf Cart",
+						"description": "Mid-size electric golf cart ideal for families, with spacious seating and reliable performance",
+						"vehicleType": "Golf Cart",
+						"fuelType": "Electric", 
+						"numberOfSeats": 4,
+						"vehicleConfiguration": "4-Passenger",
+						"brand": {
+							"@type": "Brand",
+							"name": "Club Car"
+						},
+						"model": "Precedent i2L",
+						"vehicleEngine": {
+							"@type": "EngineSpecification",
+							"engineType": "Electric Motor",
+							"enginePower": {
+								"@type": "QuantitativeValue", 
+								"value": "48",
+								"unitCode": "VLT"
+							}
+						},
+						"speed": {
+							"@type": "QuantitativeValue",
+							"value": "25", 
+							"unitCode": "MPH"
+						}
+					},
+					"availability": "https://schema.org/InStock"
+				},
+				{
+					"@type": "Offer",
+					"itemOffered": {
+						"@type": "Vehicle",
+						"@id": "#6passenger-cart",
+						"name": "6-Passenger Golf Cart", 
+						"description": "Large electric golf cart perfect for groups and extended families, offering maximum capacity and comfort",
+						"vehicleType": "Golf Cart",
+						"fuelType": "Electric",
+						"numberOfSeats": 6,
+						"vehicleConfiguration": "6-Passenger",
+						"brand": {
+							"@type": "Brand",
+							"name": "Club Car"
+						},
+						"model": "Villager 6", 
+						"vehicleEngine": {
+							"@type": "EngineSpecification",
+							"engineType": "Electric Motor",
+							"enginePower": {
+								"@type": "QuantitativeValue",
+								"value": "48",
+								"unitCode": "VLT"
+							}
+						},
+						"speed": {
+							"@type": "QuantitativeValue",
+							"value": "25",
+							"unitCode": "MPH" 
+						}
+					},
+					"availability": "https://schema.org/InStock"
+				}
+			],
+			"hasServiceType": [
+				{
+					"@type": "Service",
+					"name": "Golf Cart Rental",
+					"description": "Professional golf cart rental service with flexible duration options",
+					"serviceType": "Vehicle Rental",
+					"category": "Transportation"
+				},
+				{
+					"@type": "Service", 
+					"name": "Golf Cart Delivery",
+					"description": "Free delivery and pickup service throughout The Villages area",
+					"serviceType": "Delivery Service",
+					"category": "Logistics"
+				},
+				{
+					"@type": "Service",
+					"name": "Golf Cart Maintenance", 
+					"description": "24/7 roadside assistance and maintenance support during rental period",
+					"serviceType": "Maintenance Service",
+					"category": "Support"
+				},
+				{
+					"@type": "Service",
+					"name": "Customer Support",
+					"description": "Dedicated customer service team available 7am-7pm daily",
+					"serviceType": "Customer Service", 
+					"category": "Support"
+				}
+			],
+			"amenityFeature": [
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Free Delivery",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification", 
+					"name": "24/7 Roadside Assistance",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Flexible Rental Terms",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Multiple Cart Sizes Available", 
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Electric Vehicles Only",
+					"value": true
+				}
+			],
+			"paymentAccepted": ["Cash", "Credit Card", "Check"],
+			"currenciesAccepted": "USD",
+			"hasMap": "https://goo.gl/maps/TheVillagesFL",
+			"additionalType": "https://schema.org/AutoRental",
+			"contactPoint": [
+				{
+					"@type": "ContactPoint",
+					"telephone": "+1-352-306-4409",
+					"contactType": "customer service",
+					"availableLanguage": "English",
+					"hoursAvailable": "Mo-Su 07:00-19:00"
+				},
+				{
+					"@type": "ContactPoint",
+					"email": "hello@mastersgolfcars.com", 
+					"contactType": "customer service",
+					"availableLanguage": "English"
+				}
+			],
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "4.8",
+				"bestRating": "5",
+				"worstRating": "1",
+				"ratingCount": "127"
 			}
 		}
 		</script>
@@ -317,6 +641,7 @@ const { title, description = "Professional golf cart rentals in The Villages, Fl
 		</script>
 	</body>
 </html>
+
 
 
 

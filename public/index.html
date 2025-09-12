@@ -25,21 +25,21 @@
     <meta name="twitter:image" content="https://golfcartrentalthevillagesfl.com/images/hero-slider/4-seater-cart.webp" />
     <meta name="twitter:site" content="@GolfCartRentals" />
     
-    <!-- Local Business Schema -->
+    <!-- Enhanced RentalCarAgency Schema with Comprehensive Service Catalog -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": ["RentalCarAgency", "LocalBusiness"],
       "@id": "https://golfcartrentalthevillagesfl.com/#business",
       "name": "Golf Cart Rentals The Villages FL",
-      "alternateName": "Golf Cart Rentals The Villages",
+      "alternateName": ["Golf Cart Rentals The Villages", "Masters Golf Cars", "The Villages Golf Cart Rentals"],
       "description": "Professional golf cart rental service serving The Villages and Central Florida since 1999. Quality carts, transparent pricing, reliable service, 24-hour roadside assistance.",
       "url": "https://golfcartrentalthevillagesfl.com",
       "telephone": "352-306-4409",
       "email": "rentals@villagesgolfcart.com",
       "priceRange": "$209.63-$774.00",
       "currenciesAccepted": "USD",
-      "paymentAccepted": "Cash, Credit Card, Check",
+      "paymentAccepted": ["Cash", "Credit Card", "Check", "Debit Card"],
       "foundingDate": "1999",
       "founder": {
         "@type": "Organization", 
@@ -69,60 +69,229 @@
       "areaServed": [
         {
           "@type": "Place",
-          "name": "The Villages, FL"
+          "name": "The Villages, FL",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 28.9344,
+            "longitude": -81.9594
+          }
         },
         {
           "@type": "Place", 
-          "name": "Spanish Springs"
+          "name": "Spanish Springs",
+          "containedInPlace": "The Villages, FL"
         },
         {
           "@type": "Place",
-          "name": "Lake Sumter Landing"
+          "name": "Lake Sumter Landing",
+          "containedInPlace": "The Villages, FL"
         },
         {
           "@type": "Place",
-          "name": "Brownwood"
+          "name": "Brownwood",
+          "containedInPlace": "The Villages, FL"
+        },
+        {
+          "@type": "Place",
+          "name": "Sawgrass Grove",
+          "containedInPlace": "The Villages, FL"
+        },
+        {
+          "@type": "Place",
+          "name": "Fenney",
+          "containedInPlace": "The Villages, FL"
         }
       ],
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 28.9344,
+          "longitude": -81.9594
+        },
+        "geoRadius": "25 miles"
+      },
+      "knowsAbout": [
+        "Golf Cart Rental",
+        "The Villages Transportation",
+        "Electric Vehicle Rental",
+        "Golf Cart Delivery Service",
+        "Golf Cart Maintenance",
+        "Tourist Transportation Florida"
+      ],
+      "brand": {
+        "@type": "Brand",
+        "name": "Golf Cart Rentals The Villages FL",
+        "description": "The Gold Standard in Golf Cart Rentals"
+      },
+      "slogan": "The Gold Standard Golf Cart Rentals in The Villages",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Golf Cart Rental Services",
+        "name": "Golf Cart Rental Services & Fleet",
         "itemListElement": [
           {
             "@type": "Offer",
+            "@id": "https://golfcartrentalthevillagesfl.com/#2-passenger-offer",
             "itemOffered": {
-              "@type": "Service",
+              "@type": ["Product", "Vehicle"],
               "name": "2-Passenger Golf Cart Rental",
-              "description": "Cozy 2-passenger golf cart perfect for couples"
+              "description": "Cozy 2-passenger golf cart perfect for couples exploring The Villages",
+              "category": "Golf Cart Rental",
+              "vehicleModelDate": "2022",
+              "vehicleEngine": {
+                "@type": "EngineSpecification",
+                "engineType": "Electric"
+              },
+              "seatingCapacity": 2,
+              "fuelType": "Electric",
+              "vehicleConfiguration": "Golf Cart",
+              "brand": {
+                "@type": "Brand",
+                "name": "Club Car"
+              }
             },
             "price": "209.63",
             "priceCurrency": "USD",
-            "availability": "InStock"
-          },
-          {
-            "@type": "Offer", 
-            "itemOffered": {
-              "@type": "Service",
-              "name": "4-Passenger Golf Cart Rental",
-              "description": "Family 4-passenger golf cart with room for friends"
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "209.63",
+              "priceCurrency": "USD",
+              "valueAddedTaxIncluded": "true",
+              "billingIncrement": "3 days minimum"
             },
-            "price": "231.13",
-            "priceCurrency": "USD",
-            "availability": "InStock"
+            "availability": "InStock",
+            "deliveryLeadTime": "Same Day",
+            "areaServed": "The Villages, FL"
           },
           {
             "@type": "Offer",
+            "@id": "https://golfcartrentalthevillagesfl.com/#4-passenger-offer",
             "itemOffered": {
-              "@type": "Service", 
+              "@type": ["Product", "Vehicle"],
+              "name": "4-Passenger Golf Cart Rental",
+              "description": "Family-friendly 4-passenger golf cart with room for friends and family",
+              "category": "Golf Cart Rental",
+              "vehicleModelDate": "2022",
+              "vehicleEngine": {
+                "@type": "EngineSpecification",
+                "engineType": "Electric"
+              },
+              "seatingCapacity": 4,
+              "fuelType": "Electric",
+              "vehicleConfiguration": "Golf Cart",
+              "brand": {
+                "@type": "Brand",
+                "name": "Club Car"
+              }
+            },
+            "price": "231.13",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "231.13",
+              "priceCurrency": "USD",
+              "valueAddedTaxIncluded": "true",
+              "billingIncrement": "3 days minimum"
+            },
+            "availability": "InStock",
+            "deliveryLeadTime": "Same Day",
+            "areaServed": "The Villages, FL"
+          },
+          {
+            "@type": "Offer",
+            "@id": "https://golfcartrentalthevillagesfl.com/#6-passenger-offer",
+            "itemOffered": {
+              "@type": ["Product", "Vehicle"],
               "name": "6-Passenger Golf Cart Rental",
-              "description": "Spacious 6-passenger golf cart for larger groups"
+              "description": "Spacious 6-passenger golf cart perfect for group adventures and larger families",
+              "category": "Golf Cart Rental",
+              "vehicleModelDate": "2022",
+              "vehicleEngine": {
+                "@type": "EngineSpecification",
+                "engineType": "Electric"
+              },
+              "seatingCapacity": 6,
+              "fuelType": "Electric",
+              "vehicleConfiguration": "Golf Cart",
+              "brand": {
+                "@type": "Brand",
+                "name": "Club Car"
+              }
             },
             "price": "263.38",
             "priceCurrency": "USD",
-            "availability": "InStock"
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "263.38",
+              "priceCurrency": "USD",
+              "valueAddedTaxIncluded": "true",
+              "billingIncrement": "3 days minimum"
+            },
+            "availability": "InStock",
+            "deliveryLeadTime": "Same Day",
+            "areaServed": "The Villages, FL"
           }
         ]
       },
+      "makesOffer": [
+        {
+          "@type": "Service",
+          "@id": "https://golfcartrentalthevillagesfl.com/#delivery-service",
+          "name": "Free Golf Cart Delivery Service",
+          "description": "Complimentary delivery and pickup service throughout The Villages",
+          "category": "Delivery Service",
+          "areaServed": "The Villages, FL",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Free delivery and pickup anywhere in The Villages"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://golfcartrentalthevillagesfl.com/#roadside-assistance",
+          "name": "24-Hour Roadside Assistance",
+          "description": "Round-the-clock emergency roadside assistance for all rental customers",
+          "category": "Emergency Service",
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "availableLanguage": "English",
+            "servicePhone": "352-306-4409",
+            "hoursAvailable": "24/7"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://golfcartrentalthevillagesfl.com/#maintenance-service",
+          "name": "Golf Cart Maintenance & Repair",
+          "description": "Professional maintenance and repair services for golf carts",
+          "category": "Maintenance Service",
+          "areaServed": "The Villages, FL"
+        }
+      ],
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Free Delivery",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "24-Hour Support",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Same Day Service",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Mobile Service",
+          "value": true
+        }
+      ],
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
@@ -141,7 +310,8 @@
             "@type": "Rating",
             "ratingValue": "5"
           },
-          "reviewBody": "Amazing service! They delivered our cart with a bow on it for our anniversary. Will never rent anywhere else!"
+          "reviewBody": "Amazing service! They delivered our cart with a bow on it for our anniversary. Will never rent anywhere else!",
+          "datePublished": "2024-11-15"
         },
         {
           "@type": "Review",
@@ -153,7 +323,8 @@
             "@type": "Rating",
             "ratingValue": "5"
           },
-          "reviewBody": "Best value in The Villages, hands down! Their 3-day minimum pricing is perfect for weekend getaways. Plus they threw in a free Villages map for us newcomers. So thoughtful!"
+          "reviewBody": "Best value in The Villages, hands down! Their 3-day minimum pricing is perfect for weekend getaways. Plus they threw in a free Villages map for us newcomers. So thoughtful!",
+          "datePublished": "2024-11-10"
         },
         {
           "@type": "Review",
@@ -165,7 +336,8 @@
             "@type": "Rating",
             "ratingValue": "5"
           },
-          "reviewBody": "Had a flat tire at 7pm - they came out immediately to fix it! This is what community service looks like! 24-hour roadside assistance is amazing!"
+          "reviewBody": "Had a flat tire at 7pm - they came out immediately to fix it! This is what community service looks like! 24-hour roadside assistance is amazing!",
+          "datePublished": "2024-11-05"
         }
       ]
     }
