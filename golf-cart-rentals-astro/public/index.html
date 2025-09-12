@@ -717,18 +717,8 @@
                                     <input type="tel" id="customer-phone" placeholder="Phone Number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-[#146ff8] outline-none">
                                 </div>
                                 <div>
-                                    <select id="delivery-location" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-[#146ff8] outline-none">
-                                        <option value="">Select Your Villages Location</option>
-                                        <option value="spanish-springs">Spanish Springs</option>
-                                        <option value="lake-sumter">Lake Sumter Landing</option>
-                                        <option value="brownwood">Brownwood</option>
-                                        <option value="sawgrass">Sawgrass Grove</option>
-                                        <option value="fenney">Fenney</option>
-                                        <option value="rohan">Rohan</option>
-                                        <option value="water-lily">Water Lily</option>
-                                        <option value="eastport">Eastport</option>
-                                        <option value="other">Other Villages Location</option>
-                                    </select>
+                                    <input type="text" id="delivery-location" placeholder="Enter your drop-off address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-[#146ff8] outline-none">
+                                    <p class="text-xs text-gray-500 mt-1">We deliver free anywhere in The Villages!</p>
                                 </div>
                                 <div>
                                     <input type="date" id="rental-date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-[#146ff8] outline-none">
@@ -1072,7 +1062,7 @@
             console.log(`Calculator v3.0 - ${selectedCart}: days=${days}, weeks=${weeks}, months=${months}, subtotal=${subtotal}, fuel=${fuel}, tax=${tax.toFixed(2)}, total=${total.toFixed(2)}`);
             
             document.getElementById('cart-summary').textContent = `${cartDisplay} Cart for ${durationText.join(' + ')}`;
-            document.getElementById('delivery-summary').textContent = `Free delivery to ${document.getElementById('delivery-location').options[document.getElementById('delivery-location').selectedIndex].text}`;
+            document.getElementById('delivery-summary').textContent = `Free delivery to: ${location}`;
             document.getElementById('base-rate').textContent = `$${subtotal.toFixed(2)}`;
             document.getElementById('fuel-charge').textContent = `$${fuel.toFixed(2)}`;
             document.getElementById('tax-amount').textContent = `$${tax.toFixed(2)}`;
