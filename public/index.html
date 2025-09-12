@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="Q5DwPNNj0gIfp951tcZG2qlDZl1CkiOJkWy42rlDk-c" />
+    <meta name="google-site-verification" content="ialh6yDyHEBOGaKg2kwru4JrG8AJhBqsEKBIkjZL-QI" />
     <title>Golf Cart Rentals The Villages FL | The Gold Standard Since 1999</title>
     <meta name="description" content="Best golf cart rentals in The Villages, FL. Professional service since 1999. Transparent pricing from $209.63 for 3-day minimum. Free delivery & 24-hour roadside assistance. Book online or call 352-306-4409.">
     <meta name="keywords" content="golf cart rental The Villages FL, Villages golf cart rental, golf cart rental Florida, The Villages transportation, golf cart delivery Villages, professional golf cart rental, Spanish Springs golf cart, Lake Sumter golf cart, Brownwood golf cart">
@@ -1034,18 +1034,25 @@
             
             // Calculate daily cost
             if (days > 0) {
-                // For daily rentals, use the 3-day minimum price for first 3 days
-                if (days <= 3) {
-                    subtotal += pricing[selectedCart]['3-day'];
-                    durationText.push(`${days} day${days > 1 ? 's' : ''} (3-day minimum)`);
+                // Check if this is the ONLY duration selected (no weeks or months)
+                if (weeks === 0 && months === 0) {
+                    // Stand-alone daily rental - apply 3-day minimum
+                    if (days <= 3) {
+                        subtotal += pricing[selectedCart]['3-day'];
+                        durationText.push(`${days} day${days > 1 ? 's' : ''} (3-day minimum)`);
+                    } else {
+                        // More than 3 days - calculate proportionally
+                        const threeDayRate = pricing[selectedCart]['3-day'];
+                        const dailyRate = threeDayRate / 3;
+                        subtotal += dailyRate * days;
+                        durationText.push(`${days} days`);
+                    }
                 } else {
-                    // First 3 days at minimum price, then daily rate for additional days
-                    subtotal += pricing[selectedCart]['3-day'];
-                    const additionalDays = days - 3;
-                    const dailyRate = selectedCart === '2-passenger' ? 20 : 
-                                      selectedCart === '4-passenger' ? 25 : 35;
-                    subtotal += dailyRate * additionalDays;
-                    durationText.push(`${days} days`);
+                    // Additional days on top of weeks/months - use proportional daily rate
+                    const threeDayRate = pricing[selectedCart]['3-day'];
+                    const dailyRate = threeDayRate / 3;
+                    subtotal += dailyRate * days;
+                    durationText.push(`${days} day${days > 1 ? 's' : ''}`);
                 }
             }
             
