@@ -7,42 +7,201 @@
     <meta name="description" content="Weekly golf cart rentals in The Villages, FL from $247.25/week. Best value for extended vacations and week-long stays. Golf Cart Rentals The Villages FL - trusted since 1999. Free maintenance included.">
     <meta name="keywords" content="weekly golf cart rental Villages FL, week long golf cart rental, vacation golf cart rental The Villages, Golf Cart Rentals The Villages FL weekly rates, extended stay">
     
-    <!-- Local Business Schema -->
+    <!-- Enhanced Service Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Weekly Golf Cart Rentals - The Villages",
+      "name": "Weekly Golf Cart Rental Service",
+      "@id": "https://golfcartrentalthevillagesfl.com/weekly-golf-cart-rental-villages.html#service",
+      "description": "Professional weekly golf cart rental service in The Villages, Florida. Perfect for extended vacations, week-long stays, and longer explorations of The Villages community. Best value for 7-day rentals.",
+      "serviceType": "Golf Cart Rental",
+      "category": "Transportation Services",
       "provider": {
-        "@type": "LocalBusiness",
-        "name": "Golf Cart Rentals The Villages FL",
+        "@type": ["RentalCarAgency", "LocalBusiness"],
+        "@id": "https://golfcartrentalthevillagesfl.com/#organization",
+        "name": "Masters Golf Cars",
+        "alternateName": "The Villages Golf Cart Rentals",
+        "url": "https://golfcartrentalthevillagesfl.com",
+        "telephone": "+1-352-306-4409",
+        "email": "hello@mastersgolfcars.com",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "12885 S US Hwy 441",
-          "addressLocality": "Belleview",
+          "addressLocality": "The Villages",
           "addressRegion": "FL",
-          "postalCode": "34420"
+          "postalCode": "32162",
+          "addressCountry": "US",
+          "streetAddress": "Service Area: The Villages Community"
         },
-        "telephone": "352-306-4409"
-      },
-      "areaServed": "The Villages, FL",
-      "description": "Professional weekly golf cart rental service. Perfect for extended vacations, week-long stays, and longer visits to The Villages.",
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "2-Passenger Weekly Rental",
-          "price": "247.25",
-          "priceCurrency": "USD",
-          "description": "One week rental, includes maintenance and tax"
-        },
-        {
-          "@type": "Offer", 
-          "name": "4-Passenger Weekly Rental",
-          "price": "290.25"
-          "priceCurrency": "USD",
-          "description": "One week rental, includes maintenance and tax"
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 28.9344,
+          "longitude": -81.9594
         }
-      ]
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "The Villages",
+          "addressRegion": "FL"
+        },
+        {
+          "@type": "City",
+          "name": "Lady Lake", 
+          "addressRegion": "FL"
+        },
+        {
+          "@type": "City",
+          "name": "Fruitland Park",
+          "addressRegion": "FL"
+        }
+      ],
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://golfcartrentalthevillagesfl.com/weekly-golf-cart-rental-villages.html",
+        "serviceSmsNumber": "+1-352-306-4409",
+        "servicePhone": "+1-352-306-4409"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Weekly Golf Cart Rental Options",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "@id": "#2passenger-weekly-offer",
+            "name": "2-Passenger Golf Cart - Weekly Rental",
+            "description": "Compact 2-passenger electric golf cart perfect for couples. One week rental includes free delivery, pickup, maintenance, and all taxes.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "2-Passenger Golf Cart Weekly Rental",
+              "serviceType": "Vehicle Rental"
+            },
+            "price": "391.51",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "391.51",
+              "priceCurrency": "USD",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": "1",
+                "unitCode": "WEE"
+              }
+            },
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-01-01",
+            "includesObject": [
+              {
+                "@type": "Service",
+                "name": "Free Delivery and Pickup"
+              },
+              {
+                "@type": "Service", 
+                "name": "24/7 Roadside Assistance"
+              },
+              {
+                "@type": "Service",
+                "name": "Weekly Maintenance Check"
+              }
+            ]
+          },
+          {
+            "@type": "Offer",
+            "@id": "#4passenger-weekly-offer", 
+            "name": "4-Passenger Golf Cart - Weekly Rental",
+            "description": "Spacious 4-passenger electric golf cart ideal for small families. One week rental includes free delivery, pickup, maintenance, and all taxes.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "4-Passenger Golf Cart Weekly Rental",
+              "serviceType": "Vehicle Rental"
+            },
+            "price": "462.26",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "462.26",
+              "priceCurrency": "USD",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": "1",
+                "unitCode": "WEE"
+              }
+            },
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-01-01",
+            "includesObject": [
+              {
+                "@type": "Service",
+                "name": "Free Delivery and Pickup"
+              },
+              {
+                "@type": "Service",
+                "name": "24/7 Roadside Assistance"
+              },
+              {
+                "@type": "Service",
+                "name": "Weekly Maintenance Check"
+              }
+            ]
+          },
+          {
+            "@type": "Offer",
+            "@id": "#6passenger-weekly-offer",
+            "name": "6-Passenger Golf Cart - Weekly Rental", 
+            "description": "Large 6-passenger electric golf cart perfect for groups and extended families. One week rental includes free delivery, pickup, maintenance, and all taxes.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "6-Passenger Golf Cart Weekly Rental",
+              "serviceType": "Vehicle Rental"
+            },
+            "price": "555.01",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "555.01",
+              "priceCurrency": "USD",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": "1", 
+                "unitCode": "WEE"
+              }
+            },
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-01-01",
+            "includesObject": [
+              {
+                "@type": "Service",
+                "name": "Free Delivery and Pickup"
+              },
+              {
+                "@type": "Service",
+                "name": "24/7 Roadside Assistance"
+              },
+              {
+                "@type": "Service",
+                "name": "Weekly Maintenance Check"
+              }
+            ]
+          }
+        ]
+      },
+      "serviceOutput": {
+        "@type": "Vehicle",
+        "name": "Electric Golf Cart",
+        "vehicleType": "Golf Cart",
+        "fuelType": "Electric"
+      },
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "07:00",
+        "closes": "19:00"
+      },
+      "termsOfService": "https://golfcartrentalthevillagesfl.com/terms.html",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Extended Stay Visitors, Long-term Tourists, Weekly Vacationers"
+      }
     }
     </script>
     

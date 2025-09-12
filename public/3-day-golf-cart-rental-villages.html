@@ -7,42 +7,189 @@
     <meta name="description" content="3-day golf cart rentals in The Villages, FL from $209.63. Perfect for weekend getaways and short visits. Golf Cart Rentals The Villages FL - trusted since 1999. Free delivery included.">
     <meta name="keywords" content="3 day golf cart rental Villages FL, weekend golf cart rental, short term golf cart rental The Villages, Golf Cart Rentals The Villages FL 3 day rates, weekend getaway">
     
-    <!-- Local Business Schema -->
+    <!-- Enhanced Service Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "3-Day Golf Cart Rentals - The Villages",
+      "name": "3-Day Golf Cart Rental Service",
+      "@id": "https://golfcartrentalthevillagesfl.com/3-day-golf-cart-rental-villages.html#service",
+      "description": "Professional 3-day golf cart rental service in The Villages, Florida. Perfect for weekend getaways, short visits, and exploring The Villages community. Minimum rental period with flexible daily extensions available.",
+      "serviceType": "Golf Cart Rental",
+      "category": "Transportation Services",
       "provider": {
-        "@type": "LocalBusiness",
-        "name": "Golf Cart Rentals The Villages FL",
+        "@type": ["RentalCarAgency", "LocalBusiness"],
+        "@id": "https://golfcartrentalthevillagesfl.com/#organization",
+        "name": "Masters Golf Cars",
+        "alternateName": "The Villages Golf Cart Rentals",
+        "url": "https://golfcartrentalthevillagesfl.com",
+        "telephone": "+1-352-306-4409",
+        "email": "hello@mastersgolfcars.com",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "12885 S US Hwy 441",
-          "addressLocality": "Belleview",
+          "addressLocality": "The Villages",
           "addressRegion": "FL",
-          "postalCode": "34420"
+          "postalCode": "32162",
+          "addressCountry": "US",
+          "streetAddress": "Service Area: The Villages Community"
         },
-        "telephone": "352-306-4409"
-      },
-      "areaServed": "The Villages, FL",
-      "description": "Professional 3-day golf cart rental service. Perfect for weekend getaways, short visits, and quick trips to The Villages.",
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "2-Passenger 3-Day Rental",
-          "price": "209.63",
-          "priceCurrency": "USD",
-          "description": "Three day rental, includes delivery and tax"
-        },
-        {
-          "@type": "Offer", 
-          "name": "4-Passenger 3-Day Rental",
-          "price": "231.13",
-          "priceCurrency": "USD",
-          "description": "Three day rental, includes delivery and tax"
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 28.9344,
+          "longitude": -81.9594
         }
-      ]
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "The Villages",
+          "addressRegion": "FL"
+        },
+        {
+          "@type": "City",
+          "name": "Lady Lake", 
+          "addressRegion": "FL"
+        },
+        {
+          "@type": "City",
+          "name": "Fruitland Park",
+          "addressRegion": "FL"
+        }
+      ],
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://golfcartrentalthevillagesfl.com/3-day-golf-cart-rental-villages.html",
+        "serviceSmsNumber": "+1-352-306-4409",
+        "servicePhone": "+1-352-306-4409"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "3-Day Golf Cart Rental Options",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "@id": "#2passenger-3day-offer",
+            "name": "2-Passenger Golf Cart - 3 Day Rental",
+            "description": "Compact 2-passenger electric golf cart perfect for couples. Three day rental includes free delivery, pickup, and all taxes.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "2-Passenger Golf Cart Rental",
+              "serviceType": "Vehicle Rental"
+            },
+            "price": "209.63",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "209.63",
+              "priceCurrency": "USD",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": "3",
+                "unitCode": "DAY"
+              }
+            },
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-01-01",
+            "includesObject": [
+              {
+                "@type": "Service",
+                "name": "Free Delivery and Pickup"
+              },
+              {
+                "@type": "Service", 
+                "name": "24/7 Roadside Assistance"
+              }
+            ]
+          },
+          {
+            "@type": "Offer",
+            "@id": "#4passenger-3day-offer", 
+            "name": "4-Passenger Golf Cart - 3 Day Rental",
+            "description": "Spacious 4-passenger electric golf cart ideal for small families. Three day rental includes free delivery, pickup, and all taxes.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "4-Passenger Golf Cart Rental",
+              "serviceType": "Vehicle Rental"
+            },
+            "price": "231.13",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "231.13",
+              "priceCurrency": "USD",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": "3",
+                "unitCode": "DAY"
+              }
+            },
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-01-01",
+            "includesObject": [
+              {
+                "@type": "Service",
+                "name": "Free Delivery and Pickup"
+              },
+              {
+                "@type": "Service",
+                "name": "24/7 Roadside Assistance"
+              }
+            ]
+          },
+          {
+            "@type": "Offer",
+            "@id": "#6passenger-3day-offer",
+            "name": "6-Passenger Golf Cart - 3 Day Rental", 
+            "description": "Large 6-passenger electric golf cart perfect for groups and extended families. Three day rental includes free delivery, pickup, and all taxes.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "6-Passenger Golf Cart Rental",
+              "serviceType": "Vehicle Rental"
+            },
+            "price": "277.88",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "277.88",
+              "priceCurrency": "USD",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": "3", 
+                "unitCode": "DAY"
+              }
+            },
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-01-01",
+            "includesObject": [
+              {
+                "@type": "Service",
+                "name": "Free Delivery and Pickup"
+              },
+              {
+                "@type": "Service",
+                "name": "24/7 Roadside Assistance"
+              }
+            ]
+          }
+        ]
+      },
+      "serviceOutput": {
+        "@type": "Vehicle",
+        "name": "Electric Golf Cart",
+        "vehicleType": "Golf Cart",
+        "fuelType": "Electric"
+      },
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "07:00",
+        "closes": "19:00"
+      },
+      "termsOfService": "https://golfcartrentalthevillagesfl.com/terms.html",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Tourists, Residents, Weekend Visitors"
+      }
     }
     </script>
     

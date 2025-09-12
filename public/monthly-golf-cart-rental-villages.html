@@ -7,42 +7,213 @@
     <meta name="description" content="Monthly golf cart rentals in The Villages, FL from $521.38/month. Best value for extended stays. Golf Cart Rentals The Villages FL - trusted since 1999. Free maintenance included.">
     <meta name="keywords" content="monthly golf cart rental Villages FL, long term golf cart rental, extended stay golf cart rental The Villages, Golf Cart Rentals The Villages FL monthly rates, seasonal rental">
     
-    <!-- Local Business Schema -->
+    <!-- Enhanced Service Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Monthly Golf Cart Rentals - The Villages",
+      "name": "Monthly Golf Cart Rental Service",
+      "@id": "https://golfcartrentalthevillagesfl.com/monthly-golf-cart-rental-villages.html#service",
+      "description": "Professional monthly golf cart rental service in The Villages, Florida. Perfect for extended stays, seasonal residents, and long-term visitors to The Villages community. Best value for 30+ day rentals.",
+      "serviceType": "Golf Cart Rental",
+      "category": "Transportation Services",
       "provider": {
-        "@type": "LocalBusiness",
-        "name": "Golf Cart Rentals The Villages FL",
+        "@type": ["RentalCarAgency", "LocalBusiness"],
+        "@id": "https://golfcartrentalthevillagesfl.com/#organization",
+        "name": "Masters Golf Cars",
+        "alternateName": "The Villages Golf Cart Rentals",
+        "url": "https://golfcartrentalthevillagesfl.com",
+        "telephone": "+1-352-306-4409",
+        "email": "hello@mastersgolfcars.com",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "12885 S US Hwy 441",
-          "addressLocality": "Belleview",
+          "addressLocality": "The Villages",
           "addressRegion": "FL",
-          "postalCode": "34420"
+          "postalCode": "32162",
+          "addressCountry": "US",
+          "streetAddress": "Service Area: The Villages Community"
         },
-        "telephone": "352-306-4409"
-      },
-      "areaServed": "The Villages, FL",
-      "description": "Professional monthly golf cart rental service. Perfect for extended stays, seasonal residents, and long-term visitors.",
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "2-Passenger Monthly Rental",
-          "price": "521.38",
-          "priceCurrency": "USD",
-          "description": "One month rental, includes maintenance and tax"
-        },
-        {
-          "@type": "Offer", 
-          "name": "4-Passenger Monthly Rental",
-          "price": "639.63"
-          "priceCurrency": "USD",
-          "description": "One month rental, includes maintenance and tax"
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 28.9344,
+          "longitude": -81.9594
         }
-      ]
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "The Villages",
+          "addressRegion": "FL"
+        },
+        {
+          "@type": "City",
+          "name": "Lady Lake", 
+          "addressRegion": "FL"
+        },
+        {
+          "@type": "City",
+          "name": "Fruitland Park",
+          "addressRegion": "FL"
+        }
+      ],
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://golfcartrentalthevillagesfl.com/monthly-golf-cart-rental-villages.html",
+        "serviceSmsNumber": "+1-352-306-4409",
+        "servicePhone": "+1-352-306-4409"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Monthly Golf Cart Rental Options",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "@id": "#2passenger-monthly-offer",
+            "name": "2-Passenger Golf Cart - Monthly Rental",
+            "description": "Compact 2-passenger electric golf cart perfect for couples. One month rental includes free delivery, pickup, comprehensive maintenance, and all taxes.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "2-Passenger Golf Cart Monthly Rental",
+              "serviceType": "Vehicle Rental"
+            },
+            "price": "1171.89",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "1171.89",
+              "priceCurrency": "USD",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": "1",
+                "unitCode": "MON"
+              }
+            },
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-01-01",
+            "includesObject": [
+              {
+                "@type": "Service",
+                "name": "Free Delivery and Pickup"
+              },
+              {
+                "@type": "Service", 
+                "name": "24/7 Roadside Assistance"
+              },
+              {
+                "@type": "Service",
+                "name": "Comprehensive Monthly Maintenance"
+              },
+              {
+                "@type": "Service",
+                "name": "Battery Replacement Coverage"
+              }
+            ]
+          },
+          {
+            "@type": "Offer",
+            "@id": "#4passenger-monthly-offer", 
+            "name": "4-Passenger Golf Cart - Monthly Rental",
+            "description": "Spacious 4-passenger electric golf cart ideal for small families. One month rental includes free delivery, pickup, comprehensive maintenance, and all taxes.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "4-Passenger Golf Cart Monthly Rental",
+              "serviceType": "Vehicle Rental"
+            },
+            "price": "1386.78",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "1386.78",
+              "priceCurrency": "USD",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": "1",
+                "unitCode": "MON"
+              }
+            },
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-01-01",
+            "includesObject": [
+              {
+                "@type": "Service",
+                "name": "Free Delivery and Pickup"
+              },
+              {
+                "@type": "Service",
+                "name": "24/7 Roadside Assistance"
+              },
+              {
+                "@type": "Service",
+                "name": "Comprehensive Monthly Maintenance"
+              },
+              {
+                "@type": "Service",
+                "name": "Battery Replacement Coverage"
+              }
+            ]
+          },
+          {
+            "@type": "Offer",
+            "@id": "#6passenger-monthly-offer",
+            "name": "6-Passenger Golf Cart - Monthly Rental", 
+            "description": "Large 6-passenger electric golf cart perfect for groups and extended families. One month rental includes free delivery, pickup, comprehensive maintenance, and all taxes.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "6-Passenger Golf Cart Monthly Rental",
+              "serviceType": "Vehicle Rental"
+            },
+            "price": "1664.14",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "1664.14",
+              "priceCurrency": "USD",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": "1", 
+                "unitCode": "MON"
+              }
+            },
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-01-01",
+            "includesObject": [
+              {
+                "@type": "Service",
+                "name": "Free Delivery and Pickup"
+              },
+              {
+                "@type": "Service",
+                "name": "24/7 Roadside Assistance"
+              },
+              {
+                "@type": "Service",
+                "name": "Comprehensive Monthly Maintenance"
+              },
+              {
+                "@type": "Service",
+                "name": "Battery Replacement Coverage"
+              }
+            ]
+          }
+        ]
+      },
+      "serviceOutput": {
+        "@type": "Vehicle",
+        "name": "Electric Golf Cart",
+        "vehicleType": "Golf Cart",
+        "fuelType": "Electric"
+      },
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "07:00",
+        "closes": "19:00"
+      },
+      "termsOfService": "https://golfcartrentalthevillagesfl.com/terms.html",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Seasonal Residents, Long-term Visitors, Extended Stay Guests"
+      }
     }
     </script>
     

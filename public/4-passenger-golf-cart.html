@@ -7,22 +7,162 @@
     <meta name="description" content="4-passenger golf cart rentals in The Villages, FL. Perfect for families, small groups, and friends. Spacious and comfortable carts from Golf Cart Rentals The Villages FL.">
     <meta name="keywords" content="4 passenger golf cart rental Villages FL, family golf cart rental, group golf cart The Villages, Golf Cart Rentals The Villages FL 4 passenger">
     
-    <!-- Local Business Schema -->
+    <!-- Enhanced Service Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "4-Passenger Golf Cart - The Villages",
-      "description": "Spacious 4-passenger golf cart perfect for families and small groups in The Villages",
-      "brand": {
-        "@type": "Brand",
-        "name": "Golf Cart Rentals The Villages FL"
+      "@type": "Service",
+      "name": "4-Passenger Golf Cart Rental Service",
+      "@id": "https://golfcartrentalthevillagesfl.com/4-passenger-golf-cart.html#service",
+      "description": "Premium 4-passenger golf cart rental service in The Villages, Florida. Perfect for families, small groups, and comfortable explorations of The Villages community. Spacious, reliable, and comfortable electric golf cart.",
+      "serviceType": "Golf Cart Rental",
+      "category": "Transportation Services",
+      "provider": {
+        "@type": ["RentalCarAgency", "LocalBusiness"],
+        "@id": "https://golfcartrentalthevillagesfl.com/#organization",
+        "name": "Masters Golf Cars",
+        "alternateName": "The Villages Golf Cart Rentals",
+        "url": "https://golfcartrentalthevillagesfl.com",
+        "telephone": "+1-352-306-4409",
+        "email": "hello@mastersgolfcars.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "The Villages",
+          "addressRegion": "FL",
+          "postalCode": "32162",
+          "addressCountry": "US",
+          "streetAddress": "Service Area: The Villages Community"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 28.9344,
+          "longitude": -81.9594
+        }
       },
-      "offers": {
-        "@type": "Offer",
-        "price": "209.63",
-        "priceCurrency": "USD",
-        "availability": "InStock"
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "The Villages",
+          "addressRegion": "FL"
+        },
+        {
+          "@type": "City",
+          "name": "Lady Lake", 
+          "addressRegion": "FL"
+        },
+        {
+          "@type": "City",
+          "name": "Fruitland Park",
+          "addressRegion": "FL"
+        }
+      ],
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://golfcartrentalthevillagesfl.com/4-passenger-golf-cart.html",
+        "serviceSmsNumber": "+1-352-306-4409",
+        "servicePhone": "+1-352-306-4409"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "4-Passenger Golf Cart Rental Options",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "@id": "#4passenger-3day-offer",
+            "name": "4-Passenger Golf Cart - 3 Day Rental",
+            "description": "Spacious 4-passenger electric golf cart. Three day rental includes free delivery, pickup, and all taxes.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "4-Passenger Golf Cart 3-Day Rental",
+              "serviceType": "Vehicle Rental"
+            },
+            "price": "231.13",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "231.13",
+              "priceCurrency": "USD",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": "3",
+                "unitCode": "DAY"
+              }
+            },
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "@id": "#4passenger-weekly-offer",
+            "name": "4-Passenger Golf Cart - Weekly Rental",
+            "description": "Spacious 4-passenger electric golf cart. One week rental includes free delivery, pickup, maintenance, and all taxes.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "4-Passenger Golf Cart Weekly Rental",
+              "serviceType": "Vehicle Rental"
+            },
+            "price": "462.26",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "462.26",
+              "priceCurrency": "USD",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": "1",
+                "unitCode": "WEE"
+              }
+            },
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "@id": "#4passenger-monthly-offer",
+            "name": "4-Passenger Golf Cart - Monthly Rental",
+            "description": "Spacious 4-passenger electric golf cart. One month rental includes free delivery, pickup, comprehensive maintenance, and all taxes.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "4-Passenger Golf Cart Monthly Rental",
+              "serviceType": "Vehicle Rental"
+            },
+            "price": "1386.78",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "1386.78",
+              "priceCurrency": "USD",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": "1",
+                "unitCode": "MON"
+              }
+            },
+            "availability": "https://schema.org/InStock"
+          }
+        ]
+      },
+      "serviceOutput": {
+        "@type": "Vehicle",
+        "name": "4-Passenger Electric Golf Cart",
+        "vehicleType": "Golf Cart",
+        "fuelType": "Electric",
+        "numberOfSeats": 4,
+        "vehicleConfiguration": "4-Passenger",
+        "brand": {
+          "@type": "Brand",
+          "name": "Club Car"
+        },
+        "model": "Precedent i2L"
+      },
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "07:00",
+        "closes": "19:00"
+      },
+      "termsOfService": "https://golfcartrentalthevillagesfl.com/terms.html",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Families, Small Groups, Comfortable Travelers"
       }
     }
     </script>
