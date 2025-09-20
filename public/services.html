@@ -90,7 +90,7 @@
 </head>
 <body class="bg-gray-50">
         <!-- Global Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50 wave-border">
+    <nav class="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 shadow-lg sticky top-0 z-50 wave-border">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <!-- Logo and Brand -->
@@ -100,12 +100,12 @@
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex space-x-6 items-center">
-                    <a href="index.html" class="hover:text-[#146ff8] transition font-medium">Home</a>
-                    <a href="about-us.html" class="hover:text-[#146ff8] transition font-medium">About Us</a>
+                    <a href="index.html" class="text-white hover:text-yellow-300 transition font-medium">Home</a>
+                    <a href="about-us.html" class="text-white hover:text-yellow-300 transition font-medium">About Us</a>
                     
                     <!-- Services Dropdown -->
                     <div class="relative group">
-                        <button class="flex items-center space-x-1 hover:text-[#146ff8] transition font-medium">
+                        <button class="flex items-center space-x-1 text-white hover:text-yellow-300 transition font-medium">
                             <span>Services</span>
                             <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
                         </button>
@@ -136,7 +136,7 @@
                     
                     <!-- Carts Dropdown -->
                     <div class="relative group">
-                        <button class="flex items-center space-x-1 hover:text-[#146ff8] transition font-medium">
+                        <button class="flex items-center space-x-1 text-white hover:text-yellow-300 transition font-medium">
                             <span>Carts</span>
                             <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
                         </button>
@@ -160,14 +160,14 @@
                         </div>
                     </div>
                     
-                    <a href="gallery.html" class="hover:text-[#146ff8] transition font-medium">Gallery</a>
-                    <a href="faq.html" class="hover:text-[#146ff8] transition font-medium">FAQ</a>
-                    <a href="contact.html" class="hover:text-[#146ff8] transition font-medium">Contact</a>
+                    <a href="gallery.html" class="text-white hover:text-yellow-300 transition font-medium">Gallery</a>
+                    <a href="faq.html" class="text-white hover:text-yellow-300 transition font-medium">FAQ</a>
+                    <a href="contact.html" class="text-white hover:text-yellow-300 transition font-medium">Contact</a>
                 </div>
                 
                 <!-- Contact and CTA -->
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="tel:352-306-4409" class="text-[#146ff8] font-semibold hover:text-[#0ea5e9] transition">
+                    <a href="tel:352-306-4409" class="text-yellow-300 font-semibold hover:text-yellow-200 transition">
                         📞 352-306-4409
                     </a>
                     <a href="pricing.html" class="bubble-button text-white px-6 py-2 font-semibold">
@@ -249,8 +249,9 @@
                         <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Perfect for shopping</li>
                     </ul>
                     <div class="text-center">
-                        <p class="text-2xl font-bold text-[#146ff8] mb-2">Starting at $209.63</p>
-                        <p class="text-sm text-[#666666]">3-day minimum rental</p>
+                        <a href="pricing.html" class="brand-button text-white px-6 py-3 font-semibold inline-block">
+                            View Pricing
+                        </a>
                     </div>
                 </div>
                 
@@ -268,8 +269,9 @@
                         <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Comfortable seating</li>
                     </ul>
                     <div class="text-center">
-                        <p class="text-2xl font-bold text-[#146ff8] mb-2">Starting at $231.13</p>
-                        <p class="text-sm text-[#666666]">3-day minimum rental</p>
+                        <a href="pricing.html" class="brand-button text-white px-6 py-3 font-semibold inline-block">
+                            View Pricing
+                        </a>
                     </div>
                 </div>
                 
@@ -286,91 +288,46 @@
                         <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Social seating</li>
                     </ul>
                     <div class="text-center">
-                        <p class="text-2xl font-bold text-[#146ff8] mb-2">Starting at $263.38</p>
-                        <p class="text-sm text-[#666666]">3-day minimum rental</p>
+                        <a href="pricing.html" class="brand-button text-white px-6 py-3 font-semibold inline-block">
+                            View Pricing
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Rental Duration Options -->
+    <!-- Golf Cart Gallery -->
     <section class="py-16 bg-[#f8f9fa]">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4 text-[#333333]">Flexible Rental Durations</h2>
-                <p class="text-[#666666] text-lg">Choose the rental period that works best for your stay</p>
+                <h2 class="text-3xl font-bold mb-4 text-[#333333]">Our Premium Golf Cart Fleet</h2>
+                <p class="text-[#666666] text-lg">Choose from our well-maintained fleet of golf carts</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="friendly-card p-8 text-center">
-                    <div class="bg-[#146ff8] text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                        <i data-lucide="calendar" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="font-bold text-2xl mb-4 text-[#333333]">3-Day Minimum</h3>
-                    <p class="text-[#666666] mb-4">Perfect for weekend getaways and short visits. Our most popular option for guests and weekend residents.</p>
-                    <div class="space-y-2 text-left max-w-sm mx-auto">
-                        <div class="flex justify-between">
-                            <span>Base Rate:</span>
-                            <span class="font-semibold">$175 - $225</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span>Fuel Surcharge:</span>
-                            <span class="font-semibold">$20</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span>Tax (8.25%):</span>
-                            <span class="font-semibold">Included</span>
-                        </div>
-                    </div>
-                    <p class="text-sm text-[#146ff8] font-semibold mt-4">Perfect for weekend getaways!</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <div class="text-center">
+                    <img src="images/golf-carts/219809536098758887.jpg" alt="2-Passenger Golf Cart Rental The Villages" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold text-[#333333] mb-2">2-Passenger Carts</h3>
+                    <p class="text-[#666666]">Perfect for couples and intimate adventures</p>
                 </div>
                 
-                <div class="friendly-card p-8 text-center package-card">
-                    <div class="popular-badge">BEST VALUE</div>
-                    <div class="bg-green-500 text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                        <i data-lucide="calendar" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="font-bold text-2xl mb-4 text-[#333333]">Weekly Rentals</h3>
-                    <p class="text-[#666666] mb-4">Great value for vacation stays! Save money while enjoying extended access to your golf cart.</p>
-                    <div class="space-y-2 text-left max-w-sm mx-auto">
-                        <div class="flex justify-between">
-                            <span>Base Rate:</span>
-                            <span class="font-semibold">$210 - $275</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span>Fuel Surcharge:</span>
-                            <span class="font-semibold">$20</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span>Tax (8.25%):</span>
-                            <span class="font-semibold">Included</span>
-                        </div>
-                    </div>
-                    <p class="text-sm text-green-600 font-semibold mt-4">Save money with weekly rates!</p>
+                <div class="text-center">
+                    <img src="images/golf-carts/2653653379919038682.jpg" alt="4-Passenger Golf Cart Rental The Villages" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold text-[#333333] mb-2">4-Passenger Carts</h3>
+                    <p class="text-[#666666]">Most popular choice for families</p>
                 </div>
                 
-                <div class="friendly-card p-8 text-center">
-                    <div class="bg-orange-500 text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                        <i data-lucide="calendar" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="font-bold text-2xl mb-4 text-[#333333]">Monthly Rentals</h3>
-                    <p class="text-[#666666] mb-4">Best value for extended stays! Perfect for snowbirds and long-term visitors to The Villages.</p>
-                    <div class="space-y-2 text-left max-w-sm mx-auto">
-                        <div class="flex justify-between">
-                            <span>Base Rate:</span>
-                            <span class="font-semibold">$465 - $700</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span>Fuel Surcharge:</span>
-                            <span class="font-semibold">$20</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span>Tax (8.25%):</span>
-                            <span class="font-semibold">Included</span>
-                        </div>
-                    </div>
-                    <p class="text-sm text-orange-600 font-semibold mt-4">Maximum savings for long stays!</p>
+                <div class="text-center">
+                    <img src="images/golf-carts/3844609223195681126.jpg" alt="6-Passenger Golf Cart Rental The Villages" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold text-[#333333] mb-2">6-Passenger Carts</h3>
+                    <p class="text-[#666666]">Great for groups and extended families</p>
+                </div>
+                
+                <div class="text-center">
+                    <img src="images/golf-carts/3948793105572885238.jpg" alt="Premium Golf Cart Rental The Villages" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold text-[#333333] mb-2">Premium Fleet</h3>
+                    <p class="text-[#666666]">Well-maintained and reliable vehicles</p>
                 </div>
             </div>
         </div>
