@@ -198,7 +198,7 @@
         </div>
     </section>
 
-    <!-- Pricing Table -->
+    <!-- Pricing Cards -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
@@ -206,93 +206,157 @@
                 <p class="text-[#666666] text-lg">All prices include fuel surcharge, taxes, and free delivery</p>
             </div>
             
-            <div class="max-w-6xl mx-auto overflow-x-auto">
-                <table class="w-full border-collapse border border-gray-300 rounded-lg overflow-hidden">
-                    <thead class="bg-[#146ff8] text-white">
-                        <tr>
-                            <th class="border border-gray-300 px-6 py-4 text-left">Cart Type</th>
-                            <th class="border border-gray-300 px-6 py-4 text-center">3-Day Minimum</th>
-                            <th class="border border-gray-300 px-6 py-4 text-center">Weekly</th>
-                            <th class="border border-gray-300 px-6 py-4 text-center">Monthly</th>
-                            <th class="border border-gray-300 px-6 py-4 text-center">Additional Day</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="hover:bg-gray-50">
-                            <td class="border border-gray-300 px-6 py-4 font-semibold">
-                                <div class="flex items-center">
-                                    <i data-lucide="users" class="w-5 h-5 mr-2 text-[#146ff8]"></i>
-                                    2-Passenger
-                                </div>
-                            </td>
-                            <td class="border border-gray-300 px-6 py-4 text-center">
-                                <div class="text-2xl font-bold text-[#146ff8]">$209.63</div>
-                                <div class="text-sm text-gray-600">$175 + $20 fuel + $14.63 tax</div>
-                            </td>
-                            <td class="border border-gray-300 px-6 py-4 text-center">
-                                <div class="text-2xl font-bold text-[#146ff8]">$247.25</div>
-                                <div class="text-sm text-gray-600">$210 + $20 fuel + $17.25 tax</div>
-                            </td>
-                            <td class="border border-gray-300 px-6 py-4 text-center">
-                                <div class="text-2xl font-bold text-[#146ff8]">$521.38</div>
-                                <div class="text-sm text-gray-600">$465 + $20 fuel + $36.38 tax</div>
-                            </td>
-                            <td class="border border-gray-300 px-6 py-4 text-center">
-                                <div class="text-lg font-semibold text-[#146ff8]">$20/day</div>
-                                <div class="text-sm text-gray-600">+ tax</div>
-                            </td>
-                        </tr>
-                        <tr class="hover:bg-gray-50 bg-blue-50">
-                            <td class="border border-gray-300 px-6 py-4 font-semibold">
-                                <div class="flex items-center">
-                                    <i data-lucide="users" class="w-5 h-5 mr-2 text-[#146ff8]"></i>
-                                    4-Passenger
-                                    <span class="ml-2 bg-[#146ff8] text-white text-xs px-2 py-1 rounded">MOST POPULAR</span>
-                                </div>
-                            </td>
-                            <td class="border border-gray-300 px-6 py-4 text-center">
-                                <div class="text-2xl font-bold text-[#146ff8]">$231.13</div>
-                                <div class="text-sm text-gray-600">$195 + $20 fuel + $16.13 tax</div>
-                            </td>
-                            <td class="border border-gray-300 px-6 py-4 text-center">
-                                <div class="text-2xl font-bold text-[#146ff8]">$290.25</div>
-                                <div class="text-sm text-gray-600">$250 + $20 fuel + $20.25 tax</div>
-                            </td>
-                            <td class="border border-gray-300 px-6 py-4 text-center">
-                                <div class="text-2xl font-bold text-[#146ff8]">$639.63</div>
-                                <div class="text-sm text-gray-600">$575 + $20 fuel + $44.63 tax</div>
-                            </td>
-                            <td class="border border-gray-300 px-6 py-4 text-center">
-                                <div class="text-lg font-semibold text-[#146ff8]">$25/day</div>
-                                <div class="text-sm text-gray-600">+ tax</div>
-                            </td>
-                        </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="border border-gray-300 px-6 py-4 font-semibold">
-                                <div class="flex items-center">
-                                    <i data-lucide="users" class="w-5 h-5 mr-2 text-[#146ff8]"></i>
-                                    6-Passenger
-                                </div>
-                            </td>
-                            <td class="border border-gray-300 px-6 py-4 text-center">
-                                <div class="text-2xl font-bold text-[#146ff8]">$263.38</div>
-                                <div class="text-sm text-gray-600">$225 + $20 fuel + $18.38 tax</div>
-                            </td>
-                            <td class="border border-gray-300 px-6 py-4 text-center">
-                                <div class="text-2xl font-bold text-[#146ff8]">$317.13</div>
-                                <div class="text-sm text-gray-600">$275 + $20 fuel + $22.13 tax</div>
-                            </td>
-                            <td class="border border-gray-300 px-6 py-4 text-center">
-                                <div class="text-2xl font-bold text-[#146ff8]">$774.00</div>
-                                <div class="text-sm text-gray-600">$700 + $20 fuel + $54.00 tax</div>
-                            </td>
-                            <td class="border border-gray-300 px-6 py-4 text-center">
-                                <div class="text-lg font-semibold text-[#146ff8]">$35/day</div>
-                                <div class="text-sm text-gray-600">+ tax</div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- 2-Passenger Cart -->
+                <div class="pricing-card bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-[#146ff8] hover:shadow-xl transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-[#146ff8] rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="users" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#333333] mb-2">2-Passenger Cart</h3>
+                        <p class="text-[#666666]">Perfect for couples</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">3-Day Minimum</span>
+                                <span class="text-2xl font-bold text-[#146ff8]">$209.63</span>
+                            </div>
+                            <p class="text-sm text-gray-600">$175 + $20 fuel + $14.63 tax</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">Weekly</span>
+                                <span class="text-2xl font-bold text-[#146ff8]">$247.25</span>
+                            </div>
+                            <p class="text-sm text-gray-600">$210 + $20 fuel + $17.25 tax</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">Monthly</span>
+                                <span class="text-2xl font-bold text-[#146ff8]">$521.38</span>
+                            </div>
+                            <p class="text-sm text-gray-600">$465 + $20 fuel + $36.38 tax</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">Additional Day</span>
+                                <span class="text-xl font-bold text-[#146ff8]">$20/day</span>
+                            </div>
+                            <p class="text-sm text-gray-600">+ tax</p>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-[#146ff8] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#0ea5e9] transition">
+                        Book 2-Passenger
+                    </button>
+                </div>
+                
+                <!-- 4-Passenger Cart (Most Popular) -->
+                <div class="pricing-card bg-white border-2 border-[#146ff8] rounded-2xl p-8 hover:shadow-xl transition-all duration-300 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-[#146ff8] text-white px-4 py-2 rounded-full text-sm font-semibold">MOST POPULAR</span>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-[#146ff8] rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="users" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#333333] mb-2">4-Passenger Cart</h3>
+                        <p class="text-[#666666]">Great for families</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="bg-blue-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">3-Day Minimum</span>
+                                <span class="text-2xl font-bold text-[#146ff8]">$231.13</span>
+                            </div>
+                            <p class="text-sm text-gray-600">$195 + $20 fuel + $16.13 tax</p>
+                        </div>
+                        
+                        <div class="bg-blue-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">Weekly</span>
+                                <span class="text-2xl font-bold text-[#146ff8]">$290.25</span>
+                            </div>
+                            <p class="text-sm text-gray-600">$250 + $20 fuel + $20.25 tax</p>
+                        </div>
+                        
+                        <div class="bg-blue-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">Monthly</span>
+                                <span class="text-2xl font-bold text-[#146ff8]">$639.63</span>
+                            </div>
+                            <p class="text-sm text-gray-600">$575 + $20 fuel + $44.63 tax</p>
+                        </div>
+                        
+                        <div class="bg-blue-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">Additional Day</span>
+                                <span class="text-xl font-bold text-[#146ff8]">$25/day</span>
+                            </div>
+                            <p class="text-sm text-gray-600">+ tax</p>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-[#146ff8] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#0ea5e9] transition">
+                        Book 4-Passenger
+                    </button>
+                </div>
+                
+                <!-- 6-Passenger Cart -->
+                <div class="pricing-card bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-[#146ff8] hover:shadow-xl transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-[#146ff8] rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="users" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#333333] mb-2">6-Passenger Cart</h3>
+                        <p class="text-[#666666]">Perfect for groups</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">3-Day Minimum</span>
+                                <span class="text-2xl font-bold text-[#146ff8]">$263.38</span>
+                            </div>
+                            <p class="text-sm text-gray-600">$225 + $20 fuel + $18.38 tax</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">Weekly</span>
+                                <span class="text-2xl font-bold text-[#146ff8]">$317.13</span>
+                            </div>
+                            <p class="text-sm text-gray-600">$275 + $20 fuel + $22.13 tax</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">Monthly</span>
+                                <span class="text-2xl font-bold text-[#146ff8]">$774.00</span>
+                            </div>
+                            <p class="text-sm text-gray-600">$700 + $20 fuel + $54.00 tax</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">Additional Day</span>
+                                <span class="text-xl font-bold text-[#146ff8]">$35/day</span>
+                            </div>
+                            <p class="text-sm text-gray-600">+ tax</p>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-[#146ff8] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#0ea5e9] transition">
+                        Book 6-Passenger
+                    </button>
+                </div>
             </div>
         </div>
     </section>
