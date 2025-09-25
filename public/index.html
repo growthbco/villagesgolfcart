@@ -761,553 +761,159 @@
         </div>
     </section>
     
-    <!-- Interactive Pricing Calculator -->
+        <!-- Pricing Display -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4 text-[#333333]">Get Your Custom Quote</h2>
-                <p class="text-[#666666]">Answer a few questions and we'll calculate your exact price instantly!</p>
+                <h2 class="text-3xl font-bold mb-4 text-[#333333]">Transparent Pricing</h2>
+                <p class="text-[#666666] text-lg">All prices include fuel surcharge, taxes, and free delivery</p>
             </div>
             
-            <div class="max-w-3xl mx-auto">
-                <div class="friendly-card p-8">
-                    <div id="pricing-calculator">
-                        <!-- Step 1: Group Size -->
-                        <div class="calculator-step" id="step-1">
-                            <h3 class="text-2xl font-bold mb-6 text-center text-[#333333]">How many people will be riding? 👥</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <button class="cart-option p-6 border-2 border-gray-200 rounded-lg hover:border-[#146ff8] hover:bg-[#f8f9fa] transition" onclick="selectCart('2-passenger')">
-                                    <i data-lucide="users" class="w-12 h-12 text-[#146ff8] mx-auto mb-3"></i>
-                                    <h4 class="font-bold text-lg mb-2">2 People</h4>
-                                    <p class="text-sm text-gray-600">Perfect for couples</p>
-                                    <a href="2-passenger-golf-cart.html" class="text-xs text-[#146ff8] hover:underline mt-2 inline-block" onclick="event.stopPropagation()">Learn More →</a>
-                                </button>
-                                <button class="cart-option p-6 border-2 border-gray-200 rounded-lg hover:border-[#146ff8] hover:bg-[#f8f9fa] transition" onclick="selectCart('4-passenger')">
-                                    <i data-lucide="users" class="w-12 h-12 text-[#146ff8] mx-auto mb-3"></i>
-                                    <h4 class="font-bold text-lg mb-2">2-4 People</h4>
-                                    <p class="text-sm text-gray-600">Most popular choice</p>
-                                    <span class="bg-[#146ff8] text-white px-2 py-1 text-xs rounded mt-2 inline-block">MOST POPULAR</span>
-                                    <a href="4-passenger-golf-cart.html" class="text-xs text-[#146ff8] hover:underline mt-2 inline-block" onclick="event.stopPropagation()">Learn More →</a>
-                                </button>
-                                <button class="cart-option p-6 border-2 border-gray-200 rounded-lg hover:border-[#146ff8] hover:bg-[#f8f9fa] transition" onclick="selectCart('6-passenger')">
-                                    <i data-lucide="users-round" class="w-12 h-12 text-[#146ff8] mx-auto mb-3"></i>
-                                    <h4 class="font-bold text-lg mb-2">5-6 People</h4>
-                                    <p class="text-sm text-gray-600">Group adventures</p>
-                                    <a href="6-passenger-golf-cart.html" class="text-xs text-[#146ff8] hover:underline mt-2 inline-block" onclick="event.stopPropagation()">Learn More →</a>
-                                </button>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                <!-- 2-Passenger Cart -->
+                <div class="pricing-card bg-white border-2 border-gray-200 rounded-2xl p-6 hover:border-[#146ff8] hover:shadow-xl transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-[#146ff8] rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="users" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#333333] mb-2">2-Passenger Cart</h3>
+                        <p class="text-[#666666]">Perfect for couples</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">3-Day Minimum</span>
+                                <span class="text-2xl font-bold text-[#146ff8]">$209.63</span>
                             </div>
+                            <p class="text-sm text-gray-600">$175 + $20 fuel + $14.63 tax</p>
                         </div>
                         
-                        <!-- Step 2: Duration -->
-                        <div class="calculator-step hidden" id="step-2">
-                            <h3 class="text-2xl font-bold mb-6 text-center text-[#333333]">How long do you need it? 📅</h3>
-                            
-                            <!-- Duration Selection Cards -->
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                                <!-- Daily Rental -->
-                                <div class="duration-card p-6 border-2 border-gray-200 rounded-lg bg-white">
-                                    <i data-lucide="calendar" class="w-12 h-12 text-[#146ff8] mx-auto mb-3"></i>
-                                    <h4 class="font-bold text-lg mb-2 text-center">Daily Rental</h4>
-                                    <p class="text-sm text-gray-600 text-center mb-4">Perfect for short trips</p>
-                                    <div class="flex items-center justify-center space-x-3">
-                                        <button onclick="adjustQuantity('days', -1)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition">
-                                            <span class="text-xl">−</span>
-                                        </button>
-                                        <div class="text-center">
-                                            <input type="number" id="days-quantity" value="0" min="0" max="30" onchange="updateDurationDisplay()" class="w-16 text-center text-xl font-bold border-2 border-gray-300 rounded-lg">
-                                            <p class="text-xs text-gray-600 mt-1">Days</p>
-                                        </div>
-                                        <button onclick="adjustQuantity('days', 1)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition">
-                                            <span class="text-xl">+</span>
-                                        </button>
-                                    </div>
-                                    <p class="text-xs text-[#146ff8] font-semibold text-center mt-3">Min. 3 days</p>
-                                    <a href="3-day-golf-cart-rental-villages.html" class="text-xs text-[#146ff8] hover:underline mt-2 inline-block w-full text-center">Learn More →</a>
-                                </div>
-                                
-                                <!-- Weekly Rental -->
-                                <div class="duration-card p-6 border-2 border-gray-200 rounded-lg bg-white">
-                                    <i data-lucide="calendar-range" class="w-12 h-12 text-[#146ff8] mx-auto mb-3"></i>
-                                    <h4 class="font-bold text-lg mb-2 text-center">Weekly Rental</h4>
-                                    <p class="text-sm text-gray-600 text-center mb-4">Best value option</p>
-                                    <div class="flex items-center justify-center space-x-3">
-                                        <button onclick="adjustQuantity('weeks', -1)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition">
-                                            <span class="text-xl">−</span>
-                                        </button>
-                                        <div class="text-center">
-                                            <input type="number" id="weeks-quantity" value="0" min="0" max="52" onchange="updateDurationDisplay()" class="w-16 text-center text-xl font-bold border-2 border-gray-300 rounded-lg">
-                                            <p class="text-xs text-gray-600 mt-1">Weeks</p>
-                                        </div>
-                                        <button onclick="adjustQuantity('weeks', 1)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition">
-                                            <span class="text-xl">+</span>
-                                        </button>
-                                    </div>
-                                    <span class="bg-green-500 text-white px-2 py-1 text-xs rounded mt-3 inline-block w-full text-center">SAVE $$</span>
-                                    <a href="weekly-golf-cart-rental-villages.html" class="text-xs text-[#146ff8] hover:underline mt-2 inline-block w-full text-center">Learn More →</a>
-                                </div>
-                                
-                                <!-- Monthly Rental -->
-                                <div class="duration-card p-6 border-2 border-gray-200 rounded-lg bg-white">
-                                    <i data-lucide="calendar-days" class="w-12 h-12 text-[#146ff8] mx-auto mb-3"></i>
-                                    <h4 class="font-bold text-lg mb-2 text-center">Monthly Rental</h4>
-                                    <p class="text-sm text-gray-600 text-center mb-4">Extended stay</p>
-                                    <div class="flex items-center justify-center space-x-3">
-                                        <button onclick="adjustQuantity('months', -1)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition">
-                                            <span class="text-xl">−</span>
-                                        </button>
-                                        <div class="text-center">
-                                            <input type="number" id="months-quantity" value="0" min="0" max="12" onchange="updateDurationDisplay()" class="w-16 text-center text-xl font-bold border-2 border-gray-300 rounded-lg">
-                                            <p class="text-xs text-gray-600 mt-1">Months</p>
-                                        </div>
-                                        <button onclick="adjustQuantity('months', 1)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition">
-                                            <span class="text-xl">+</span>
-                                        </button>
-                                    </div>
-                                    <span class="bg-orange-500 text-white px-2 py-1 text-xs rounded mt-3 inline-block w-full text-center">BEST DEAL</span>
-                                    <a href="monthly-golf-cart-rental-villages.html" class="text-xs text-[#146ff8] hover:underline mt-2 inline-block w-full text-center">Learn More →</a>
-                                </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">Weekly</span>
+                                <span class="text-2xl font-bold text-[#146ff8]">$247.25</span>
                             </div>
-                            
-                            <!-- Duration Summary -->
-                            <div class="bg-[#f8f9fa] rounded-lg p-4 mb-4 hidden" id="duration-summary">
-                                <p class="text-center text-lg font-semibold text-[#333333]">Total Duration: <span id="total-duration-text" class="text-[#146ff8]">Select duration above</span></p>
-                            </div>
-                            
-                            <!-- Quick Selection Buttons -->
-                            <div class="text-center">
-                                <p class="text-sm text-gray-600 mb-3">Quick selections:</p>
-                                <div class="flex flex-wrap justify-center gap-2">
-                                    <button onclick="setQuickDuration(3, 0, 0)" class="px-4 py-2 bg-gray-100 hover:bg-[#146ff8] hover:text-white rounded-full text-sm transition">3 Days (Min)</button>
-                                    <button onclick="setQuickDuration(0, 1, 0)" class="px-4 py-2 bg-gray-100 hover:bg-[#146ff8] hover:text-white rounded-full text-sm transition">1 Week</button>
-                                    <button onclick="setQuickDuration(0, 2, 0)" class="px-4 py-2 bg-gray-100 hover:bg-[#146ff8] hover:text-white rounded-full text-sm transition">2 Weeks</button>
-                                    <button onclick="setQuickDuration(0, 0, 1)" class="px-4 py-2 bg-gray-100 hover:bg-[#146ff8] hover:text-white rounded-full text-sm transition">1 Month</button>
-                                    <button onclick="setQuickDuration(0, 0, 3)" class="px-4 py-2 bg-gray-100 hover:bg-[#146ff8] hover:text-white rounded-full text-sm transition">3 Months</button>
-                                </div>
-                            </div>
+                            <p class="text-sm text-gray-600">$210 + $20 fuel + $17.25 tax</p>
                         </div>
                         
-                        <!-- Step 3: Contact Info -->
-                        <div class="calculator-step hidden" id="step-3">
-                            <h3 class="text-2xl font-bold mb-6 text-center text-[#333333]">Almost done! Where should we deliver? 🚚</h3>
-                            <div class="space-y-4">
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <input type="text" id="customer-name" placeholder="Your Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-[#146ff8] outline-none">
-                                    <input type="tel" id="customer-phone" placeholder="Phone Number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-[#146ff8] outline-none">
-                                </div>
-                                <div>
-                                    <input type="text" id="delivery-location" placeholder="Enter your drop-off address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-[#146ff8] outline-none">
-                                    <p class="text-xs text-gray-500 mt-1">We deliver free anywhere in The Villages!</p>
-                                </div>
-                                <div>
-                                    <input type="date" id="rental-date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-[#146ff8] outline-none">
-                                </div>
-                                <textarea id="special-requests" placeholder="Any special requests or questions?" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-[#146ff8] outline-none" rows="3"></textarea>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">Monthly</span>
+                                <span class="text-2xl font-bold text-[#146ff8]">$521.38</span>
                             </div>
-                        </div>
-                        
-                        <!-- Price Display -->
-                        <div class="calculator-step hidden" id="step-4">
-                            <div class="text-center">
-                                <h3 class="text-2xl font-bold mb-4 text-[#333333]">Your Custom Quote 💚</h3>
-                                
-                                <div class="bg-[#f8f9fa] rounded-lg p-6 mb-6">
-                                    <div class="mb-4">
-                                        <p class="text-lg font-semibold text-[#666666]" id="cart-summary">4-Passenger Cart for 1 Week</p>
-                                        <p class="text-sm text-[#666666]" id="delivery-summary">Delivery to Spanish Springs</p>
-                                    </div>
-                                    
-                                    <div class="space-y-2 text-left max-w-md mx-auto">
-                                        <div class="flex justify-between">
-                                            <span>Base Rate:</span>
-                                            <span id="base-rate">$250.00</span>
-                                        </div>
-                                        <div class="flex justify-between">
-                                            <span>Fuel Surcharge:</span>
-                                            <span id="fuel-charge">$20.00</span>
-                                        </div>
-                                        <div class="flex justify-between">
-                                            <span>Tax (7.5%):</span>
-                                            <span id="tax-amount">$22.28</span>
-                                        </div>
-                                        <div class="border-t-2 border-[#146ff8] pt-2 flex justify-between font-bold text-lg">
-                                            <span>Total:</span>
-                                            <span class="text-[#146ff8]" id="total-price">$292.28</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="space-y-4">
-                                    <button onclick="submitQuote()" class="bubble-button text-white px-8 py-4 text-lg font-semibold w-full">
-                                        <i data-lucide="party-popper" class="w-4 h-4 inline mr-1"></i> Reserve This Cart!
-                                    </button>
-                                    <button onclick="resetCalculator()" class="bg-gray-200 text-[#333333] px-8 py-3 rounded font-semibold w-full hover:bg-gray-300 transition">
-                                        Start Over
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Navigation Buttons -->
-                        <div class="flex justify-between mt-8" id="nav-buttons">
-                            <button onclick="prevStep()" class="bg-gray-200 text-[#333333] px-6 py-2 rounded font-semibold hover:bg-gray-300 transition hidden" id="prev-btn">
-                                ← Back
-                            </button>
-                            <div class="flex-1"></div>
-                            <button onclick="nextStep()" class="bubble-button text-white px-6 py-2 font-semibold hidden" id="next-btn">
-                                Next →
-                            </button>
-                        </div>
-                        
-                        <!-- Progress Indicator -->
-                        <div class="mt-6">
-                            <div class="flex justify-center space-x-2">
-                                <div class="w-3 h-3 rounded-full bg-[#146ff8]" id="progress-1"></div>
-                                <div class="w-3 h-3 rounded-full bg-gray-300" id="progress-2"></div>
-                                <div class="w-3 h-3 rounded-full bg-gray-300" id="progress-3"></div>
-                                <div class="w-3 h-3 rounded-full bg-gray-300" id="progress-4"></div>
-                            </div>
+                            <p class="text-sm text-gray-600">$465 + $20 fuel + $36.38 tax</p>
                         </div>
                     </div>
+                    
+                    <a href="2-passenger-golf-cart.html" class="block w-full bg-[#146ff8] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#0ea5e9] transition text-center">
+                        View 2-Passenger Cart
+                    </a>
+                </div>
+                
+                <!-- 4-Passenger Cart (Most Popular) -->
+                <div class="pricing-card bg-white border-2 border-[#146ff8] rounded-2xl p-6 hover:shadow-xl transition-all duration-300 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-[#146ff8] text-white px-4 py-2 rounded-full text-sm font-semibold">MOST POPULAR</span>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-[#146ff8] rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="users" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#333333] mb-2">4-Passenger Cart</h3>
+                        <p class="text-[#666666]">Great for families</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">3-Day Minimum</span>
+                                <span class="text-2xl font-bold text-[#146ff8]">$229.63</span>
+                            </div>
+                            <p class="text-sm text-gray-600">$195 + $20 fuel + $14.63 tax</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">Weekly</span>
+                                <span class="text-2xl font-bold text-[#146ff8]">$292.25</span>
+                            </div>
+                            <p class="text-sm text-gray-600">$250 + $20 fuel + $22.25 tax</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">Monthly</span>
+                                <span class="text-2xl font-bold text-[#146ff8]">$641.38</span>
+                            </div>
+                            <p class="text-sm text-gray-600">$575 + $20 fuel + $46.38 tax</p>
+                        </div>
+                    </div>
+                    
+                    <a href="4-passenger-golf-cart.html" class="block w-full bg-[#146ff8] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#0ea5e9] transition text-center">
+                        View 4-Passenger Cart
+                    </a>
+                </div>
+                
+                <!-- 6-Passenger Cart -->
+                <div class="pricing-card bg-white border-2 border-gray-200 rounded-2xl p-6 hover:border-[#146ff8] hover:shadow-xl transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-[#146ff8] rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="users" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#333333] mb-2">6-Passenger Cart</h3>
+                        <p class="text-[#666666]">Perfect for groups</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">3-Day Minimum</span>
+                                <span class="text-2xl font-bold text-[#146ff8]">$263.88</span>
+                            </div>
+                            <p class="text-sm text-gray-600">$225 + $20 fuel + $18.88 tax</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">Weekly</span>
+                                <span class="text-2xl font-bold text-[#146ff8]">$316.88</span>
+                            </div>
+                            <p class="text-sm text-gray-600">$275 + $20 fuel + $21.88 tax</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#333333]">Monthly</span>
+                                <span class="text-2xl font-bold text-[#146ff8]">$774.00</span>
+                            </div>
+                            <p class="text-sm text-gray-600">$700 + $20 fuel + $54.00 tax</p>
+                        </div>
+                    </div>
+                    
+                    <a href="6-passenger-golf-cart.html" class="block w-full bg-[#146ff8] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#0ea5e9] transition text-center">
+                        View 6-Passenger Cart
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="text-center mt-12">
+                <p class="text-lg text-[#666666] mb-6">Ready to book your golf cart rental?</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="pricing.html" class="bubble-button text-white px-8 py-4 text-lg font-semibold">
+                        View Full Pricing
+                    </a>
+                    <a href="contact.html" class="bg-white text-[#146ff8] px-8 py-4 rounded text-lg font-semibold border-2 border-[#146ff8] hover:bg-[#146ff8] hover:text-white transition">
+                        Contact Us
+                    </a>
                 </div>
             </div>
         </div>
     </section>
     
-    <script>
-        let currentStep = 1;
-        let selectedCart = null;
-        let selectedDuration = null;
-        let basePrice = 0;
-        let durationMultiplier = 1;
-        let durationQuantities = {
-            days: 0,
-            weeks: 0,
-            months: 0
-        };
-        
-        // UPDATED 2025-09-09: Exact pricing table (base rate without fuel/tax)
-        const pricing = {
-            '2-passenger': {
-                '3-day': 175,
-                'weekly': 210,
-                'monthly': 465
-            },
-            '4-passenger': {
-                '3-day': 195,
-                'weekly': 250,
-                'monthly': 575
-            },
-            '6-passenger': {
-                '3-day': 225,
-                'weekly': 275,
-                'monthly': 700
-            }
-        };
-        
-        // Force cache refresh - version 2.1
-        console.log('Pricing calculator loaded - version 2.1');
-        
-        function selectCart(cartType) {
-            selectedCart = cartType;
-            document.querySelectorAll('.cart-option').forEach(btn => {
-                btn.classList.remove('border-[#146ff8]', 'bg-[#f8f9fa]');
-                btn.classList.add('border-gray-200');
-            });
-            event.target.closest('.cart-option').classList.add('border-[#146ff8]', 'bg-[#f8f9fa]');
-            document.getElementById('next-btn').classList.remove('hidden');
-        }
-        
-        function adjustQuantity(type, change) {
-            const input = document.getElementById(`${type}-quantity`);
-            let newValue = parseInt(input.value) + change;
-            
-            // Enforce minimum and maximum values
-            if (type === 'days') {
-                newValue = Math.max(0, Math.min(30, newValue));
-            } else if (type === 'weeks') {
-                newValue = Math.max(0, Math.min(52, newValue));
-            } else if (type === 'months') {
-                newValue = Math.max(0, Math.min(12, newValue));
-            }
-            
-            input.value = newValue;
-            durationQuantities[type] = newValue;
-            updateDurationDisplay();
-        }
-        
-        function setQuickDuration(days, weeks, months) {
-            document.getElementById('days-quantity').value = days;
-            document.getElementById('weeks-quantity').value = weeks;
-            document.getElementById('months-quantity').value = months;
-            durationQuantities.days = days;
-            durationQuantities.weeks = weeks;
-            durationQuantities.months = months;
-            updateDurationDisplay();
-        }
-        
-        function updateDurationDisplay() {
-            const days = parseInt(document.getElementById('days-quantity').value) || 0;
-            const weeks = parseInt(document.getElementById('weeks-quantity').value) || 0;
-            const months = parseInt(document.getElementById('months-quantity').value) || 0;
-            
-            durationQuantities.days = days;
-            durationQuantities.weeks = weeks;
-            durationQuantities.months = months;
-            
-            // Calculate total days for validation
-            const totalDays = days + (weeks * 7) + (months * 30);
-            
-            // Build duration text
-            let durationParts = [];
-            if (months > 0) durationParts.push(`${months} month${months > 1 ? 's' : ''}`);
-            if (weeks > 0) durationParts.push(`${weeks} week${weeks > 1 ? 's' : ''}`);
-            if (days > 0) durationParts.push(`${days} day${days > 1 ? 's' : ''}`);
-            
-            const summaryDiv = document.getElementById('duration-summary');
-            const durationText = document.getElementById('total-duration-text');
-            
-            if (totalDays >= 3) {
-                // Valid duration selected
-                summaryDiv.classList.remove('hidden');
-                durationText.textContent = durationParts.join(' + ') || 'No duration selected';
-                durationText.classList.remove('text-red-500');
-                document.getElementById('next-btn').classList.remove('hidden');
-                
-                // Highlight active duration cards
-                document.querySelectorAll('.duration-card').forEach(card => {
-                    card.classList.remove('border-[#146ff8]', 'bg-[#f8f9fa]');
-                    card.classList.add('border-gray-200');
-                });
-                
-                if (days > 0) {
-                    document.querySelectorAll('.duration-card')[0].classList.add('border-[#146ff8]', 'bg-[#f8f9fa]');
-                }
-                if (weeks > 0) {
-                    document.querySelectorAll('.duration-card')[1].classList.add('border-[#146ff8]', 'bg-[#f8f9fa]');
-                }
-                if (months > 0) {
-                    document.querySelectorAll('.duration-card')[2].classList.add('border-[#146ff8]', 'bg-[#f8f9fa]');
-                }
-            } else if (totalDays > 0) {
-                // Duration selected but below minimum
-                summaryDiv.classList.remove('hidden');
-                durationText.textContent = `${durationParts.join(' + ')} (Minimum 3 days required)`;
-                durationText.classList.add('text-red-500');
-                document.getElementById('next-btn').classList.add('hidden');
-            } else {
-                // No duration selected
-                summaryDiv.classList.add('hidden');
-                document.getElementById('next-btn').classList.add('hidden');
-                
-                // Reset card styling
-                document.querySelectorAll('.duration-card').forEach(card => {
-                    card.classList.remove('border-[#146ff8]', 'bg-[#f8f9fa]');
-                    card.classList.add('border-gray-200');
-                });
-            }
-        }
-        
-        function selectDuration(duration, description) {
-            // This function is kept for backwards compatibility but not used in new UI
-            selectedDuration = {duration, description};
-            document.querySelectorAll('.duration-option').forEach(btn => {
-                btn.classList.remove('border-[#146ff8]', 'bg-[#f8f9fa]');
-                btn.classList.add('border-gray-200');
-            });
-            event.target.closest('.duration-option').classList.add('border-[#146ff8]', 'bg-[#f8f9fa]');
-            document.getElementById('next-btn').classList.remove('hidden');
-        }
-        
-        function nextStep() {
-            if (currentStep < 4) {
-                document.getElementById(`step-${currentStep}`).classList.add('hidden');
-                document.getElementById(`progress-${currentStep}`).classList.remove('bg-[#146ff8]');
-                document.getElementById(`progress-${currentStep}`).classList.add('bg-green-500');
-                
-                currentStep++;
-                
-                document.getElementById(`step-${currentStep}`).classList.remove('hidden');
-                document.getElementById(`progress-${currentStep}`).classList.remove('bg-gray-300');
-                document.getElementById(`progress-${currentStep}`).classList.add('bg-[#146ff8]');
-                
-                if (currentStep === 3) {
-                    document.getElementById('next-btn').textContent = 'Calculate Price →';
-                    document.getElementById('next-btn').onclick = calculatePrice;
-                    document.getElementById('next-btn').classList.remove('hidden');
-                }
-                
-                if (currentStep === 4) {
-                    calculatePrice();
-                    document.getElementById('nav-buttons').classList.add('hidden');
-                }
-                
-                document.getElementById('prev-btn').classList.remove('hidden');
-                
-                // Only hide next button if NOT on step 3
-                if (currentStep !== 3) {
-                    document.getElementById('next-btn').classList.add('hidden');
-                }
-                
-                // Re-initialize icons after DOM update
-                setTimeout(() => lucide.createIcons(), 100);
-            }
-        }
-        
-        function prevStep() {
-            if (currentStep > 1) {
-                document.getElementById(`step-${currentStep}`).classList.add('hidden');
-                document.getElementById(`progress-${currentStep}`).classList.remove('bg-[#146ff8]');
-                document.getElementById(`progress-${currentStep}`).classList.add('bg-gray-300');
-                
-                currentStep--;
-                
-                document.getElementById(`step-${currentStep}`).classList.remove('hidden');
-                document.getElementById(`progress-${currentStep}`).classList.remove('bg-green-500');
-                document.getElementById(`progress-${currentStep}`).classList.add('bg-[#146ff8]');
-                
-                if (currentStep === 1) {
-                    document.getElementById('prev-btn').classList.add('hidden');
-                }
-                
-                if (currentStep < 4) {
-                    document.getElementById('nav-buttons').classList.remove('hidden');
-                    document.getElementById('next-btn').classList.remove('hidden');
-                    document.getElementById('next-btn').textContent = 'Next →';
-                    document.getElementById('next-btn').onclick = nextStep;
-                }
-            }
-        }
-        
-        function calculatePrice() {
-            const name = document.getElementById('customer-name').value;
-            const phone = document.getElementById('customer-phone').value;
-            const location = document.getElementById('delivery-location').value;
-            
-            if (!name || !phone || !location) {
-                alert('Please fill in all required fields!');
-                return;
-            }
-            
-            // Calculate price based on selected quantities
-            const days = durationQuantities.days;
-            const weeks = durationQuantities.weeks;
-            const months = durationQuantities.months;
-            
-            let subtotal = 0;
-            let durationText = [];
-            
-            // Calculate monthly cost
-            if (months > 0) {
-                const monthlyRate = pricing[selectedCart]['monthly'];
-                subtotal += monthlyRate * months;
-                durationText.push(`${months} month${months > 1 ? 's' : ''}`);
-            }
-            
-            // Calculate weekly cost
-            if (weeks > 0) {
-                const weeklyRate = pricing[selectedCart]['weekly'];
-                subtotal += weeklyRate * weeks;
-                durationText.push(`${weeks} week${weeks > 1 ? 's' : ''}`);
-            }
-            
-            // Calculate daily cost
-            if (days > 0) {
-                // Check if this is the ONLY duration selected (no weeks or months)
-                if (weeks === 0 && months === 0) {
-                    // Stand-alone daily rental - apply 3-day minimum
-                    if (days <= 3) {
-                        subtotal += pricing[selectedCart]['3-day'];
-                        durationText.push(`${days} day${days > 1 ? 's' : ''} (3-day minimum)`);
-                    } else {
-                        // More than 3 days - calculate proportionally
-                        const threeDayRate = pricing[selectedCart]['3-day'];
-                        const dailyRate = threeDayRate / 3;
-                        subtotal += dailyRate * days;
-                        durationText.push(`${days} days`);
-                    }
-                } else {
-                    // Additional days on top of weeks/months - use proportional daily rate
-                    const threeDayRate = pricing[selectedCart]['3-day'];
-                    const dailyRate = threeDayRate / 3;
-                    subtotal += dailyRate * days;
-                    durationText.push(`${days} day${days > 1 ? 's' : ''}`);
-                }
-            }
-            
-            const fuel = 20;
-            const tax = (subtotal + fuel) * 0.075; // 7.5% tax rate
-            const total = subtotal + fuel + tax;
-            
-            // Format cart type for display
-            const cartDisplay = selectedCart.replace('-', ' ').split(' ').map(word => 
-                word.charAt(0).toUpperCase() + word.slice(1)
-            ).join(' ');
-            
-            // Debug logging
-            console.log(`Calculator v3.0 - ${selectedCart}: days=${days}, weeks=${weeks}, months=${months}, subtotal=${subtotal}, fuel=${fuel}, tax=${tax.toFixed(2)}, total=${total.toFixed(2)}`);
-            
-            document.getElementById('cart-summary').textContent = `${cartDisplay} Cart for ${durationText.join(' + ')}`;
-            document.getElementById('delivery-summary').textContent = `Free delivery to: ${location}`;
-            document.getElementById('base-rate').textContent = `$${subtotal.toFixed(2)}`;
-            document.getElementById('fuel-charge').textContent = `$${fuel.toFixed(2)}`;
-            document.getElementById('tax-amount').textContent = `$${tax.toFixed(2)}`;
-            document.getElementById('total-price').textContent = `$${total.toFixed(2)}`;
-            
-            nextStep();
-        }
-        
-        function submitQuote() {
-            alert('Thank you! We\'ll contact you within 15 minutes to confirm your reservation.');
-        }
-        
-        function resetCalculator() {
-            currentStep = 1;
-            selectedCart = null;
-            selectedDuration = null;
-            basePrice = 0;
-            durationMultiplier = 1;
-            durationQuantities = {
-                days: 0,
-                weeks: 0,
-                months: 0
-            };
-            
-            // Reset quantity inputs
-            if (document.getElementById('days-quantity')) {
-                document.getElementById('days-quantity').value = 0;
-            }
-            if (document.getElementById('weeks-quantity')) {
-                document.getElementById('weeks-quantity').value = 0;
-            }
-            if (document.getElementById('months-quantity')) {
-                document.getElementById('months-quantity').value = 0;
-            }
-            if (document.getElementById('duration-summary')) {
-                document.getElementById('duration-summary').classList.add('hidden');
-            }
-            
-            document.querySelectorAll('.calculator-step').forEach(step => step.classList.add('hidden'));
-            document.getElementById('step-1').classList.remove('hidden');
-            
-            document.querySelectorAll('[id^="progress-"]').forEach(progress => {
-                progress.classList.remove('bg-[#146ff8]', 'bg-green-500');
-                progress.classList.add('bg-gray-300');
-            });
-            document.getElementById('progress-1').classList.remove('bg-gray-300');
-            document.getElementById('progress-1').classList.add('bg-[#146ff8]');
-            
-            document.getElementById('nav-buttons').classList.remove('hidden');
-            document.getElementById('prev-btn').classList.add('hidden');
-            document.getElementById('next-btn').classList.add('hidden');
-            document.getElementById('next-btn').textContent = 'Next →';
-            document.getElementById('next-btn').onclick = nextStep;
-            
-            document.querySelectorAll('.cart-option, .duration-option, .duration-card').forEach(btn => {
-                btn.classList.remove('border-[#146ff8]', 'bg-[#f8f9fa]');
-                btn.classList.add('border-gray-200');
-            });
-        }
-    </script>
+
     
     <!-- Why Choose Us -->
     <section class="py-16 bg-gradient-to-br from-[#f1fffa] to-[#ccfccb]">
