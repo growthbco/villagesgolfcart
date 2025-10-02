@@ -68,7 +68,65 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- TIER 5: CONTACT & CONVERSION PAGES - High Local SEO Priority -->
+  <!-- TIER 5: LOCATION PAGES - High Local SEO Priority -->
+  <!-- Location-specific pages for local search optimization -->
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/spanish-springs-golf-cart-rentals.html</loc>
+    <lastmod>2024-12-12T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/lake-sumter-golf-cart-rentals.html</loc>
+    <lastmod>2024-12-12T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/brownwood-golf-cart-rentals.html</loc>
+    <lastmod>2024-12-12T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/sawgrass-grove-golf-cart-rentals.html</loc>
+    <lastmod>2024-12-12T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/fenney-golf-cart-rentals.html</loc>
+    <lastmod>2024-12-12T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/rohan-golf-cart-rentals.html</loc>
+    <lastmod>2024-12-12T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/water-lily-golf-cart-rentals.html</loc>
+    <lastmod>2024-12-12T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://golfcartrentalthevillagesfl.com/eastport-golf-cart-rentals.html</loc>
+    <lastmod>2024-12-12T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- TIER 6: CONTACT & CONVERSION PAGES - High Local SEO Priority -->
   <!-- Critical for local business discovery and conversions -->
   <url>
     <loc>https://golfcartrentalthevillagesfl.com/contact.html</loc>
@@ -84,7 +142,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- TIER 6: CUSTOMER SUPPORT PAGES - Medium Priority -->
+  <!-- TIER 7: CUSTOMER SUPPORT PAGES - Medium Priority -->
   <!-- Important for user experience and trust signals -->
   <url>
     <loc>https://golfcartrentalthevillagesfl.com/faq.html</loc>
@@ -100,7 +158,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- TIER 7: LEGAL PAGES - Lower Priority but Required -->
+  <!-- TIER 8: LEGAL PAGES - Lower Priority but Required -->
   <!-- Necessary for compliance but lower commercial value -->
   <url>
     <loc>https://golfcartrentalthevillagesfl.com/terms.html</loc>
