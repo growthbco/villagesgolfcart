@@ -243,31 +243,87 @@
             box-shadow: 0 8px 25px rgba(20, 111, 248, 0.3);
         }
         
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .gallery-item {
+        .gallery-carousel {
             position: relative;
+            max-width: 100%;
             overflow: hidden;
+            min-height: 400px;
+        }
+        
+        .gallery-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .gallery-slide {
+            min-width: 100%;
+            flex-shrink: 0;
+        }
+        
+        .gallery-slide img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
             border-radius: 12px;
-            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            background: #f8f9fa;
         }
         
-        .gallery-item:hover {
-            transform: scale(1.02);
-        }
-        
-        .gallery-placeholder {
-            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-            border: 2px dashed #d1d5db;
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #6b7280;
-            font-style: italic;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-nav:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .gallery-nav.prev {
+            left: 20px;
+        }
+        
+        .gallery-nav.next {
+            right: 20px;
+        }
+        
+        .gallery-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        
+        .gallery-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.3);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-dot.active {
+            background: #10b981;
+            transform: scale(1.2);
+        }
+        
+        .gallery-dot:hover {
+            background: #10b981;
         }
     </style>
 </head>
@@ -422,14 +478,13 @@
                 </h1>
                 
                 <p class="text-xl mb-8 max-w-2xl mx-auto text-white/90">
-                    Experience The Villages together in our spacious 4-passenger golf cart. 
-                    Perfect for families, friends, and small groups exploring together.
+                    This 4-passenger gas-powered golf cart is perfect for getting around retirement communities, neighborhoods, and equestrian events. It offers comfortable seating, smooth handling, and reliable performance for both leisure and convenience. The gas engine provides strong, consistent power and extended range—ideal for daily use, event transportation, or simply enjoying a relaxed ride around the area. Available in short-term and long-term rentals.
                 </p>
                 
                 <!-- Hero Golf Cart Image -->
                 <div class="mb-8">
                     <div class="w-full max-w-2xl mx-auto rounded-lg shadow-2xl border-4 border-white/20 overflow-hidden">
-                        <img src="images/hero-slider/4-seater-cart.webp" alt="4-Passenger Golf Cart The Villages FL" class="w-full h-auto object-cover">
+                        <img src="images/golf-carts/448078448809305469.jpg" alt="4-Passenger Gas Golf Cart Rental - Perfect for Retirement Communities" class="w-full h-auto object-cover">
                     </div>
                 </div>
                 
@@ -569,40 +624,40 @@
                 <p class="text-[#666666] text-lg">See our spacious 4-passenger carts in action</p>
             </div>
             
-            <div class="gallery-grid max-w-6xl mx-auto">
-                <!-- Main Showcase Image -->
-                <div class="gallery-item col-span-2">
-                    <div class="w-full h-80 rounded-lg overflow-hidden">
-                        <img src="images/hero-slider/4-seater-cart.webp" alt="4-Passenger Golf Cart The Villages FL" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+            <div class="gallery-carousel max-w-4xl mx-auto">
+                <div class="gallery-slides" id="gallery-slides">
+                    <div class="gallery-slide">
+                        <img src="images/golf-carts/448078448809305469.jpg" 
+                             alt="4-Passenger Gas Golf Cart Rental - Front View">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="images/golf-carts/6863207246230067349.jpg" 
+                             alt="4-Passenger Gas Golf Cart - Side View">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="images/golf-carts/8838382283693613256.jpg" 
+                             alt="4-Passenger Gas Golf Cart - Driver Side">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="images/golf-carts/3838898031558212787.jpg" 
+                             alt="4-Passenger Gas Golf Cart - Interior View">
                     </div>
                 </div>
                 
-                <!-- Additional Golf Cart Photo 1 -->
-                <div class="gallery-item">
-                    <div class="w-full h-80 rounded-lg overflow-hidden">
-                        <img src="images/golf-carts/219809536098758887.jpg" alt="4-Passenger Golf Cart The Villages FL" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                </div>
+                <!-- Navigation Arrows -->
+                <button class="gallery-nav prev" onclick="prevGallerySlide()">
+                    <i data-lucide="chevron-left" class="w-6 h-6 text-gray-700"></i>
+                </button>
+                <button class="gallery-nav next" onclick="nextGallerySlide()">
+                    <i data-lucide="chevron-right" class="w-6 h-6 text-gray-700"></i>
+                </button>
                 
-                <!-- Additional Golf Cart Photo 2 -->
-                <div class="gallery-item">
-                    <div class="w-full h-80 rounded-lg overflow-hidden">
-                        <img src="images/golf-carts/2653653379919038682.jpg" alt="4-Passenger Golf Cart The Villages FL" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                </div>
-                
-                <!-- Additional Golf Cart Photo 3 -->
-                <div class="gallery-item">
-                    <div class="w-full h-80 rounded-lg overflow-hidden">
-                        <img src="images/golf-carts/3844609223195681126.jpg" alt="4-Passenger Golf Cart The Villages FL" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                </div>
-                
-                <!-- Additional Golf Cart Photo 4 -->
-                <div class="gallery-item">
-                    <div class="w-full h-80 rounded-lg overflow-hidden">
-                        <img src="images/golf-carts/3948793105572885238.jpg" alt="4-Passenger Golf Cart The Villages FL" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
+                <!-- Dots Indicator -->
+                <div class="gallery-dots">
+                    <button class="gallery-dot active" onclick="goToGallerySlide(0)" data-slide="0"></button>
+                    <button class="gallery-dot" onclick="goToGallerySlide(1)" data-slide="1"></button>
+                    <button class="gallery-dot" onclick="goToGallerySlide(2)" data-slide="2"></button>
+                    <button class="gallery-dot" onclick="goToGallerySlide(3)" data-slide="3"></button>
                 </div>
             </div>
         </div>
@@ -768,6 +823,60 @@
     
     <script>
         lucide.createIcons();
+        
+        // Gallery Carousel JavaScript
+        let currentGallerySlide = 0;
+        const totalGallerySlides = 4;
+        let galleryInterval;
+        
+        function updateGallerySlider() {
+            const slides = document.getElementById('gallery-slides');
+            if (slides) {
+                slides.style.transform = `translateX(-${currentGallerySlide * 100}%)`;
+                
+                // Update dots
+                document.querySelectorAll('.gallery-dot').forEach((dot, index) => {
+                    if (index === currentGallerySlide) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+        }
+        
+        function nextGallerySlide() {
+            currentGallerySlide = (currentGallerySlide + 1) % totalGallerySlides;
+            updateGallerySlider();
+            resetGalleryInterval();
+        }
+        
+        function prevGallerySlide() {
+            currentGallerySlide = (currentGallerySlide - 1 + totalGallerySlides) % totalGallerySlides;
+            updateGallerySlider();
+            resetGalleryInterval();
+        }
+        
+        function goToGallerySlide(slideIndex) {
+            currentGallerySlide = slideIndex;
+            updateGallerySlider();
+            resetGalleryInterval();
+        }
+        
+        function startGalleryAutoSlide() {
+            galleryInterval = setInterval(nextGallerySlide, 4000); // Change slide every 4 seconds
+        }
+        
+        function resetGalleryInterval() {
+            clearInterval(galleryInterval);
+            startGalleryAutoSlide();
+        }
+        
+        // Initialize gallery carousel when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            startGalleryAutoSlide();
+            updateGallerySlider();
+        });
     </script>
 </body>
 </html>
