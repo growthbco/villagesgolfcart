@@ -5,6 +5,18 @@
 [build.environment]
   NODE_VERSION = "18"
 
+[[redirects]]
+  from = "/3-day-golf-cart-rental-villages.html"
+  to = "/weekly-golf-cart-rental-villages.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/daily-golf-cart-rental-villages.html"
+  to = "/weekly-golf-cart-rental-villages.html"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]
