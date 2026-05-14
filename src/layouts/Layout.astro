@@ -113,6 +113,13 @@ const localBusinessSchema = {
     />
 
     <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+
+    <!-- Roadside Launch external tracking -->
+    <script
+      is:inline
+      src="https://links.roadsidelaunch.com/js/external-tracking.js"
+      data-tracking-id="tk_8bb5a01b86a24612ba9a7076475fa2d4"
+    ></script>
   </head>
   <body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-brand-500 selection:text-white">
     <!-- HEADER -->
@@ -339,35 +346,64 @@ const localBusinessSchema = {
     </footer>
 
     <script is:inline>
-      document.addEventListener("DOMContentLoaded", function () {
-        const btn = document.getElementById("mobile-menu-btn");
-        const menu = document.getElementById("mobile-menu");
-        const icon = btn && btn.querySelector("i");
-        let open = false;
+      (function () {
+        function initMobileMenu() {
+          var btn = document.getElementById("mobile-menu-btn");
+          var menu = document.getElementById("mobile-menu");
+          if (!btn || !menu) return;
+          var icon = btn.querySelector("i");
+          var open = false;
 
-        btn && btn.addEventListener("click", function () {
-          open = !open;
-          if (open) {
-            menu.classList.remove("-translate-y-full");
-            menu.classList.add("translate-y-0");
-            if (icon) { icon.classList.remove("fa-bars"); icon.classList.add("fa-xmark"); }
-          } else {
-            menu.classList.remove("translate-y-0");
-            menu.classList.add("-translate-y-full");
-            if (icon) { icon.classList.remove("fa-xmark"); icon.classList.add("fa-bars"); }
+          function setState(o) {
+            open = o;
+            if (open) {
+              menu.classList.remove("-translate-y-full");
+              menu.classList.add("translate-y-0");
+              document.body.style.overflow = "hidden";
+              if (icon) { icon.classList.remove("fa-bars"); icon.classList.add("fa-xmark"); }
+            } else {
+              menu.classList.remove("translate-y-0");
+              menu.classList.add("-translate-y-full");
+              document.body.style.overflow = "";
+              if (icon) { icon.classList.remove("fa-xmark"); icon.classList.add("fa-bars"); }
+            }
           }
-        });
 
-        document.querySelectorAll("[data-mobile-toggle]").forEach((b) => {
-          b.addEventListener("click", function () {
-            const key = b.getAttribute("data-mobile-toggle");
-            const submenu = document.querySelector(`[data-mobile-submenu="${key}"]`);
-            const chevron = document.querySelector(`[data-chevron="${key}"]`);
-            submenu && submenu.classList.toggle("hidden");
-            chevron && chevron.classList.toggle("rotate-180");
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            setState(!open);
           });
-        });
-      });
+
+          // Close menu when clicking any menu link
+          menu.querySelectorAll("a[href]").forEach(function (a) {
+            a.addEventListener("click", function () { setState(false); });
+          });
+
+          // Close on ESC
+          document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && open) setState(false);
+          });
+
+          // Submenu toggles
+          document.querySelectorAll("[data-mobile-toggle]").forEach(function (b) {
+            b.addEventListener("click", function () {
+              var key = b.getAttribute("data-mobile-toggle");
+              var submenu = document.querySelector('[data-mobile-submenu="' + key + '"]');
+              var chevron = document.querySelector('[data-chevron="' + key + '"]');
+              if (submenu) submenu.classList.toggle("hidden");
+              if (chevron) chevron.classList.toggle("rotate-180");
+            });
+          });
+        }
+
+        // Run immediately if DOM ready, else wait
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", initMobileMenu);
+        } else {
+          initMobileMenu();
+        }
+      })();
     </script>
   </body>
 </html>
