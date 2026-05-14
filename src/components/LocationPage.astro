@@ -1,0 +1,552 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+interface Landmark {
+  title: string;
+  body: string;
+  icon: string;
+}
+
+interface Props {
+  name: string;
+  slug: string;
+  eyebrow?: string;
+  intro: string;
+  whyChoose?: string;
+  highlights?: string[];
+  landmarks?: Landmark[];
+  nearby?: string[];
+  fineDining?: { name: string; desc: string }[];
+  casualDining?: { name: string; desc: string }[];
+  quickBites?: { name: string; desc: string }[];
+  fashion?: { name: string; desc: string }[];
+  specialty?: { name: string; desc: string }[];
+  healthBeauty?: { name: string; desc: string }[];
+}
+
+const {
+  name,
+  slug,
+  eyebrow = "Villages Neighborhood",
+  intro,
+  whyChoose = `${name} is one of The Villages' most vibrant locations, offering shopping, dining, entertainment, and community events. Our golf cart rentals make it easy to explore everything this beautiful area has to offer.`,
+  highlights = [],
+  landmarks = [],
+  nearby = [],
+  fineDining = [
+    { name: "Lopez Legacy", desc: "Upscale Mexican cuisine with outdoor seating" },
+    { name: "Blue Fin Sushi", desc: "Fresh sushi and Japanese specialties" },
+    { name: "Red Sauce", desc: "Authentic Italian with extensive wine list" },
+    { name: "Nancy Lopez Legacy", desc: "Golf-themed upscale dining" },
+  ],
+  casualDining = [
+    { name: "Mulligan's Sports Bar", desc: "Sports viewing with pub fare" },
+    { name: "Froggy's", desc: "American comfort food and cocktails" },
+    { name: "Kate's Korner", desc: "Family-friendly casual dining" },
+    { name: `${name} Grille`, desc: "Fresh seafood and steaks" },
+  ],
+  quickBites = [
+    { name: "Starbucks", desc: "Coffee and light breakfast" },
+    { name: "Dunkin'", desc: "Donuts and coffee" },
+    { name: "Subway", desc: "Fresh sandwiches and salads" },
+    { name: "Pizza Hut", desc: "Pizza and Italian favorites" },
+  ],
+  fashion = [
+    { name: "Chico's", desc: "Women's contemporary fashion" },
+    { name: "White House Black Market", desc: "Sophisticated women's wear" },
+    { name: "Jos. A. Bank", desc: "Men's professional attire" },
+    { name: "Tommy Bahama", desc: "Resort and lifestyle clothing" },
+  ],
+  specialty = [
+    { name: "Golf Cart Accessories", desc: "Cart upgrades and add-ons" },
+    { name: "Art Gallery", desc: "Local and regional artwork" },
+    { name: "Jewelry Store", desc: "Fine jewelry and watches" },
+    { name: "Gift Shops", desc: "Unique souvenirs and gifts" },
+  ],
+  healthBeauty = [
+    { name: "CVS Pharmacy", desc: "Health and wellness products" },
+    { name: "Hair Salon", desc: "Professional hair services" },
+    { name: "Nail Studio", desc: "Manicures and pedicures" },
+    { name: "Massage Therapy", desc: "Relaxation and wellness" },
+  ],
+} = Astro.props;
+
+const title = `${name} Golf Cart Rentals — The Villages, FL | GCR Villages`;
+const description = `Golf cart rentals in ${name}, The Villages, FL. Free delivery, weekly and monthly rates, 2/4/6-passenger gas carts. Call (352) 306-4409.`;
+const formName = `quote-${slug}`;
+---
+
+<Layout title={title} description={description}>
+  <!-- HERO -->
+  <section class="relative py-24 lg:py-32 bg-slate-50 overflow-hidden">
+    <div class="absolute top-20 right-20 w-64 h-64 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-50 rounded-bl-[100px] -z-10 hidden lg:block"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4">{eyebrow}</p>
+      <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight uppercase leading-[1.05] mb-6">
+        {name} <span class="text-brand-600 italic">Golf Cart Rentals</span>
+      </h1>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">{intro}</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
+        <a href="/pricing" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5">
+          <i class="fa-solid fa-bolt"></i> View Pricing &amp; Book Now
+        </a>
+        <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-900 font-bold py-4 px-8 rounded-lg shadow-lg transition-all">
+          <i class="fa-solid fa-phone"></i> (352) 306-4409
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Why Choose Us</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Why Choose {name}?</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+        <p class="text-slate-600 mt-6 leading-relaxed">{whyChoose}</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-slate-50 rounded-2xl p-8 text-center">
+          <div class="w-16 h-16 bg-brand-600 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-5"><i class="fa-solid fa-location-dot"></i></div>
+          <h3 class="font-heading font-bold text-slate-900 uppercase mb-3">Prime Location</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Located in the heart of {name} with easy access to all amenities, restaurants, and entertainment venues.</p>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-8 text-center">
+          <div class="w-16 h-16 bg-brand-600 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-5"><i class="fa-solid fa-truck-fast"></i></div>
+          <h3 class="font-heading font-bold text-slate-900 uppercase mb-3">Free Delivery</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">We deliver directly to your {name} location at no extra charge. Convenient pickup and return.</p>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-8 text-center">
+          <div class="w-16 h-16 bg-brand-600 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-5"><i class="fa-solid fa-headset"></i></div>
+          <h3 class="font-heading font-bold text-slate-900 uppercase mb-3">7-Day Support</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Roadside assistance and customer support 7 AM – 7 PM, seven days a week for all your {name} adventures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {highlights.length > 0 && (
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">What&rsquo;s Included</p>
+          <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Designed for {name} Residents &amp; Visitors</h2>
+          <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+          {highlights.map((h) => (
+            <div class="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm">
+              <div class="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 flex-shrink-0">
+                <i class="fa-solid fa-check text-sm"></i>
+              </div>
+              <span class="text-slate-700">{h}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CART TYPES -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Pick Your Cart</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Cart Types Available in {name}</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <a href="/2-passenger-deluxe-golf-cart" class="group bg-white rounded-3xl overflow-hidden shadow-xl shadow-slate-200/50 hover:-translate-y-1 transition-transform">
+          <div class="h-56 bg-slate-100 overflow-hidden">
+            <img src="/cart-images/2-passenger-1.jpg" alt="2-Passenger Deluxe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-heading font-black text-xl text-slate-900 uppercase mb-2">2-Passenger</h3>
+            <p class="text-slate-600 text-sm mb-4">Perfect for couples exploring {name}. Compact, efficient, and easy to maneuver through the town square.</p>
+            <ul class="space-y-2 mb-4 text-sm">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1 text-xs"></i><span class="text-slate-700">Ideal for romantic dinners</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1 text-xs"></i><span class="text-slate-700">Easy parking at {name}</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1 text-xs"></i><span class="text-slate-700">Fuel efficient</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1 text-xs"></i><span class="text-slate-700">Comfortable seating</span></li>
+            </ul>
+            <span class="inline-flex items-center gap-1 text-brand-600 font-bold text-sm">View Details <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a href="/4-passenger-deluxe-golf-cart" class="group bg-white rounded-3xl overflow-hidden shadow-xl shadow-slate-200/50 hover:-translate-y-1 transition-transform relative">
+          <span class="absolute top-4 left-4 z-20 bg-brand-100 text-brand-700 text-xs font-bold px-3 py-1 rounded-full border border-brand-200">Most Popular</span>
+          <div class="h-56 bg-slate-100 overflow-hidden">
+            <img src="/cart-images/4-passenger-1.jpg" alt="4-Passenger Deluxe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-heading font-black text-xl text-slate-900 uppercase mb-2">4-Passenger</h3>
+            <p class="text-slate-600 text-sm mb-4">Most popular choice for families and small groups. Perfect for shopping trips and dining at {name} restaurants.</p>
+            <ul class="space-y-2 mb-4 text-sm">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1 text-xs"></i><span class="text-slate-700">Great for family outings</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1 text-xs"></i><span class="text-slate-700">Spacious seating</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1 text-xs"></i><span class="text-slate-700">Shopping convenience</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1 text-xs"></i><span class="text-slate-700">Most popular choice</span></li>
+            </ul>
+            <span class="inline-flex items-center gap-1 text-brand-600 font-bold text-sm">View Details <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a href="/6-passenger-golf-cart" class="group bg-white rounded-3xl overflow-hidden shadow-xl shadow-slate-200/50 hover:-translate-y-1 transition-transform">
+          <div class="h-56 bg-slate-100 overflow-hidden">
+            <img src="/cart-images/6-passenger-1.jpg" alt="6-Passenger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-heading font-black text-xl text-slate-900 uppercase mb-2">6-Passenger</h3>
+            <p class="text-slate-600 text-sm mb-4">Perfect for larger groups and special events. Great for entertaining guests and group activities in {name}.</p>
+            <ul class="space-y-2 mb-4 text-sm">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1 text-xs"></i><span class="text-slate-700">Group entertainment</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1 text-xs"></i><span class="text-slate-700">Special events</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1 text-xs"></i><span class="text-slate-700">Guest transportation</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1 text-xs"></i><span class="text-slate-700">Maximum capacity</span></li>
+            </ul>
+            <span class="inline-flex items-center gap-1 text-brand-600 font-bold text-sm">View Details <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RENTAL OPTIONS -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Rental Options</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Rental Options for {name}</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-3xl p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
+          <div class="inline-block bg-brand-100 text-brand-700 text-xs font-bold px-3 py-1 rounded-full mb-4 border border-brand-200">Weekly</div>
+          <h3 class="font-heading font-black text-2xl text-slate-900 uppercase mb-3">Weekly Rentals</h3>
+          <p class="text-slate-600 mb-6 leading-relaxed">Great value for extended stays in {name}. Perfect for vacation rentals and longer visits.</p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="/weekly-golf-cart-rental-villages" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg shadow-brand-500/30 transition-all">Learn More</a>
+            <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold py-3 px-6 rounded-lg transition-all"><i class="fa-solid fa-phone"></i> (352) 306-4409</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
+          <div class="inline-block bg-brand-100 text-brand-700 text-xs font-bold px-3 py-1 rounded-full mb-4 border border-brand-200">Monthly</div>
+          <h3 class="font-heading font-black text-2xl text-slate-900 uppercase mb-3">Monthly Rentals</h3>
+          <p class="text-slate-600 mb-6 leading-relaxed">Best value for seasonal residents and long-term stays in {name}. Maximum savings and convenience.</p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="/monthly-golf-cart-rental-villages" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg shadow-brand-500/30 transition-all">Learn More</a>
+            <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold py-3 px-6 rounded-lg transition-all"><i class="fa-solid fa-phone"></i> (352) 306-4409</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORE WITH CART -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">What You&rsquo;ll Find</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Explore {name} with Your Golf Cart</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-slate-50 rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-brand-600 text-xl"><i class="fa-solid fa-bag-shopping"></i></div>
+          <h3 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm">Shopping</h3>
+          <p class="text-slate-600 text-sm">Boutiques, specialty stores, and unique shops</p>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-brand-600 text-xl"><i class="fa-solid fa-utensils"></i></div>
+          <h3 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm">Dining</h3>
+          <p class="text-slate-600 text-sm">Restaurants, cafes, and outdoor dining</p>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-brand-600 text-xl"><i class="fa-solid fa-music"></i></div>
+          <h3 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm">Entertainment</h3>
+          <p class="text-slate-600 text-sm">Live music, shows, and community events</p>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-brand-600 text-xl"><i class="fa-solid fa-mug-hot"></i></div>
+          <h3 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm">Socializing</h3>
+          <p class="text-slate-600 text-sm">Coffee shops and gathering spots</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTINATION GUIDE -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Destination Guide</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">{name}: Your Ultimate Destination Guide</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+        <p class="text-slate-600 mt-6 leading-relaxed">From world-class dining to unique shopping and vibrant entertainment, {name} offers endless possibilities for your golf cart adventures.</p>
+      </div>
+
+      <!-- DINING -->
+      <div class="mb-16">
+        <h3 class="font-heading font-black text-2xl text-slate-900 uppercase text-center mb-10">Exceptional Dining Experiences</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+            <h4 class="font-heading font-bold text-brand-700 uppercase mb-4 text-sm tracking-wide flex items-center gap-2"><i class="fa-solid fa-utensils"></i> Fine Dining</h4>
+            <ul class="space-y-3">
+              {fineDining.map((d) => (
+                <li><div class="font-semibold text-slate-900 text-sm">{d.name}</div><div class="text-slate-600 text-xs">{d.desc}</div></li>
+              ))}
+            </ul>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+            <h4 class="font-heading font-bold text-brand-700 uppercase mb-4 text-sm tracking-wide flex items-center gap-2"><i class="fa-solid fa-burger"></i> Casual Dining</h4>
+            <ul class="space-y-3">
+              {casualDining.map((d) => (
+                <li><div class="font-semibold text-slate-900 text-sm">{d.name}</div><div class="text-slate-600 text-xs">{d.desc}</div></li>
+              ))}
+            </ul>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+            <h4 class="font-heading font-bold text-brand-700 uppercase mb-4 text-sm tracking-wide flex items-center gap-2"><i class="fa-solid fa-mug-hot"></i> Quick Bites &amp; Cafes</h4>
+            <ul class="space-y-3">
+              {quickBites.map((d) => (
+                <li><div class="font-semibold text-slate-900 text-sm">{d.name}</div><div class="text-slate-600 text-xs">{d.desc}</div></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- SHOPPING -->
+      <div class="mb-16">
+        <h3 class="font-heading font-black text-2xl text-slate-900 uppercase text-center mb-10">Unique Shopping Destinations</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+            <h4 class="font-heading font-bold text-brand-700 uppercase mb-4 text-sm tracking-wide flex items-center gap-2"><i class="fa-solid fa-shirt"></i> Fashion &amp; Apparel</h4>
+            <ul class="space-y-3">
+              {fashion.map((d) => (
+                <li><div class="font-semibold text-slate-900 text-sm">{d.name}</div><div class="text-slate-600 text-xs">{d.desc}</div></li>
+              ))}
+            </ul>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+            <h4 class="font-heading font-bold text-brand-700 uppercase mb-4 text-sm tracking-wide flex items-center gap-2"><i class="fa-solid fa-gift"></i> Specialty Stores</h4>
+            <ul class="space-y-3">
+              {specialty.map((d) => (
+                <li><div class="font-semibold text-slate-900 text-sm">{d.name}</div><div class="text-slate-600 text-xs">{d.desc}</div></li>
+              ))}
+            </ul>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+            <h4 class="font-heading font-bold text-brand-700 uppercase mb-4 text-sm tracking-wide flex items-center gap-2"><i class="fa-solid fa-spa"></i> Health &amp; Beauty</h4>
+            <ul class="space-y-3">
+              {healthBeauty.map((d) => (
+                <li><div class="font-semibold text-slate-900 text-sm">{d.name}</div><div class="text-slate-600 text-xs">{d.desc}</div></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENTERTAINMENT -->
+      <div class="mb-16">
+        <h3 class="font-heading font-black text-2xl text-slate-900 uppercase text-center mb-10">Live Entertainment &amp; Events</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+            <h4 class="font-heading font-bold text-brand-700 uppercase mb-4 text-sm tracking-wide flex items-center gap-2"><i class="fa-solid fa-calendar-day"></i> Daily Entertainment</h4>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-music text-brand-600 mt-1 text-xs"></i><span class="text-slate-700 text-sm"><span class="font-semibold">Live Music</span> — Daily performances at the gazebo</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-shoe-prints text-brand-600 mt-1 text-xs"></i><span class="text-slate-700 text-sm"><span class="font-semibold">Dancing</span> — Free dance lessons and social dancing</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-lightbulb text-brand-600 mt-1 text-xs"></i><span class="text-slate-700 text-sm"><span class="font-semibold">Trivia Nights</span> — Weekly trivia competitions</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-microphone text-brand-600 mt-1 text-xs"></i><span class="text-slate-700 text-sm"><span class="font-semibold">Karaoke</span> — Sing your heart out with friends</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-palette text-brand-600 mt-1 text-xs"></i><span class="text-slate-700 text-sm"><span class="font-semibold">Art Shows</span> — Local artist exhibitions</span></li>
+            </ul>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+            <h4 class="font-heading font-bold text-brand-700 uppercase mb-4 text-sm tracking-wide flex items-center gap-2"><i class="fa-solid fa-calendar-star"></i> Special Events</h4>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-tree text-brand-600 mt-1 text-xs"></i><span class="text-slate-700 text-sm"><span class="font-semibold">Holiday Celebrations</span> — Festive seasonal events</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-paintbrush text-brand-600 mt-1 text-xs"></i><span class="text-slate-700 text-sm"><span class="font-semibold">Art &amp; Craft Fairs</span> — Monthly vendor markets</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-utensils text-brand-600 mt-1 text-xs"></i><span class="text-slate-700 text-sm"><span class="font-semibold">Food Festivals</span> — Culinary celebrations</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-car text-brand-600 mt-1 text-xs"></i><span class="text-slate-700 text-sm"><span class="font-semibold">Car Shows</span> — Classic and custom vehicle displays</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-users text-brand-600 mt-1 text-xs"></i><span class="text-slate-700 text-sm"><span class="font-semibold">Community Gatherings</span> — Social events and meetups</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- RECREATION -->
+      <div class="mb-16">
+        <h3 class="font-heading font-black text-2xl text-slate-900 uppercase text-center mb-10">Recreation &amp; Activities</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 text-center">
+            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-brand-600 text-xl"><i class="fa-solid fa-golf-ball-tee"></i></div>
+            <h4 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm">Golf</h4>
+            <p class="text-slate-600 text-xs">Nearby golf courses and driving ranges</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 text-center">
+            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-brand-600 text-xl"><i class="fa-solid fa-person-swimming"></i></div>
+            <h4 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm">Swimming</h4>
+            <p class="text-slate-600 text-xs">Community pools and aquatic centers</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 text-center">
+            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-brand-600 text-xl"><i class="fa-solid fa-person-biking"></i></div>
+            <h4 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm">Biking</h4>
+            <p class="text-slate-600 text-xs">Scenic bike paths and trails</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 text-center">
+            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-brand-600 text-xl"><i class="fa-solid fa-tree"></i></div>
+            <h4 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm">Parks</h4>
+            <p class="text-slate-600 text-xs">Beautiful parks and green spaces</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHY CARTS MAKE X PERFECT -->
+      <div>
+        <h3 class="font-heading font-black text-2xl text-slate-900 uppercase text-center mb-10">Why Golf Carts Make {name} Perfect</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-2xl p-8 text-center shadow-sm border border-slate-100">
+            <div class="w-16 h-16 bg-brand-600 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-5"><i class="fa-solid fa-route"></i></div>
+            <h4 class="font-heading font-bold text-slate-900 uppercase mb-3 text-sm">Easy Navigation</h4>
+            <p class="text-slate-600 text-sm">Navigate the square and surrounding areas effortlessly.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 text-center shadow-sm border border-slate-100">
+            <div class="w-16 h-16 bg-brand-600 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-5"><i class="fa-solid fa-square-parking"></i></div>
+            <h4 class="font-heading font-bold text-slate-900 uppercase mb-3 text-sm">Convenient Parking</h4>
+            <p class="text-slate-600 text-sm">Dedicated golf cart parking throughout {name}.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 text-center shadow-sm border border-slate-100">
+            <div class="w-16 h-16 bg-brand-600 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-5"><i class="fa-solid fa-people-group"></i></div>
+            <h4 class="font-heading font-bold text-slate-900 uppercase mb-3 text-sm">Social Experience</h4>
+            <p class="text-slate-600 text-sm">Meet other residents and visitors while exploring.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {landmarks.length > 0 && (
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Local Spots</p>
+          <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">What to Do Near {name}</h2>
+          <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {landmarks.map((l) => (
+            <div class="bg-slate-50 rounded-2xl p-6 shadow-sm border border-slate-100">
+              <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-4 text-brand-600 text-xl">
+                <i class={`fa-solid ${l.icon}`}></i>
+              </div>
+              <h3 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm tracking-wide">{l.title}</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">{l.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- NEARBY LOCATIONS -->
+  {nearby.length > 0 && (
+    <section class="py-20 bg-slate-50">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Also Serving</p>
+          <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Explore Other Villages Locations</h2>
+          <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3">
+          {nearby.map((n) => (
+            <a href={`/${n.toLowerCase().replace(/\s+/g, "-")}-golf-cart-rentals`} class="inline-flex items-center gap-2 bg-white border border-slate-200 hover:border-brand-500 hover:text-brand-700 text-slate-700 font-semibold px-5 py-3 rounded-full transition-all">
+              <i class="fa-solid fa-location-dot text-brand-500"></i> {n}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <section class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-black text-3xl md:text-5xl text-white uppercase mb-6 leading-tight">Ready to Explore {name}?</h2>
+      <p class="text-xl text-slate-300 mb-10">Book your golf cart rental today and start your {name} adventure!</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/pricing" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5">View Pricing</a>
+        <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-900 font-bold py-4 px-8 rounded-lg shadow-lg transition-all"><i class="fa-solid fa-phone"></i> Call (352) 306-4409</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INLINE CONTACT FORM -->
+  <section class="py-20 bg-white">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Get In Touch</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Get Your Custom Quote</h2>
+        <p class="text-slate-600 mt-4">Fill out the form below and we&rsquo;ll get back to you within 2 hours!</p>
+      </div>
+      <div class="bg-slate-50 rounded-3xl shadow-xl p-8">
+        <form name={formName} method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+          <input type="hidden" name="form-name" value={formName} />
+          <input type="hidden" name="location" value={name} />
+          <p class="hidden"><label>Don&rsquo;t fill this out: <input name="bot-field" /></label></p>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-1">Name <span class="text-brand-600">*</span></label>
+              <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-1">Phone <span class="text-brand-600">*</span></label>
+              <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1">Email</label>
+            <input type="email" name="email" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1">Delivery Address in {name}</label>
+            <input type="text" name="delivery-address" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-1">Rental Dates</label>
+              <input type="text" name="rental-dates" placeholder="e.g. Jan 5 – Jan 12" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-1">Cart Type</label>
+              <select name="cart-type" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all">
+                <option value="">Not sure yet</option>
+                <option value="2-passenger">2-Passenger Deluxe</option>
+                <option value="4-passenger">4-Passenger Deluxe</option>
+                <option value="6-passenger">6-Passenger</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1">Message</label>
+            <textarea name="message" rows="3" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all"></textarea>
+          </div>
+
+          <label class="flex items-start gap-2 text-xs text-slate-600">
+            <input type="checkbox" name="sms-consent" class="mt-0.5" />
+            <span>I agree to receive text messages for booking and follow-up. Reply STOP to opt out.</span>
+          </label>
+
+          <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-6 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5 flex justify-center items-center gap-2">
+            <i class="fa-solid fa-bolt"></i> Get My Quote
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>

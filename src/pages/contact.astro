@@ -1,0 +1,253 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const methods = [
+  { icon: "fa-phone", title: "Call Us", body: "The fastest way to get answers and book your rental.", cta: "(352) 306-4409", href: "tel:+13523064409" },
+  { icon: "fa-envelope", title: "Email Us", body: "Perfect for detailed questions and non-urgent inquiries.", cta: "villages@mastersgolfcars.com", href: "mailto:villages@mastersgolfcars.com" },
+  { icon: "fa-comment-sms", title: "Text Us", body: "Quick questions? Send us a text message!", cta: "(352) 306-4409", href: "sms:+13523064409" },
+];
+
+const guarantees = [
+  { icon: "fa-phone-volume", title: "Phone Calls", body: "Answered within 3 rings" },
+  { icon: "fa-envelope-open-text", title: "Emails", body: "Responded to within 2 hours" },
+  { icon: "fa-comment-sms", title: "Text Messages", body: "Replied within 15 minutes" },
+  { icon: "fa-truck-medical", title: "Emergency", body: "Available 24/7" },
+];
+
+const areas = ["Spanish Springs", "Lake Sumter Landing", "Brownwood", "Sawgrass Grove", "Fenney", "Rohan", "Water Lily", "Eastport"];
+---
+
+<Layout title="Contact Us — Golf Cart Rentals The Villages FL" description="Get in touch for a custom golf cart rental quote. Call (352) 306-4409, email, or fill out our contact form.">
+  <!-- HERO -->
+  <section class="relative py-24 lg:py-32 bg-slate-50 overflow-hidden">
+    <div class="absolute top-20 right-20 w-64 h-64 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-50 rounded-bl-[100px] -z-10 hidden lg:block"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4">Contact</p>
+      <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight uppercase leading-[1.05] mb-6">
+        Get In <span class="text-brand-600 italic">Touch</span>
+      </h1>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        Have questions about our golf cart rentals? Need a custom quote? Want to chat about The Villages? We'd love to hear from you — we're here to help.
+      </p>
+    </div>
+  </section>
+
+  <!-- METHODS -->
+  <section class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Multiple Ways</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Reach Us How You Want</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {methods.map((m) => (
+          <a href={m.href} class="block bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100 hover:-translate-y-1 transition-all text-center">
+            <div class="w-16 h-16 bg-brand-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-brand-500/30">
+              <i class={`fa-solid ${m.icon} text-white text-2xl`}></i>
+            </div>
+            <h3 class="font-heading font-black text-xl text-slate-900 uppercase mb-2">{m.title}</h3>
+            <p class="text-slate-600 mb-4">{m.body}</p>
+            <span class="inline-block text-brand-600 font-bold">{m.cta}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM + INFO -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div>
+          <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Custom Quote</p>
+          <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase mb-4">Send Us a Message</h2>
+          <p class="text-slate-600 mb-8">Fill out the form below and we'll get back to you within 2 hours!</p>
+
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="bg-white rounded-2xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100 space-y-5">
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1" for="name">Name *</label>
+                <input id="name" name="name" type="text" required class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1" for="phone">Phone *</label>
+                <input id="phone" name="phone" type="tel" required class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-1" for="email">Email *</label>
+              <input id="email" name="email" type="email" required class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1" for="cart">Cart Type</label>
+                <select id="cart" name="cart" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all">
+                  <option value="">Select…</option>
+                  <option>2-Passenger</option>
+                  <option>4-Passenger</option>
+                  <option>6-Passenger</option>
+                  <option>Not sure</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1" for="duration">Rental Duration</label>
+                <select id="duration" name="duration" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all">
+                  <option value="">Select…</option>
+                  <option>Weekly</option>
+                  <option>Monthly</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-1" for="message">Message</label>
+              <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" placeholder="Tell us about your rental dates, delivery address, and any questions…"></textarea>
+            </div>
+
+            <label class="flex items-start gap-3 text-sm text-slate-600">
+              <input type="checkbox" name="sms-consent" class="mt-1" />
+              <span>I agree to receive text messages from Golf Cart Rentals The Villages FL for booking and follow-up. Message and data rates may apply. Reply STOP to opt out.</span>
+            </label>
+
+            <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-6 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5 flex justify-center items-center gap-2 text-lg">
+              <i class="fa-solid fa-bolt"></i> Send My Message
+            </button>
+          </form>
+        </div>
+
+        <div class="space-y-8">
+          <div>
+            <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Contact Info</p>
+            <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase mb-6">Where to Find Us</h2>
+            <div class="bg-white rounded-2xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100 space-y-5">
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-brand-600 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-lg shadow-brand-500/30">
+                  <i class="fa-solid fa-phone text-white"></i>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-slate-500 uppercase tracking-wide">Phone</div>
+                  <a href="tel:+13523064409" class="text-lg font-bold text-slate-900 hover:text-brand-600">(352) 306-4409</a>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-brand-600 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-lg shadow-brand-500/30">
+                  <i class="fa-solid fa-envelope text-white"></i>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-slate-500 uppercase tracking-wide">Email</div>
+                  <a href="mailto:villages@mastersgolfcars.com" class="text-lg font-bold text-slate-900 hover:text-brand-600 break-all">villages@mastersgolfcars.com</a>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-brand-600 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-lg shadow-brand-500/30">
+                  <i class="fa-solid fa-location-dot text-white"></i>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-slate-500 uppercase tracking-wide">Address</div>
+                  <a href="https://www.google.com/maps/search/?api=1&query=624+Holly+Cir+Lady+Lake+FL+32159" target="_blank" rel="noopener" class="text-lg font-bold text-slate-900 hover:text-brand-600">624 Holly Cir, Lady Lake, FL 32159</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-heading font-bold text-slate-900 uppercase text-lg mb-4">Business Hours</h3>
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 space-y-3">
+              <div class="flex justify-between"><span class="font-bold text-slate-900">Mon – Fri</span><span class="text-slate-600">7:00 AM – 7:00 PM</span></div>
+              <div class="flex justify-between"><span class="font-bold text-slate-900">Saturday</span><span class="text-slate-600">7:00 AM – 6:00 PM</span></div>
+              <div class="flex justify-between"><span class="font-bold text-slate-900">Sunday</span><span class="text-slate-600">8:00 AM – 5:00 PM</span></div>
+              <div class="pt-3 border-t border-slate-100 text-sm text-brand-700 font-bold flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved"></i> Emergency support available 24/7
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-heading font-bold text-slate-900 uppercase text-lg mb-4">Free Delivery</h3>
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+              <div class="grid grid-cols-2 gap-2">
+                {areas.map((a) => (
+                  <div class="flex items-center text-sm">
+                    <i class="fa-solid fa-circle-check text-brand-600 mr-2"></i>
+                    <span class="text-slate-700">{a}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESPONSE GUARANTEE -->
+  <section class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Quick Response</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">We Promise Prompt Replies</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {guarantees.map((g) => (
+          <div class="bg-slate-50 rounded-2xl p-6 text-center border border-slate-100">
+            <div class="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-brand-500/30">
+              <i class={`fa-solid ${g.icon} text-white text-2xl`}></i>
+            </div>
+            <h3 class="font-heading font-bold text-slate-900 uppercase text-sm tracking-wide mb-1">{g.title}</h3>
+            <p class="text-sm text-slate-600">{g.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- INLINE FAQ -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Quick Answers</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Frequently Asked Questions</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="space-y-3">
+        <details class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 group">
+          <summary class="font-bold text-slate-900 cursor-pointer flex justify-between items-center">How far in advance should I book? <i class="fa-solid fa-plus group-open:rotate-45 transition-transform text-brand-600"></i></summary>
+          <p class="text-slate-600 mt-3">1–2 weeks ahead is ideal during peak season (Nov–Apr). Last-minute is often available — just call.</p>
+        </details>
+        <details class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 group">
+          <summary class="font-bold text-slate-900 cursor-pointer flex justify-between items-center">Do you really deliver for free to all Villages locations? <i class="fa-solid fa-plus group-open:rotate-45 transition-transform text-brand-600"></i></summary>
+          <p class="text-slate-600 mt-3">Yes — free delivery and pickup to every village. No mileage or delivery surcharges.</p>
+        </details>
+        <details class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 group">
+          <summary class="font-bold text-slate-900 cursor-pointer flex justify-between items-center">What&rsquo;s included in the rental? <i class="fa-solid fa-plus group-open:rotate-45 transition-transform text-brand-600"></i></summary>
+          <p class="text-slate-600 mt-3">Comprehensive insurance, free delivery, a full tank of gas, and 7-day roadside support.</p>
+        </details>
+        <details class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 group">
+          <summary class="font-bold text-slate-900 cursor-pointer flex justify-between items-center">Do I need a driver&rsquo;s license? <i class="fa-solid fa-plus group-open:rotate-45 transition-transform text-brand-600"></i></summary>
+          <p class="text-slate-600 mt-3">Yes — a valid driver&rsquo;s license is required, and the primary renter must be 18+.</p>
+        </details>
+      </div>
+      <div class="text-center mt-8">
+        <a href="/faq" class="inline-flex items-center gap-2 text-brand-600 font-bold hover:underline">View All FAQ <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-black text-3xl md:text-5xl text-white uppercase mb-6 leading-tight">Ready to Get Started?</h2>
+      <p class="text-xl text-slate-300 mb-10">Reach out anytime — we're here to help.</p>
+      <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5"><i class="fa-solid fa-phone"></i> Call (352) 306-4409</a>
+    </div>
+  </section>
+</Layout>

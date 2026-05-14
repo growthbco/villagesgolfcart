@@ -1,0 +1,132 @@
+---
+import Layout from "../layouts/Layout.astro";
+import QuoteForm from "../components/QuoteForm.astro";
+
+const tiers = [
+  { title: "2-Passenger", href: "/2-passenger-deluxe-golf-cart", img: "/cart-images/2-passenger-1.jpg", desc: "Perfect for couples", badge: null },
+  { title: "4-Passenger", href: "/4-passenger-deluxe-golf-cart", img: "/cart-images/4-passenger-1.jpg", desc: "Great for families", badge: "Most Popular" },
+  { title: "6-Passenger", href: "/6-passenger-golf-cart", img: "/cart-images/6-passenger-1.jpg", desc: "Perfect for groups", badge: null },
+];
+
+const included = [
+  { icon: "fa-truck-fast", title: "Free Delivery", body: "We deliver to all Villages locations at no extra cost." },
+  { icon: "fa-gas-pump", title: "Full Gas Tank", body: "Every cart comes with a full tank of gas." },
+  { icon: "fa-headset", title: "24/7 Support", body: "Round-the-clock roadside assistance included." },
+  { icon: "fa-receipt", title: "All Taxes Included", body: "No surprise charges — what you see is what you pay." },
+];
+---
+
+<Layout title="Pricing — Golf Cart Rentals The Villages FL" description="Golf cart rental pricing in The Villages. Personalized weekly and monthly rates. Contact us for a custom quote.">
+  <!-- HERO -->
+  <section class="relative py-24 lg:py-32 bg-slate-50 overflow-hidden">
+    <div class="absolute top-20 right-20 w-64 h-64 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-50 rounded-bl-[100px] -z-10 hidden lg:block"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4">Pricing</p>
+      <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight uppercase leading-[1.05] mb-6">
+        Personalized <span class="text-brand-600 italic">Quotes</span>
+      </h1>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        Contact us for a quote on weekly and monthly rentals. No hidden fees — every quote includes taxes, delivery, and a full tank of gas.
+      </p>
+    </div>
+  </section>
+
+  <!-- TIERS -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {tiers.map((t) => (
+          <div class="bg-white rounded-3xl overflow-hidden shadow-xl shadow-slate-200/50 flex flex-col group relative">
+            {t.badge && (
+              <span class="absolute top-4 left-4 z-20 bg-brand-100 text-brand-700 text-xs font-bold px-3 py-1 rounded-full border border-brand-200">{t.badge}</span>
+            )}
+            <div class="h-64 bg-slate-100 overflow-hidden">
+              <img src={t.img} alt={t.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-8 text-center flex flex-col flex-1">
+              <h3 class="font-heading font-black text-2xl text-slate-900 uppercase mb-2">{t.title}</h3>
+              <p class="text-slate-600 mb-6">{t.desc}</p>
+              <p class="text-3xl font-bold text-brand-600 mb-1">Contact for Pricing</p>
+              <p class="text-sm text-slate-500 mb-6">Call (352) 306-4409 for a quote</p>
+              <div class="mt-auto space-y-2">
+                <a href="/contact" class="block bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5">Book {t.title}</a>
+                <a href={t.href} class="block bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold py-3 px-6 rounded-lg transition-all">View Details</a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">No Hidden Fees</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">What's Included</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {included.map((inc) => (
+          <div class="bg-white rounded-2xl p-6 text-center shadow-sm border border-slate-100">
+            <div class="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-brand-500/30">
+              <i class={`fa-solid ${inc.icon} text-white text-2xl`}></i>
+            </div>
+            <h3 class="font-heading font-bold text-slate-900 uppercase text-sm tracking-wide mb-2">{inc.title}</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">{inc.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">No Hidden Fees</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">What&rsquo;s Included in Every Rental</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-slate-50 rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 bg-brand-600 rounded-xl flex items-center justify-center mx-auto mb-4 text-white text-xl"><i class="fa-solid fa-truck-fast"></i></div>
+          <h3 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm tracking-wide">Free Delivery</h3>
+          <p class="text-slate-600 text-sm">Free delivery and pickup throughout all Villages locations.</p>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 bg-brand-600 rounded-xl flex items-center justify-center mx-auto mb-4 text-white text-xl"><i class="fa-solid fa-gas-pump"></i></div>
+          <h3 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm tracking-wide">Full Gas Tank</h3>
+          <p class="text-slate-600 text-sm">Cart shows up gassed up and ready to roll.</p>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 bg-brand-600 rounded-xl flex items-center justify-center mx-auto mb-4 text-white text-xl"><i class="fa-solid fa-headset"></i></div>
+          <h3 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm tracking-wide">7-Day Support</h3>
+          <p class="text-slate-600 text-sm">7 AM – 7 PM daily customer line plus roadside assistance.</p>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 bg-brand-600 rounded-xl flex items-center justify-center mx-auto mb-4 text-white text-xl"><i class="fa-solid fa-receipt"></i></div>
+          <h3 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm tracking-wide">All Taxes Included</h3>
+          <p class="text-slate-600 text-sm">No surprise charges — what you see is what you pay.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-black text-3xl md:text-5xl text-white uppercase mb-6 leading-tight">Ready to Book?</h2>
+      <p class="text-xl text-slate-300 mb-10">Call us today at (352) 306-4409 to check availability and book your perfect rental.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5"><i class="fa-solid fa-phone"></i> Call (352) 306-4409</a>
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-900 font-bold py-4 px-8 rounded-lg shadow-lg transition-all"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm formName="quote-pricing" hiddenContext={{ "source-page": "pricing" }} />
+</Layout>

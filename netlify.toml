@@ -1,25 +1,248 @@
 [build]
-  command = "echo 'Static site - no build required'"
-  publish = "public"
+  command = "npm run build"
+  publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
+
+# ===========================================================================
+# 301 redirects — preserve SEO equity from old .html URLs to new pretty URLs
+# ===========================================================================
+
+# Cart pages — old non-deluxe to new deluxe URLs
+[[redirects]]
+  from = "/2-passenger-golf-cart.html"
+  to = "/2-passenger-deluxe-golf-cart"
+  status = 301
+  force = true
 
 [[redirects]]
+  from = "/2-passenger-golf-cart"
+  to = "/2-passenger-deluxe-golf-cart"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/4-passenger-golf-cart.html"
+  to = "/4-passenger-deluxe-golf-cart"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/4-passenger-golf-cart"
+  to = "/4-passenger-deluxe-golf-cart"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/6-passenger-golf-cart.html"
+  to = "/6-passenger-golf-cart"
+  status = 301
+  force = true
+
+# Service pages
+[[redirects]]
+  from = "/services.html"
+  to = "/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/weekly-golf-cart-rental-villages.html"
+  to = "/weekly-golf-cart-rental-villages"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/monthly-golf-cart-rental-villages.html"
+  to = "/monthly-golf-cart-rental-villages"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/long-term-golf-cart-rental.html"
+  to = "/long-term-golf-cart-rental"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/snowbird-golf-cart-rental.html"
+  to = "/snowbird-golf-cart-rental"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/wedding-golf-cart-rental-villages.html"
+  to = "/wedding-golf-cart-rental-villages"
+  status = 301
+  force = true
+
+# Legacy old rental term URLs (kept from previous netlify.toml)
+[[redirects]]
   from = "/3-day-golf-cart-rental-villages.html"
-  to = "/weekly-golf-cart-rental-villages.html"
+  to = "/weekly-golf-cart-rental-villages"
   status = 301
   force = true
 
 [[redirects]]
   from = "/daily-golf-cart-rental-villages.html"
-  to = "/weekly-golf-cart-rental-villages.html"
+  to = "/weekly-golf-cart-rental-villages"
   status = 301
   force = true
 
+# Location pages — Villages neighborhoods
+[[redirects]]
+  from = "/spanish-springs-golf-cart-rentals.html"
+  to = "/spanish-springs-golf-cart-rentals"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lake-sumter-golf-cart-rentals.html"
+  to = "/lake-sumter-golf-cart-rentals"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/brownwood-golf-cart-rentals.html"
+  to = "/brownwood-golf-cart-rentals"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sawgrass-grove-golf-cart-rentals.html"
+  to = "/sawgrass-grove-golf-cart-rentals"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fenney-golf-cart-rentals.html"
+  to = "/fenney-golf-cart-rentals"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/rohan-golf-cart-rentals.html"
+  to = "/rohan-golf-cart-rentals"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/water-lily-golf-cart-rentals.html"
+  to = "/water-lily-golf-cart-rentals"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/eastport-golf-cart-rentals.html"
+  to = "/eastport-golf-cart-rentals"
+  status = 301
+  force = true
+
+# Nearby towns
+[[redirects]]
+  from = "/lady-lake-golf-cart-rentals.html"
+  to = "/lady-lake-golf-cart-rentals"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fruitland-park-golf-cart-rentals.html"
+  to = "/fruitland-park-golf-cart-rentals"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/leesburg-golf-cart-rentals.html"
+  to = "/leesburg-golf-cart-rentals"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/wildwood-golf-cart-rentals.html"
+  to = "/wildwood-golf-cart-rentals"
+  status = 301
+  force = true
+
+# Marketing / info pages
+[[redirects]]
+  from = "/about-us.html"
+  to = "/about-us"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/faq.html"
+  to = "/faq"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gallery.html"
+  to = "/gallery"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pricing.html"
+  to = "/pricing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/reviews.html"
+  to = "/reviews"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/things-to-do-the-villages.html"
+  to = "/things-to-do-the-villages"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/golf-cart-rules-the-villages.html"
+  to = "/golf-cart-rules-the-villages"
+  status = 301
+  force = true
+
+# Legal
+[[redirects]]
+  from = "/privacy-policy.html"
+  to = "/privacy-policy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms.html"
+  to = "/terms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms-conditions"
+  to = "/terms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms-conditions.html"
+  to = "/terms"
+  status = 301
+  force = true
+
+# Security headers
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

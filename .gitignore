@@ -19,3 +19,6 @@ pnpm-debug.log*
 
 # misc
 .astro/
+
+# legacy embedded repo
+villagesgolfcart/

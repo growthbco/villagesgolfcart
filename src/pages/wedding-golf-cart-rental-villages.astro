@@ -1,0 +1,104 @@
+---
+import Layout from "../layouts/Layout.astro";
+import QuoteForm from "../components/QuoteForm.astro";
+
+const benefits = [
+  { icon: "fa-heart", title: "Wedding-Ready Carts", body: "Clean, photo-worthy carts that look great in your venue photos and bridal-party shots." },
+  { icon: "fa-people-group", title: "Fleet Discounts", body: "Renting 2+ carts? Group rates make multi-cart bookings far more affordable." },
+  { icon: "fa-truck-fast", title: "Setup & Pickup", body: "We coordinate delivery and pickup around your venue schedule — including rehearsal day." },
+  { icon: "fa-champagne-glasses", title: "Decoration-Friendly", body: "Add tulle, signs, and ribbons. We&rsquo;ll let you know what&rsquo;s safe to attach." },
+];
+
+const useCases = [
+  { icon: "fa-ring", title: "Getting Ready", body: "Shuttle the wedding party between cottage rentals and the venue with style." },
+  { icon: "fa-camera", title: "Photo Sessions", body: "Roll up to first-look moments and engagement shoots in a wedding-decorated cart." },
+  { icon: "fa-utensils", title: "Reception Shuttles", body: "Move guests between ceremony and reception without parking headaches." },
+  { icon: "fa-bed", title: "Late-Night Returns", body: "Get guests safely back to their rentals after the reception ends." },
+];
+---
+<Layout
+  title="Wedding Golf Cart Rentals in The Villages, FL | GCR Villages"
+  description="Wedding golf cart rentals in The Villages, FL. Multi-cart fleet discounts, decoration-friendly, ceremony &amp; reception shuttles. Call (352) 306-4409."
+>
+  <section class="relative py-24 lg:py-32 bg-slate-50 overflow-hidden">
+    <div class="absolute top-20 right-20 w-64 h-64 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-50 rounded-bl-[100px] -z-10 hidden lg:block"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4">Wedding Rentals</p>
+      <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight uppercase leading-[1.05] mb-6">
+        Wedding Golf Cart <span class="text-brand-600 italic">Rentals</span>
+      </h1>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        Getting married in The Villages? Our golf carts are the perfect way to shuttle the wedding party, run reception transfers, and turn your wedding photos into something unforgettable. Multi-cart fleet discounts available.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
+        <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5"><i class="fa-solid fa-bolt"></i> Get a Wedding Quote</a>
+        <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-900 font-bold py-4 px-8 rounded-lg shadow-lg transition-all"><i class="fa-solid fa-phone"></i> (352) 306-4409</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Wedding Service</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Why Couples Choose Us</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {benefits.map((b) => (
+          <div class="bg-slate-50 rounded-2xl p-6 text-center">
+            <div class="w-16 h-16 bg-brand-600 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-5"><i class={`fa-solid ${b.icon}`}></i></div>
+            <h3 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm tracking-wide">{b.title}</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">{b.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Wedding Day Uses</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Where the Cart Comes In</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {useCases.map((u) => (
+          <div class="bg-white rounded-2xl p-6 text-center shadow-sm border border-slate-100">
+            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-brand-600 text-xl"><i class={`fa-solid ${u.icon}`}></i></div>
+            <h3 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm tracking-wide">{u.title}</h3>
+            <p class="text-slate-600 text-sm">{u.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Pick Your Carts</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Cart Options for Weddings</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/2-passenger-deluxe-golf-cart" class="group bg-slate-50 rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform">
+          <div class="h-44 overflow-hidden"><img src="/cart-images/2-passenger-1.jpg" alt="2-Passenger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
+          <div class="p-5"><h3 class="font-heading font-bold text-slate-900 uppercase text-sm mb-1">2-Passenger</h3><p class="text-slate-600 text-sm">Just the couple — perfect for getaway photos.</p></div>
+        </a>
+        <a href="/4-passenger-deluxe-golf-cart" class="group bg-slate-50 rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform">
+          <div class="h-44 overflow-hidden"><img src="/cart-images/4-passenger-1.jpg" alt="4-Passenger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
+          <div class="p-5"><h3 class="font-heading font-bold text-slate-900 uppercase text-sm mb-1">4-Passenger</h3><p class="text-slate-600 text-sm">Bridal party shuttles and small group transfers.</p></div>
+        </a>
+        <a href="/6-passenger-golf-cart" class="group bg-slate-50 rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform">
+          <div class="h-44 overflow-hidden"><img src="/cart-images/6-passenger-1.jpg" alt="6-Passenger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
+          <div class="p-5"><h3 class="font-heading font-bold text-slate-900 uppercase text-sm mb-1">6-Passenger</h3><p class="text-slate-600 text-sm">Wedding party groups and reception shuttles.</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm formName="quote-wedding" hiddenContext={{ "source-page": "wedding", "rental-occasion": "wedding" }} id="quote" />
+</Layout>

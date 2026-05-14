@@ -1,0 +1,222 @@
+---
+import Layout from "../layouts/Layout.astro";
+import QuoteForm from "../components/QuoteForm.astro";
+
+const images = [
+  { src: "/cart-images/6-passenger-1.jpg", alt: "6-Passenger Club Car Tempo — Full Side Profile", title: "Stretched for Six", description: "White Club Car Tempo with extended frame and white canopy — forward bench, middle row, and rear-facing back seat for six passengers." },
+  { src: "/cart-images/6-passenger-2.jpg", alt: "6-Passenger Club Car Tempo — Front 3/4 View", title: "Front 3/4 View", description: "Clean white finish with windshield and side mirror — built to shuttle guests through Villages neighborhoods and event grounds." },
+  { src: "/cart-images/6-passenger-3.jpg", alt: "6-Passenger Club Car Tempo — Front View", title: "Front View", description: "Club Car Tempo front profile with LED headlights and full canopy roof, ready for group outings and wedding parties." },
+];
+
+const keyFeatures = [
+  "6-passenger capacity with spacious seating",
+  "Gas-powered engine for dependable power",
+  "Smooth performance and easy handling",
+  "Long range for extended use",
+  "Perfect for shuttling guests and events",
+];
+
+const perfectFor = [
+  "Retirement communities",
+  "Neighborhoods and residential areas",
+  "Equestrian events and competitions",
+  "Weddings and special occasions",
+  "Conferences and business events",
+  "Festivals and outdoor events",
+];
+---
+
+<Layout title="6-Passenger Golf Cart Rentals in The Villages | Golf Cart Rentals The Villages FL" description="Spacious 6-passenger gas golf cart rentals in The Villages. Built for group transportation and large events. Weekly and monthly rates. Call (352) 306-4409.">
+  <!-- HERO -->
+  <section class="relative py-24 lg:py-32 bg-slate-50 overflow-hidden">
+    <div class="absolute top-20 right-20 w-64 h-64 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-50 rounded-bl-[100px] -z-10 hidden lg:block"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4">6-Passenger</p>
+      <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight uppercase leading-[1.05] mb-6">
+        6-Passenger Golf Cart Rentals <br /><span class="text-brand-600 italic">in The Villages</span>
+      </h1>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        Spacious 6-passenger gas golf cart designed for group transportation and large events in The Villages, Florida. Perfect for family outings, corporate events, wedding parties, and festival transportation with comfortable seating for everyone.
+      </p>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="font-heading font-black text-3xl text-slate-900 uppercase mb-6">6-Passenger Gas Golf Cart Rental</h2>
+          <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 p-8 mb-8">
+            <div class="text-center mb-8">
+              <a href="tel:+13523064409" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5">
+                <i class="fa-solid fa-phone"></i> Call for Pricing
+              </a>
+              <p class="text-slate-600 text-sm mt-3">Available in weekly and monthly rentals</p>
+            </div>
+            <p class="text-slate-700 mb-6 leading-relaxed">
+              Our 6-passenger gas golf cart offers the ultimate group transportation experience with roomy seating and smooth performance. Built for large families, wedding parties, corporate groups, and festival transportation, this cart provides comfortable seating for up to six passengers. The powerful gas engine ensures reliable performance and extended range, making it perfect for all-day events, family adventures, and group transportation throughout The Villages, Florida.
+            </p>
+            <h3 class="font-heading font-black text-lg text-slate-900 uppercase mb-4">Key Features</h3>
+            <ul class="space-y-3">
+              {keyFeatures.map((f) => (
+                <li class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></div>
+                  <span class="text-slate-700">{f}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="bg-brand-50 border border-brand-200 rounded-2xl p-8">
+            <h3 class="font-heading font-black text-lg text-slate-900 uppercase mb-4">Perfect For</h3>
+            <ul class="grid grid-cols-1 gap-2">
+              {perfectFor.map((p) => (
+                <li class="flex items-center gap-2 text-slate-700"><i class="fa-solid fa-circle-check text-brand-600"></i>{p}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="font-heading font-black text-3xl text-slate-900 uppercase mb-6">6-Passenger Golf Cart Gallery</h2>
+          <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden relative">
+            <div class="relative h-96 overflow-hidden bg-slate-100">
+              <div class="absolute top-4 left-4 bg-brand-600 text-white px-3 py-1 rounded-full text-xs font-bold z-10 uppercase tracking-wide shadow-lg shadow-brand-500/30">6-Passenger</div>
+              <img id="slideshow-main-six" class="w-full h-full object-cover transition-opacity duration-500" src={images[0].src} alt={images[0].alt} />
+            </div>
+            <button id="prev-btn-six" class="absolute left-4 top-48 -translate-y-1/2 bg-white/90 hover:bg-white text-brand-600 p-3 rounded-full shadow-lg z-10 w-10 h-10 flex items-center justify-center" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+            <button id="next-btn-six" class="absolute right-4 top-48 -translate-y-1/2 bg-white/90 hover:bg-white text-brand-600 p-3 rounded-full shadow-lg z-10 w-10 h-10 flex items-center justify-center" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+
+            <div class="p-4 bg-slate-50 border-t border-slate-200">
+              <div class="flex gap-2 overflow-x-auto justify-center" id="thumbnails-six">
+                {images.map((img, i) => (
+                  <button class={`flex-shrink-0 thumbnail-btn${i === 0 ? " active" : ""}`} data-index={i} aria-label={`Show image ${i + 1}`}>
+                    <img class={`w-20 h-20 object-cover rounded-lg border-2 ${i === 0 ? "border-brand-600 opacity-100" : "border-transparent opacity-60 hover:opacity-80"}`} src={img.src} alt={`Thumbnail ${i + 1}`} />
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div class="p-6 border-t border-slate-200">
+              <h3 class="font-heading font-bold text-slate-900 uppercase mb-2" id="image-title-six">{images[0].title}</h3>
+              <p class="text-slate-600 text-sm leading-relaxed" id="image-desc-six">{images[0].description}</p>
+            </div>
+          </div>
+
+          <div class="mt-6 bg-slate-50 rounded-2xl p-6 border border-slate-200">
+            <h3 class="font-heading font-black text-lg text-slate-900 uppercase mb-4">Specifications</h3>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+              <div class="bg-white p-4 rounded-xl border border-slate-100"><div class="font-bold text-slate-900">Capacity</div><div class="text-slate-600">6 passengers</div></div>
+              <div class="bg-white p-4 rounded-xl border border-slate-100"><div class="font-bold text-slate-900">Engine</div><div class="text-slate-600">Gas-powered</div></div>
+              <div class="bg-white p-4 rounded-xl border border-slate-100"><div class="font-bold text-slate-900">Top Speed</div><div class="text-slate-600">Up to 25 mph</div></div>
+              <div class="bg-white p-4 rounded-xl border border-slate-100"><div class="font-bold text-slate-900">Range</div><div class="text-slate-600">150+ miles per tank</div></div>
+              <div class="bg-white p-4 rounded-xl border border-slate-100"><div class="font-bold text-slate-900">Design</div><div class="text-slate-600">Open-air canopy</div></div>
+              <div class="bg-white p-4 rounded-xl border border-slate-100"><div class="font-bold text-slate-900">Safety</div><div class="text-slate-600">Seat belts &amp; lights</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RENTAL PERIODS -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Flexible Rentals</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Available Rental Periods</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+        <p class="text-slate-600 mt-6">Choose the rental period that works best for your needs.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100 text-center">
+          <h3 class="font-heading font-black text-2xl text-slate-900 uppercase mb-2">Weekly</h3>
+          <p class="text-slate-600 mb-6">Great value for extended stays</p>
+          <a href="/weekly-golf-cart-rental-villages" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5">View Details <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100 text-center">
+          <h3 class="font-heading font-black text-2xl text-slate-900 uppercase mb-2">Monthly</h3>
+          <p class="text-slate-600 mb-6">Best rates for long-term use</p>
+          <a href="/monthly-golf-cart-rental-villages" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5">View Details <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-black text-3xl md:text-5xl text-white uppercase mb-6 leading-tight">Rent a 6-Passenger Golf Cart in The Villages Today</h2>
+      <p class="text-xl text-slate-300 mb-10">Perfect for large families, group events, and corporate transportation in The Villages, Florida. Available in weekly and monthly rentals. Call us for availability and competitive pricing.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5"><i class="fa-solid fa-phone"></i> Call (352) 306-4409</a>
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-900 font-bold py-4 px-8 rounded-lg shadow-lg transition-all"><i class="fa-solid fa-envelope"></i> Send Message</a>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline define:vars={{ images }}>
+    document.addEventListener("DOMContentLoaded", function () {
+      let currentSlide = 0;
+      const mainImg = document.getElementById("slideshow-main-six");
+      const titleEl = document.getElementById("image-title-six");
+      const descEl = document.getElementById("image-desc-six");
+      const thumbnails = document.querySelectorAll("#thumbnails-six .thumbnail-btn");
+      function updateSlide(index) {
+        currentSlide = index;
+        const image = images[currentSlide];
+        if (mainImg) { mainImg.src = image.src; mainImg.alt = image.alt; }
+        if (titleEl) titleEl.textContent = image.title;
+        if (descEl) descEl.textContent = image.description;
+        thumbnails.forEach((btn, i) => {
+          const img = btn.querySelector("img");
+          if (!img) return;
+          if (i === currentSlide) { btn.classList.add("active"); img.classList.remove("border-transparent","opacity-60"); img.classList.add("border-brand-600","opacity-100"); }
+          else { btn.classList.remove("active"); img.classList.remove("border-brand-600","opacity-100"); img.classList.add("border-transparent","opacity-60"); }
+        });
+      }
+      document.getElementById("next-btn-six")?.addEventListener("click", () => updateSlide((currentSlide + 1) % images.length));
+      document.getElementById("prev-btn-six")?.addEventListener("click", () => updateSlide((currentSlide - 1 + images.length) % images.length));
+      thumbnails.forEach((btn, index) => btn.addEventListener("click", () => updateSlide(index)));
+    });
+  </script>
+
+  <!-- EXPLORE MORE CARTS -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Smaller Group?</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Explore More Cart Options</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/2-passenger-deluxe-golf-cart" class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:-translate-y-1 transition-transform">
+          <div class="h-48 bg-slate-100 overflow-hidden"><img src="/cart-images/2-passenger-1.jpg" alt="2-Passenger Deluxe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-slate-900 uppercase text-sm mb-1">2-Passenger Deluxe</h3>
+            <p class="text-slate-600 text-sm">Compact pick for couples and easy parking.</p>
+          </div>
+        </a>
+        <a href="/4-passenger-deluxe-golf-cart" class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:-translate-y-1 transition-transform">
+          <div class="h-48 bg-slate-100 overflow-hidden"><img src="/cart-images/4-passenger-1.jpg" alt="4-Passenger Deluxe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-slate-900 uppercase text-sm mb-1">4-Passenger Deluxe</h3>
+            <p class="text-slate-600 text-sm">Most popular — great for families and small groups.</p>
+          </div>
+        </a>
+        <a href="/weekly-golf-cart-rental-villages" class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:-translate-y-1 transition-transform">
+          <div class="h-48 bg-brand-50 flex items-center justify-center"><i class="fa-solid fa-calendar-week text-brand-600 text-6xl"></i></div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-slate-900 uppercase text-sm mb-1">Weekly &amp; Monthly</h3>
+            <p class="text-slate-600 text-sm">See rental period options and pricing structure.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm formName="quote-6pass" hiddenContext={{ "source-page": "6-passenger", "cart-interest": "6-Passenger" }} />
+</Layout>

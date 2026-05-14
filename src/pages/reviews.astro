@@ -1,0 +1,83 @@
+---
+import Layout from "../layouts/Layout.astro";
+import QuoteForm from "../components/QuoteForm.astro";
+
+const testimonials = [
+  { name: "Tom &amp; Betty S.", location: "Michigan snowbirds, 4 seasons", quote: "We&rsquo;re snowbirds from Michigan and rent monthly every winter. They take care of everything — maintenance, repairs, even delivered a backup cart when ours needed service. Saved us a ton this season!" },
+  { name: "David &amp; Margaret L.", location: "Extended stay, 3 months", quote: "We needed a cart while caring for my father after his surgery. Reliable the whole stay — cart never gave us a single problem. The team checked in twice just to make sure we were good." },
+  { name: "Carlos &amp; Maria R.", location: "House hunters, 6 weeks", quote: "We were down looking for a place to retire. Having a cart made it so much easier to see neighborhoods and amenities. The team coordinated everything around our move-in date." },
+  { name: "Jennifer K.", location: "Corporate relocate, 2 months", quote: "My company put me in The Villages for two months. The monthly rental was way cheaper than daily and the maintenance was already handled. Highly recommend for business stays." },
+  { name: "Robert &amp; Helen P.", location: "Wedding weekend, 4 carts", quote: "We rented four carts for our daughter&rsquo;s wedding weekend at Brownwood. They coordinated delivery to multiple homes and the carts looked perfect in the photos. Stress-free experience." },
+  { name: "Michael D.", location: "Family vacation, 1 week", quote: "Visited my parents for a week and rented a 4-passenger. Free delivery to their place, cart was clean and full of gas, easy to drop off. Made the whole trip way more fun." },
+];
+---
+<Layout
+  title="Customer Reviews — Golf Cart Rentals The Villages | GCR Villages"
+  description="Real reviews from snowbirds, families, and wedding parties who rented from Golf Cart Rentals The Villages. See what our customers say. Call (352) 306-4409."
+>
+  <section class="relative py-24 lg:py-32 bg-slate-50 overflow-hidden">
+    <div class="absolute top-20 right-20 w-64 h-64 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-50 rounded-bl-[100px] -z-10 hidden lg:block"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4">Reviews</p>
+      <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight uppercase leading-[1.05] mb-6">
+        What Our <span class="text-brand-600 italic">Customers Say</span>
+      </h1>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        Real reviews from real renters — snowbirds, families, wedding parties, and corporate visitors who trusted us to make their stay easier.
+      </p>
+    </div>
+  </section>
+
+  <!-- LIVE REVIEW WIDGET -->
+  <section class="py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Live Reviews</p>
+        <h2 class="font-heading font-black text-2xl sm:text-3xl text-slate-900 uppercase">From Google, Facebook &amp; More</h2>
+      </div>
+      <script type="text/javascript" src="https://reputationhub.site/reputation/assets/review-widget.js" is:inline></script>
+      <iframe class="lc_reviews_widget" src="https://reputationhub.site/reputation/widgets/review_widget/Nn7R4RWXWEBhIo8gtyoe?widgetId=68cdce7ed903d6d9c9b25277" frameborder="0" scrolling="no" style="min-width: 100%; width: 100%; min-height: 500px;"></iframe>
+    </div>
+  </section>
+
+  <!-- WRITTEN TESTIMONIALS -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Customer Stories</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Featured Reviews</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        {testimonials.map((t) => (
+          <figure class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+            <div class="text-brand-500 mb-3">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <blockquote class="text-slate-700 italic leading-relaxed mb-4">&ldquo;<span set:html={t.quote}></span>&rdquo;</blockquote>
+            <figcaption class="text-sm">
+              <div class="font-bold text-slate-900" set:html={t.name}></div>
+              <div class="text-slate-500" set:html={t.location}></div>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAVE A REVIEW -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-3">Recently Rented?</p>
+      <h2 class="font-heading font-black text-2xl sm:text-3xl text-slate-900 uppercase mb-4">Leave Us a Review</h2>
+      <p class="text-slate-600 mb-6">If we made your stay easier, please share your experience — it helps other Villages visitors find us.</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="https://g.page/r/CcWoR8U-jSjPEBM/review" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white border border-slate-200 hover:border-brand-500 text-slate-900 font-bold py-3 px-6 rounded-lg transition-all"><i class="fa-brands fa-google text-brand-600"></i> Google Review</a>
+        <a href="https://facebook.com/gcrvillages" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white border border-slate-200 hover:border-brand-500 text-slate-900 font-bold py-3 px-6 rounded-lg transition-all"><i class="fa-brands fa-facebook text-brand-600"></i> Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm formName="quote-reviews" hiddenContext={{ "source-page": "reviews" }} id="quote" />
+</Layout>

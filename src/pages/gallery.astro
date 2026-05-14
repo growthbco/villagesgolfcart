@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+import QuoteForm from "../components/QuoteForm.astro";
+
+const gallery = [
+  { src: "/cart-images/2-passenger-1.jpg", title: "2-Passenger Cart", caption: "Perfect for couples" },
+  { src: "/cart-images/4-passenger-1.jpg", title: "4-Passenger Cart", caption: "Most popular choice" },
+  { src: "/cart-images/6-passenger-1.jpg", title: "6-Passenger Cart", caption: "Group adventures" },
+  { src: "/cart-images/4-passenger-2.jpg", title: "Premium Fleet", caption: "Well maintained" },
+  { src: "/cart-images/2-passenger-2.jpg", title: "Quality Carts", caption: "Reliable & safe" },
+  { src: "/cart-images/6-passenger-2.jpg", title: "Professional Service", caption: "Since 1999" },
+  { src: "/cart-images/4-passenger-3.jpg", title: "Villages Ready", caption: "Perfect for The Villages" },
+  { src: "/cart-images/2-passenger-3.jpg", title: "2-Passenger Cart", caption: "Compact & efficient" },
+  { src: "/cart-images/6-passenger-3.jpg", title: "4-Passenger Cart", caption: "Family friendly" },
+];
+---
+
+<Layout title="Gallery — Golf Cart Rentals The Villages FL" description="Photos of our premium golf cart fleet and The Villages lifestyle. See what's available for your stay.">
+  <!-- HERO -->
+  <section class="relative py-24 lg:py-32 bg-slate-50 overflow-hidden">
+    <div class="absolute top-20 right-20 w-64 h-64 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-50 rounded-bl-[100px] -z-10 hidden lg:block"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4">Gallery</p>
+      <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight uppercase leading-[1.05] mb-6">
+        Our Fleet <span class="text-brand-600 italic">In Pictures</span>
+      </h1>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        Take a look at our beautiful golf carts and the amazing Villages lifestyle. Every picture tells a story of fun, freedom, and family.
+      </p>
+    </div>
+  </section>
+
+  <!-- GRID -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {gallery.map((img) => (
+          <div class="group bg-white rounded-3xl overflow-hidden shadow-xl shadow-slate-200/50 border border-slate-100">
+            <div class="aspect-[4/3] overflow-hidden bg-slate-100">
+              <img src={img.src} alt={img.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="font-heading font-bold text-slate-900 uppercase text-sm tracking-wide mb-1">{img.title}</h3>
+              <p class="text-sm text-slate-500">{img.caption}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-black text-3xl md:text-5xl text-white uppercase mb-6 leading-tight">Ready to Join Our Happy Customers?</h2>
+      <p class="text-xl text-slate-300 mb-10">Book a cart today and start creating amazing memories in The Villages.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5">Book Your Cart</a>
+        <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-900 font-bold py-4 px-8 rounded-lg shadow-lg transition-all"><i class="fa-solid fa-phone"></i> Call (352) 306-4409</a>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm formName="quote-gallery" hiddenContext={{ "source-page": "gallery" }} />
+</Layout>

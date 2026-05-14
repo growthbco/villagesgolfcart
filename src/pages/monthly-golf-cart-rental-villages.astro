@@ -1,0 +1,342 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const fleet = [
+  { title: "2-Passenger", href: "/2-passenger-deluxe-golf-cart", img: "/cart-images/2-passenger-1.jpg", blurb: "Perfect for couples", badge: null },
+  { title: "4-Passenger", href: "/4-passenger-deluxe-golf-cart", img: "/cart-images/4-passenger-1.jpg", blurb: "Most popular choice", badge: "Most Popular" },
+  { title: "6-Passenger", href: "/6-passenger-golf-cart", img: "/cart-images/6-passenger-1.jpg", blurb: "Great for groups", badge: null },
+];
+
+const coreBenefits = [
+  { icon: "fa-star", title: "Premium Fleet", body: "Well-maintained and reliable carts for the whole month." },
+  { icon: "fa-shield-halved", title: "Quality Carts", body: "Clean, safe vehicles inspected before every delivery." },
+  { icon: "fa-medal", title: "Professional Service", body: "Serving The Villages since 1999." },
+  { icon: "fa-map-location-dot", title: "Villages Ready", body: "Outfitted for The Villages lifestyle from day one." },
+];
+
+const useCases = [
+  { icon: "fa-snowflake", title: "Seasonal Residents", body: "Snowbirds staying 3–6 months get tremendous value and zero hassle." },
+  { icon: "fa-briefcase", title: "Extended Work Stays", body: "Long-term business assignments and corporate relocations." },
+  { icon: "fa-heart-pulse", title: "Caring for Family", body: "Visits to help with aging relatives or recovery support." },
+  { icon: "fa-house-chimney", title: "House Shopping", body: "Trial period before buying — see if Villages life fits." },
+];
+
+const whyChoose = [
+  { icon: "fa-piggy-bank", title: "Great Value", body: "Excellent value for extended stays — best per-day pricing we offer." },
+  { icon: "fa-hand-holding-heart", title: "Hassle-Free Living", body: "One payment, one contract, complete peace of mind." },
+  { icon: "fa-wrench", title: "Free Maintenance", body: "All repairs, fuel system service, and upkeep included." },
+  { icon: "fa-crown", title: "VIP Treatment", body: "Priority service and a dedicated account manager." },
+];
+
+const favorites = [
+  { label: "Winter Escape (Nov–Mar)", icon: "fa-snowflake" },
+  { label: "Home Search", icon: "fa-house-chimney" },
+  { label: "Medical Care", icon: "fa-suitcase-medical" },
+  { label: "Trial Living", icon: "fa-clipboard-check" },
+];
+
+const included = [
+  { heading: "Maintenance &amp; Service", icon: "fa-wrench", items: [
+    "Monthly safety inspections",
+    "Fuel system maintenance &amp; service",
+    "Tire pressure checks",
+    "Brake adjustments",
+    "Emergency roadside assistance",
+  ]},
+  { heading: "Fuel &amp; Utilities", icon: "fa-gas-pump", items: [
+    "All charging costs covered",
+    "No fuel surcharges",
+    "Charger delivery &amp; pickup",
+    "Extension cords provided",
+    "Energy-efficient operation",
+  ]},
+  { heading: "Support &amp; Service", icon: "fa-headset", items: [
+    "Dedicated monthly customer line",
+    "Priority service appointments",
+    "7-day emergency support",
+    "Replacement cart if needed",
+    "Personal account manager",
+  ]},
+  { heading: "Monthly Perks", icon: "fa-gift", items: [
+    "Custom cart accessories",
+    "Weather protection upgrades",
+    "GPS navigation system",
+    "Cup holders &amp; storage",
+    "Flexible pickup / delivery",
+  ]},
+];
+
+const testimonials = [
+  { name: "Tom &amp; Betty S.", location: "Michigan snowbirds, 4 seasons", quote: "We&rsquo;re snowbirds from Michigan and rent monthly every winter. They take care of everything — maintenance, repairs, even delivered a backup cart when ours needed service. Saved us a ton this season!" },
+  { name: "David &amp; Margaret L.", location: "Extended stay, 3 months", quote: "We needed a cart while caring for my father after his surgery. Reliable the whole stay — cart never gave us a single problem. The team checked in twice just to make sure we were good." },
+  { name: "Carlos &amp; Maria R.", location: "House hunters, 6 weeks", quote: "We were down looking for a place to retire. Having a cart made it so much easier to see neighborhoods and amenities. The team coordinated everything around our move-in date." },
+  { name: "Jennifer K.", location: "Corporate relocate, 2 months", quote: "My company put me in The Villages for two months. The monthly rental was way cheaper than daily and the maintenance was already handled. Highly recommend for business stays." },
+];
+---
+<Layout
+  title="Monthly Golf Cart Rentals in The Villages, FL — Extended Stay Value | GCR Villages"
+  description="Monthly golf cart rentals in The Villages, FL. Perfect for seasonal residents and snowbirds. Maintenance, charging, and priority support all included. Call (352) 306-4409."
+>
+  <!-- HERO -->
+  <section class="relative py-24 lg:py-32 bg-slate-50 overflow-hidden">
+    <div class="absolute top-20 right-20 w-64 h-64 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-50 rounded-bl-[100px] -z-10 hidden lg:block"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4">Monthly Rentals</p>
+      <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight uppercase leading-[1.05] mb-6">
+        Monthly Golf Cart Rentals <span class="text-brand-600 italic">Extended Stay Value</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-700 max-w-3xl mx-auto font-semibold mb-3">Perfect for Seasonal Living</p>
+      <p class="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        Planning an extended stay in The Villages? Our monthly rentals offer unbeatable value for seasonal residents, extended visitors, and anyone staying 30+ days. Free delivery, charging covered, priority service.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
+        <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5">
+          <i class="fa-solid fa-bolt"></i> Get a Monthly Quote
+        </a>
+        <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-900 font-bold py-4 px-8 rounded-lg shadow-lg transition-all">
+          <i class="fa-solid fa-phone"></i> (352) 306-4409
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLEET -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Choose Your Cart</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Available Monthly</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {fleet.map((f) => (
+          <a href={f.href} class="group bg-white rounded-3xl overflow-hidden shadow-xl shadow-slate-200/50 hover:-translate-y-1 transition-transform relative">
+            {f.badge && <span class="absolute top-4 left-4 z-20 bg-brand-100 text-brand-700 text-xs font-bold px-3 py-1 rounded-full border border-brand-200">{f.badge}</span>}
+            <div class="h-56 bg-slate-100 overflow-hidden">
+              <img src={f.img} alt={f.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-6">
+              <h3 class="font-heading font-black text-xl text-slate-900 uppercase mb-2">{f.title}</h3>
+              <p class="text-slate-600 text-sm mb-4">{f.blurb}</p>
+              <span class="inline-flex items-center gap-1 text-brand-600 font-bold text-sm">View Details <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE BENEFITS -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Premium Fleet</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">What You Get</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {coreBenefits.map((b) => (
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-4 text-brand-600 text-xl"><i class={`fa-solid ${b.icon}`}></i></div>
+            <h3 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm tracking-wide">{b.title}</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">{b.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Best For</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Who Picks Monthly</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {useCases.map((u) => (
+          <div class="bg-slate-50 rounded-2xl p-6 text-center">
+            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-brand-600 text-xl"><i class={`fa-solid ${u.icon}`}></i></div>
+            <h3 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm tracking-wide">{u.title}</h3>
+            <p class="text-slate-600 text-sm">{u.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE MONTHLY -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Why Monthly</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Why Choose Monthly Rentals?</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {whyChoose.map((w) => (
+          <div class="bg-white rounded-2xl p-8 text-center shadow-sm border border-slate-100">
+            <div class="w-16 h-16 bg-brand-600 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-5"><i class={`fa-solid ${w.icon}`}></i></div>
+            <h3 class="font-heading font-bold text-slate-900 uppercase mb-3 text-sm">{w.title}</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">{w.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SEASONAL FAVORITES -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-3">Seasonal Resident Favorites</p>
+      <h2 class="font-heading font-black text-2xl sm:text-3xl text-slate-900 uppercase mb-6">Why Snowbirds Pick Monthly</h2>
+      <div class="flex flex-wrap justify-center gap-3">
+        {favorites.map((f) => (
+          <span class="inline-flex items-center gap-2 bg-brand-50 border border-brand-200 text-brand-700 font-semibold px-5 py-3 rounded-full"><i class={`fa-solid ${f.icon}`}></i> {f.label}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">All-Inclusive</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">What&rsquo;s Included in Your Monthly Rental</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {included.map((g) => (
+          <div class="bg-white rounded-2xl p-6">
+            <h3 class="font-heading font-bold text-brand-700 uppercase mb-4 text-sm tracking-wide flex items-center gap-2" set:html={`<i class='fa-solid ${g.icon}'></i> ${g.heading}`}></h3>
+            <ul class="space-y-2">
+              {g.items.map((i) => (
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1 text-xs"></i><span class="text-slate-700 text-sm" set:html={i}></span></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Reviews</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">From Our Monthly Renters</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        {testimonials.map((t) => (
+          <figure class="bg-slate-50 rounded-2xl p-8 shadow-sm border border-slate-100">
+            <div class="text-brand-500 mb-3">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <blockquote class="text-slate-700 italic leading-relaxed mb-4">&ldquo;<span set:html={t.quote}></span>&rdquo;</blockquote>
+            <figcaption class="text-sm">
+              <div class="font-bold text-slate-900" set:html={t.name}></div>
+              <div class="text-slate-500" set:html={t.location}></div>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-3">Shorter Stay?</p>
+      <h2 class="font-heading font-black text-2xl sm:text-3xl text-slate-900 uppercase mb-4">Weekly Might Be a Better Fit</h2>
+      <p class="text-slate-600 mb-6">Only in town for a week or two? Weekly rentals are built for visitors and short stays — same free delivery and insurance.</p>
+      <a href="/weekly-golf-cart-rental-villages" class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 border border-slate-200 text-slate-900 font-bold py-3 px-6 rounded-lg transition-all">See Weekly Rates <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-black text-3xl md:text-5xl text-white uppercase mb-6 leading-tight">Lock In Your Monthly Cart</h2>
+      <p class="text-xl text-slate-300 mb-10">Send your stay dates and address — we&rsquo;ll quote a flat monthly rate including everything.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5">Get a Monthly Quote</a>
+        <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-900 font-bold py-4 px-8 rounded-lg shadow-lg transition-all"><i class="fa-solid fa-phone"></i> (352) 306-4409</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INLINE FORM -->
+  <section id="quote" class="py-20 bg-white">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Get In Touch</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Get Your Monthly Quote</h2>
+        <p class="text-slate-600 mt-4">Fill out the form below and we&rsquo;ll get back to you within 2 hours!</p>
+      </div>
+      <div class="bg-slate-50 rounded-3xl shadow-xl p-8">
+        <form name="quote-monthly" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+          <input type="hidden" name="form-name" value="quote-monthly" />
+          <input type="hidden" name="rental-term" value="monthly" />
+          <p class="hidden"><label>Don&rsquo;t fill this out: <input name="bot-field" /></label></p>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-1">Name <span class="text-brand-600">*</span></label>
+              <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-1">Phone <span class="text-brand-600">*</span></label>
+              <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1">Email</label>
+            <input type="email" name="email" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1">Delivery Address in The Villages</label>
+            <input type="text" name="delivery-address" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-1">Stay Dates</label>
+              <input type="text" name="rental-dates" placeholder="e.g. Dec 1 – Mar 31" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-1">Cart Type</label>
+              <select name="cart-type" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all">
+                <option value="">Not sure yet</option>
+                <option value="2-passenger">2-Passenger Deluxe</option>
+                <option value="4-passenger">4-Passenger Deluxe</option>
+                <option value="6-passenger">6-Passenger</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1">Message</label>
+            <textarea name="message" rows="3" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all"></textarea>
+          </div>
+
+          <label class="flex items-start gap-2 text-xs text-slate-600">
+            <input type="checkbox" name="sms-consent" class="mt-0.5" />
+            <span>I agree to receive text messages for booking and follow-up. Reply STOP to opt out.</span>
+          </label>
+
+          <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-6 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5 flex justify-center items-center gap-2">
+            <i class="fa-solid fa-bolt"></i> Get My Quote
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>

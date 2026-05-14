@@ -1,0 +1,71 @@
+---
+import Layout from "../layouts/Layout.astro";
+import QuoteForm from "../components/QuoteForm.astro";
+
+const faqs = [
+  { q: "How far in advance should I book my golf cart rental?", a: "We recommend booking at least 1–2 weeks in advance, especially during peak season (November–April). However, we often have last-minute availability! For weekend rentals, booking 2–3 weeks ahead ensures you get your preferred cart type. During off-peak season (May–October), you can often book just a few days in advance." },
+  { q: "What if I need to cancel or change my reservation?", a: "No problem! We offer flexible cancellation up to 24 hours before your rental. Changes can be made anytime — just give us a call! If you need to cancel within 24 hours, we'll work with you to reschedule or provide a credit for future use." },
+  { q: "Can I extend my rental while I have the cart?", a: "Absolutely! Just call us and we can extend your rental. Extensions are subject to availability, but we'll do our best to help you keep enjoying your cart. You can extend by the day, week, or even month depending on your plans." },
+  { q: "What's included with my golf cart rental?", a: "Your rental includes the golf cart, comprehensive insurance, free delivery to all Villages locations, a full tank of gas, and basic roadside assistance. We also provide a detailed map of The Villages and emergency contact information." },
+  { q: "What payment methods do you accept?", a: "We accept cash, credit cards (Visa, MasterCard, American Express, Discover), personal checks, and bank transfers. For credit card payments, we require a valid ID and the card must be in the renter's name. We also offer payment plans for monthly rentals." },
+  { q: "How can I get pricing information?", a: "For detailed pricing information, please visit our pricing page or call us at (352) 306-4409. We offer personalized quotes with no hidden fees, and our rates vary based on cart type and rental duration." },
+  { q: "Do you really deliver to all Villages locations for free?", a: "Yes, absolutely! We provide free delivery to ALL Villages locations including Spanish Springs, Lake Sumter Landing, Brownwood, Sawgrass Grove, Fenney, Rohan, Water Lily, Eastport, and any other Villages area. No delivery fees, no mileage charges, no hidden costs." },
+  { q: "What are your delivery and pickup hours?", a: "Standard delivery times are 7 AM – 7 PM daily, but we can arrange early morning (6 AM) or late evening (8 PM) delivery for an additional fee. Pickup times are flexible and can be arranged when you book." },
+  { q: "What if I'm not home when you deliver the cart?", a: "No problem! We can leave the cart in your driveway or garage if you provide access instructions. We'll send you a text when we arrive and leave. The cart will be fully fueled, clean, and ready to use." },
+  { q: "Do I need a driver's license to rent a golf cart?", a: "Yes, you need a valid driver's license to rent a golf cart. The license must be current and not expired. We require that the primary renter be at least 18 years old. We'll make a copy of all drivers' licenses for our records." },
+  { q: "Where can I drive the golf cart in The Villages?", a: "Golf carts in The Villages can be driven on designated golf cart paths, residential streets, and some main roads. You can access all the major squares, shopping centers, restaurants, golf courses, and recreational facilities. We'll provide you with a detailed map." },
+  { q: "What if I have an accident or the cart breaks down?", a: "Don't worry! We provide 24/7 emergency support. If you have any issues, just call (352) 306-4409 and we'll help immediately. For breakdowns, we'll either fix the issue on-site or bring you a replacement cart. All carts are fully insured." },
+  { q: "How old are your golf carts?", a: "We maintain a fleet of golf carts that are typically 2–5 years old. We regularly update our fleet to ensure reliability and comfort. All carts undergo thorough maintenance checks before each rental." },
+  { q: "Do you offer any additional accessories or add-ons?", a: "Yes! We offer several add-ons: golf club holders, coolers, phone chargers, and custom Villages maps. We can also arrange for special decorations for birthdays or anniversaries. Contact us for current pricing." },
+  { q: "Can I rent a golf cart for someone else?", a: "Yes, you can rent a golf cart for someone else. The person who will be driving must have a valid driver's license and be present at delivery. You'll need to provide their license information when booking." },
+];
+---
+
+<Layout title="FAQ — Golf Cart Rentals The Villages FL" description="Frequently asked questions about golf cart rentals in The Villages. Booking, delivery, pricing, insurance, and more.">
+  <!-- HERO -->
+  <section class="relative py-24 lg:py-32 bg-slate-50 overflow-hidden">
+    <div class="absolute top-20 right-20 w-64 h-64 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-50 rounded-bl-[100px] -z-10 hidden lg:block"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4">FAQ</p>
+      <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight uppercase leading-[1.05] mb-6">
+        Common <span class="text-brand-600 italic">Questions</span>
+      </h1>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        Find answers to the most common questions about our golf cart rental services. Can't find what you're looking for? Just give us a call.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="bg-white rounded-2xl shadow-sm border border-slate-100 group">
+            <summary class="cursor-pointer px-6 py-5 flex items-center justify-between font-bold text-slate-900 list-none">
+              <span class="pr-4">{faq.q}</span>
+              <i class="fa-solid fa-chevron-down text-brand-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-black text-3xl md:text-5xl text-white uppercase mb-6 leading-tight">Still Have Questions?</h2>
+      <p class="text-xl text-slate-300 mb-10">Can't find the answer you're looking for? We're here to help!</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5"><i class="fa-solid fa-phone"></i> Call (352) 306-4409</a>
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-900 font-bold py-4 px-8 rounded-lg shadow-lg transition-all"><i class="fa-solid fa-envelope"></i> Send Message</a>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm formName="quote-faq" hiddenContext={{ "source-page": "faq" }} />
+</Layout>

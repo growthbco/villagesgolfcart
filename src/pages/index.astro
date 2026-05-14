@@ -1,0 +1,406 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const carts = [
+  { title: "2-Passenger", href: "/2-passenger-deluxe-golf-cart", img: "/cart-images/2-passenger-1.jpg", desc: "Perfect for couples", badge: null },
+  { title: "4-Passenger", href: "/4-passenger-deluxe-golf-cart", img: "/cart-images/4-passenger-1.jpg", desc: "Great for families", badge: "Most Popular" },
+  { title: "6-Passenger", href: "/6-passenger-golf-cart", img: "/cart-images/6-passenger-1.jpg", desc: "Perfect for groups", badge: null },
+];
+
+const locations = [
+  { name: "Spanish Springs", href: "/spanish-springs-golf-cart-rentals" },
+  { name: "Lake Sumter", href: "/lake-sumter-golf-cart-rentals" },
+  { name: "Brownwood", href: "/brownwood-golf-cart-rentals" },
+  { name: "Sawgrass Grove", href: "/sawgrass-grove-golf-cart-rentals" },
+  { name: "Fenney", href: "/fenney-golf-cart-rentals" },
+  { name: "Rohan", href: "/rohan-golf-cart-rentals" },
+  { name: "Water Lily", href: "/water-lily-golf-cart-rentals" },
+  { name: "Eastport", href: "/eastport-golf-cart-rentals" },
+];
+
+const faqs = [
+  { q: "How much does golf cart rental cost in The Villages?", a: "Contact us for current pricing on weekly and monthly golf cart rentals. Every quote includes the fuel surcharge and all applicable taxes — no hidden fees. Call (352) 306-4409 for a personalized quote." },
+  { q: "Do you deliver golf carts to all Villages locations?", a: "Absolutely! We provide FREE delivery and pickup to every Villages location including Spanish Springs, Lake Sumter Landing, Brownwood, Sawgrass Grove, Fenney, Rohan, Water Lily, Eastport, and everywhere in between." },
+  { q: "Can I book a golf cart rental online?", a: "You sure can! Book online 24/7 right here on our website, give us a call at (352) 306-4409 (we love chatting!), or use our live chat feature." },
+  { q: "What's included with my golf cart rental?", a: "Free delivery and pickup anywhere in The Villages, a full tank of gas, all safety equipment, 24-hour roadside assistance, and a complimentary Villages area map." },
+  { q: "Are your golf carts safe and reliable?", a: "Safety first! Every cart is inspected, cleaned, and maintained to the highest standards. All carts have seatbelts, lights, turn signals, and are Villages community approved." },
+  { q: "How long have you been serving The Villages?", a: "We've been proud Villages business owners since 1999! We've watched this community grow and have been honored to serve thousands of wonderful neighbors over the years." },
+];
+---
+
+<Layout
+  title="Golf Cart Rentals in The Villages, FL — Weekly &amp; Monthly | GCR Villages"
+  description="Premium golf cart rentals in The Villages, Florida. 2, 4, and 6-passenger gas carts available weekly and monthly with free delivery and insurance included. Call (352) 306-4409."
+>
+  <!-- 1. HERO -->
+  <section id="hero" class="relative pt-16 pb-20 lg:pt-24 lg:pb-28 overflow-hidden bg-slate-50">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-50 rounded-bl-[100px] -z-10 hidden lg:block"></div>
+    <div class="absolute top-20 right-20 w-64 h-64 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="max-w-xl">
+          <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4">The Gold Standard Since 1999</p>
+          <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight uppercase leading-[1.05] mb-6">
+            The Gold Standard <br />
+            <span class="text-brand-600 italic">In Golf Cart Rentals</span>
+          </h1>
+          <p class="text-lg text-slate-600 font-medium mb-8 leading-relaxed">
+            Proudly serving The Villages since 1999. Delivering professional service, quality carts, and trusted rentals you can count on.
+          </p>
+
+          <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-100 relative">
+            <div class="absolute -top-4 -right-4 bg-brand-100 text-brand-700 font-bold px-4 py-1 rounded-full text-sm shadow-sm border border-brand-200">Get Quote Today!</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-6 font-heading uppercase">Find Your Perfect Cart</h3>
+            <form name="hero-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+              <input type="hidden" name="form-name" value="hero-quote" />
+              <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-1" for="fname">First Name</label>
+                  <input id="fname" name="first-name" type="text" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" placeholder="John" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-1" for="lname">Last Name</label>
+                  <input id="lname" name="last-name" type="text" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" placeholder="Doe" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1" for="email">Email Address</label>
+                <input id="email" name="email" type="email" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" placeholder="john@example.com" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1" for="phone">Phone Number</label>
+                <input id="phone" name="phone" type="tel" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" placeholder="(555) 000-0000" />
+              </div>
+              <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-6 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5 flex justify-center items-center gap-2 text-lg">
+                <i class="fa-solid fa-bolt"></i> Get Availability &amp; Pricing
+              </button>
+              <p class="text-xs text-center text-slate-500 mt-3">We respect your privacy. No spam ever.</p>
+            </form>
+          </div>
+        </div>
+
+        <div class="relative hidden lg:flex h-[600px] items-center justify-center">
+          <div class="absolute -inset-4 bg-brand-100/40 rounded-[40px] transform -rotate-2"></div>
+          <div class="relative w-full h-full rounded-[30px] shadow-2xl z-10 overflow-hidden" id="hero-slideshow">
+            <img class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100" src="/cart-images/4-passenger-1.jpg" alt="4-Passenger Deluxe golf cart rental in The Villages" />
+            <img class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" src="/cart-images/2-passenger-1.jpg" alt="2-Passenger Deluxe golf cart rental in The Villages" />
+            <img class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" src="/cart-images/6-passenger-1.jpg" alt="6-Passenger golf cart rental in The Villages" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. PREMIUM FLEET -->
+  <section class="py-12 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm flex items-center justify-center gap-4">
+          <span class="w-12 h-0.5 bg-brand-200"></span>
+          Premium Golf Cart Fleet Available in The Villages FL
+          <span class="w-12 h-0.5 bg-brand-200"></span>
+        </p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-8">
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mx-auto mb-3 text-brand-600 text-2xl"><i class="fa-solid fa-gas-pump"></i></div>
+          <p class="font-heading font-bold text-slate-900 uppercase text-sm">Gas Powered</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mx-auto mb-3 text-brand-600 text-2xl"><i class="fa-solid fa-volume-xmark"></i></div>
+          <p class="font-heading font-bold text-slate-900 uppercase text-sm">Yamaha QuieTech</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mx-auto mb-3 text-brand-600 text-2xl"><i class="fa-solid fa-bolt"></i></div>
+          <p class="font-heading font-bold text-slate-900 uppercase text-sm">Club Car Gas</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mx-auto mb-3 text-brand-600 text-2xl"><i class="fa-solid fa-headset"></i></div>
+          <p class="font-heading font-bold text-slate-900 uppercase text-sm">24-Hour Roadside</p>
+        </div>
+      </div>
+      <p class="text-center text-slate-600 mb-6">All rentals include 24-Hour Roadside Assistance via our partnership with <span class="font-semibold text-brand-700">24hrcartclub.com</span>.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/gallery" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5">View Fleet <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all">Get Quote <i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PRICING TEASER -->
+  <section id="inventory" class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Our Fleet</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Golf Cart Rental Pricing in The Villages</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+        <p class="text-slate-600 mt-6">Contact us for current pricing and availability</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {carts.map((cart) => (
+          <a href={cart.href} class="bg-white rounded-3xl overflow-hidden shadow-xl shadow-slate-200/50 flex flex-col group relative">
+            {cart.badge && (
+              <div class="absolute top-4 left-4 z-20 bg-brand-100 text-brand-700 text-xs font-bold px-3 py-1 rounded-full border border-brand-200">{cart.badge}</div>
+            )}
+            <div class="h-64 bg-slate-100 relative overflow-hidden">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={cart.img} alt={cart.title} />
+            </div>
+            <div class="p-8 text-center">
+              <h3 class="font-heading font-black text-2xl text-slate-900 uppercase mb-2">{cart.title}</h3>
+              <p class="text-slate-600 mb-4">{cart.desc}</p>
+              <p class="text-2xl font-bold text-brand-600 mb-1">Contact for Pricing</p>
+              <p class="text-sm text-slate-500 mb-6">Call (352) 306-4409 for a quote</p>
+              <span class="inline-flex items-center gap-2 text-slate-900 font-bold group-hover:text-brand-600 transition-colors">
+                View Details <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mt-12">
+        <a href="/pricing" class="inline-flex items-center gap-2 justify-center bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5">View Full Pricing <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="/contact" class="inline-flex items-center gap-2 justify-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition-all">Contact Us <i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WHY US -->
+  <section id="value" class="py-24 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-4xl mx-auto mb-16">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Why Choose Us</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-slate-900 uppercase leading-tight">Why Choose Our Golf Cart Rentals in The Villages</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+        <p class="text-slate-600 mt-6">It's not just business — <span class="text-brand-600 italic">it's personal.</span></p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center">
+          <div class="w-16 h-16 bg-brand-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-brand-500/30">
+            <i class="fa-solid fa-handshake text-white text-2xl"></i>
+          </div>
+          <h3 class="font-heading font-black text-xl text-slate-900 uppercase mb-3">We're Local!</h3>
+          <p class="text-slate-600 leading-relaxed">We live here too! We know every street, every square, and probably your cousin Jim.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center">
+          <div class="w-16 h-16 bg-brand-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-brand-500/30">
+            <i class="fa-solid fa-phone-volume text-white text-2xl"></i>
+          </div>
+          <h3 class="font-heading font-black text-xl text-slate-900 uppercase mb-3">Personal Service</h3>
+          <p class="text-slate-600 leading-relaxed">Call us anytime! We answer our own phones and remember your name.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center">
+          <div class="w-16 h-16 bg-brand-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-brand-500/30">
+            <i class="fa-solid fa-sparkles text-white text-2xl"></i>
+          </div>
+          <h3 class="font-heading font-black text-xl text-slate-900 uppercase mb-3">Sparkling Clean</h3>
+          <p class="text-slate-600 leading-relaxed">Every cart is cleaned and sanitized like it's going to grandma's house.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. MID-PAGE CTA -->
+  <section class="py-20 bg-brand-50 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase mb-4 leading-tight">Ready to Rent Your Golf Cart in The Villages?</h2>
+      <p class="text-lg text-slate-600 mb-8">Or give us a call — we love to chat.</p>
+      <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5 text-lg">
+        <i class="fa-solid fa-phone"></i> (352) 306-4409
+      </a>
+    </div>
+  </section>
+
+  <!-- 6. REVIEWS (horizontal, standalone section) -->
+  <section id="reviews" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">What Customers Say</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Golf Cart Rental Reviews — The Villages FL</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <script type="text/javascript" src="https://reputationhub.site/reputation/assets/review-widget.js" is:inline></script>
+      <iframe class="lc_reviews_widget" src="https://reputationhub.site/reputation/widgets/review_widget/Nn7R4RWXWEBhIo8gtyoe?widgetId=68cdce7ed903d6d9c9b25277" frameborder="0" scrolling="no" style="min-width: 100%; width: 100%; min-height: 400px;"></iframe>
+    </div>
+  </section>
+
+  <!-- 7. FREE DELIVERY / LOCATIONS -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Free Delivery</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Free Golf Cart Delivery Throughout The Villages FL</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+        <p class="text-slate-600 mt-6">From Fenney to Spanish Springs, we've got you covered — free delivery and pickup to every Villages location.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {locations.map((loc) => (
+          <a href={loc.href} class="bg-white border border-slate-200 rounded-xl p-5 flex items-center gap-3 hover:shadow-lg hover:border-brand-300 transition-all">
+            <i class="fa-solid fa-location-dot text-brand-500"></i>
+            <span class="font-bold text-slate-900">{loc.name}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. SERVICES OVERVIEW -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">All Our Services</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Complete Golf Cart Rental Services in The Villages</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+        <p class="text-slate-600 mt-6">From quick weekend getaways to extended stays, we have the perfect rental option for you.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+          <div class="w-12 h-12 bg-brand-600 rounded-xl flex items-center justify-center mb-5 shadow-lg shadow-brand-500/30"><i class="fa-solid fa-calendar-week text-white"></i></div>
+          <h3 class="font-heading font-black text-lg text-slate-900 uppercase mb-4">Rental Durations</h3>
+          <ul class="space-y-2.5">
+            <li><a href="/weekly-golf-cart-rental-villages" class="text-slate-700 hover:text-brand-600 flex items-center gap-2"><i class="fa-solid fa-arrow-right text-xs text-brand-500"></i>Weekly — Perfect for weekends</a></li>
+            <li><a href="/weekly-golf-cart-rental-villages" class="text-slate-700 hover:text-brand-600 flex items-center gap-2"><i class="fa-solid fa-arrow-right text-xs text-brand-500"></i>Weekly — Best for vacations</a></li>
+            <li><a href="/monthly-golf-cart-rental-villages" class="text-slate-700 hover:text-brand-600 flex items-center gap-2"><i class="fa-solid fa-arrow-right text-xs text-brand-500"></i>Monthly — Extended stays</a></li>
+          </ul>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+          <div class="w-12 h-12 bg-brand-600 rounded-xl flex items-center justify-center mb-5 shadow-lg shadow-brand-500/30"><i class="fa-solid fa-car-side text-white"></i></div>
+          <h3 class="font-heading font-black text-lg text-slate-900 uppercase mb-4">Cart Types</h3>
+          <ul class="space-y-2.5">
+            <li><a href="/2-passenger-deluxe-golf-cart" class="text-slate-700 hover:text-brand-600 flex items-center gap-2"><i class="fa-solid fa-arrow-right text-xs text-brand-500"></i>2-Passenger — Perfect for couples</a></li>
+            <li><a href="/4-passenger-deluxe-golf-cart" class="text-slate-700 hover:text-brand-600 flex items-center gap-2"><i class="fa-solid fa-arrow-right text-xs text-brand-500"></i>4-Passenger — Most popular</a></li>
+            <li><a href="/6-passenger-golf-cart" class="text-slate-700 hover:text-brand-600 flex items-center gap-2"><i class="fa-solid fa-arrow-right text-xs text-brand-500"></i>6-Passenger — Group adventures</a></li>
+          </ul>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+          <div class="w-12 h-12 bg-brand-600 rounded-xl flex items-center justify-center mb-5 shadow-lg shadow-brand-500/30"><i class="fa-solid fa-circle-info text-white"></i></div>
+          <h3 class="font-heading font-black text-lg text-slate-900 uppercase mb-4">More Services</h3>
+          <ul class="space-y-2.5">
+            <li><a href="/services" class="text-slate-700 hover:text-brand-600 flex items-center gap-2"><i class="fa-solid fa-arrow-right text-xs text-brand-500"></i>All Services Overview</a></li>
+            <li><a href="/gallery" class="text-slate-700 hover:text-brand-600 flex items-center gap-2"><i class="fa-solid fa-arrow-right text-xs text-brand-500"></i>View Our Fleet Gallery</a></li>
+            <li><a href="/about-us" class="text-slate-700 hover:text-brand-600 flex items-center gap-2"><i class="fa-solid fa-arrow-right text-xs text-brand-500"></i>Learn About Our Family</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-center text-slate-600 mt-10">Need help choosing? <a href="/contact" class="text-brand-700 font-bold hover:underline">Contact us</a> or check out our <a href="/faq" class="text-brand-700 font-bold hover:underline">FAQ page</a> for answers.</p>
+    </div>
+  </section>
+
+  <!-- 9. FAQ -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Common Questions</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Golf Cart Rental FAQs — The Villages FL</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+        <p class="text-slate-600 mt-6">Here's what our neighbors usually ask us</p>
+      </div>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="bg-white rounded-2xl shadow-sm border border-slate-100 group">
+            <summary class="cursor-pointer px-6 py-5 flex items-center justify-between font-bold text-slate-900 list-none">
+              <span class="pr-4">{faq.q}</span>
+              <i class="fa-solid fa-chevron-down text-brand-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a href="/faq" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition-all">View All FAQs <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. MAP + QUOTE FORM (side by side) -->
+  <section class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="text-brand-400 font-bold tracking-widest uppercase text-sm mb-2">Custom Quote</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-white uppercase">Get Your Golf Cart Rental Quote — The Villages</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+        <!-- Google Map -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col">
+          <div class="p-6 pb-4">
+            <h3 class="font-heading font-black text-lg text-slate-900 uppercase mb-1">Find Us on the Map</h3>
+            <p class="text-sm text-slate-600">624 Holly Cir, Lady Lake, FL 32159</p>
+          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3491.9573626933825!2d-81.9187587!3d28.929316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e7c797b6a1caed%3A0x7cec2b75d88e96a7!2sGolf%20Cart%20Rental%20The%20Villages!5e0!3m2!1sen!2sus!4v1778786377966!5m2!1sen!2sus"
+            class="w-full flex-1 min-h-[420px]"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <!-- Quote form -->
+        <div class="bg-white text-slate-900 rounded-2xl p-6 shadow-2xl">
+          <h3 class="font-heading font-black text-lg text-slate-900 uppercase mb-1">Get Your Quote</h3>
+          <p class="text-sm text-slate-600 mb-5">Fill out the form — we'll get back to you within 2 hours.</p>
+
+          <form name="bottom-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-3">
+            <input type="hidden" name="form-name" value="bottom-quote" />
+            <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+            <div class="grid sm:grid-cols-2 gap-3">
+              <input id="b-name" name="name" type="text" required placeholder="Name *" class="w-full px-3 py-2 text-sm rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+              <input id="b-phone" name="phone" type="tel" required placeholder="Phone *" class="w-full px-3 py-2 text-sm rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+            </div>
+            <input id="b-email" name="email" type="email" required placeholder="Email *" class="w-full px-3 py-2 text-sm rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+            <div class="grid sm:grid-cols-2 gap-3">
+              <select id="b-cart" name="cart" class="w-full px-3 py-2 text-sm rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all">
+                <option value="">Cart type…</option>
+                <option>2-Passenger</option>
+                <option>4-Passenger</option>
+                <option>6-Passenger</option>
+                <option>Not sure</option>
+              </select>
+              <select id="b-duration" name="duration" class="w-full px-3 py-2 text-sm rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all">
+                <option value="">Duration…</option>
+                <option>Weekly</option>
+                <option>Monthly</option>
+              </select>
+            </div>
+            <textarea id="b-message" name="message" rows="3" placeholder="Tell us about your rental dates and delivery address…" class="w-full px-3 py-2 text-sm rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all"></textarea>
+            <label class="flex items-start gap-2 text-xs text-slate-600">
+              <input type="checkbox" name="sms-consent" class="mt-0.5" />
+              <span>I agree to receive text messages for booking and follow-up. Reply STOP to opt out.</span>
+            </label>
+            <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5 flex justify-center items-center gap-2">
+              <i class="fa-solid fa-bolt"></i> Get My Quote
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <p class="text-slate-400 mb-3">Prefer to talk? Give us a call.</p>
+        <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-900 font-bold py-3 px-6 rounded-lg shadow-lg transition-all"><i class="fa-solid fa-phone"></i> (352) 306-4409</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const slides = document.querySelectorAll<HTMLElement>("#hero-slideshow .hero-slide");
+      if (slides.length < 2) return;
+      let i = 0;
+      setInterval(() => {
+        slides[i].classList.replace("opacity-100", "opacity-0");
+        i = (i + 1) % slides.length;
+        slides[i].classList.replace("opacity-0", "opacity-100");
+      }, 4500);
+    });
+  </script>
+</Layout>

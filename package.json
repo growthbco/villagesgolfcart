@@ -1,8 +1,7 @@
 {
-  "name": "golf-cart-rentals-astro",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "the-villages-golf-cart-rentals",
+  "type": "module",
+  "version": "0.1.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,10 +9,10 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "astro": "^5.13.5"
+    "@tailwindcss/vite": "^4.1.16",
+    "astro": "^5.15.3",
+    "tailwindcss": "^4.1.16",
+    "typescript": "^5.7.2"
   }
 }

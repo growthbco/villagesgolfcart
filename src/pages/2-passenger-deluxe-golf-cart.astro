@@ -1,0 +1,280 @@
+---
+import Layout from "../layouts/Layout.astro";
+import QuoteForm from "../components/QuoteForm.astro";
+
+const images = [
+  { src: "/cart-images/2-passenger-1.jpg", alt: "2-Passenger Deluxe Gas Golf Cart Rental — Front 3/4 View", title: "Front View", description: "Yamaha 2-passenger gas golf cart with extended canopy and tan seats — ready for The Villages roads and town squares." },
+  { src: "/cart-images/2-passenger-2.jpg", alt: "2-Passenger Deluxe Golf Cart — Side Profile", title: "Side Profile", description: "Compact, easy-to-maneuver design with weather-resistant canopy and cushioned bench seating for two." },
+];
+
+const keyFeatures = [
+  "2-passenger capacity with comfortable seating",
+  "Fully enclosed design with side curtains",
+  "Smooth performance and easy handling",
+  "Dependable power for all-day use",
+  "Perfect for any weather conditions",
+];
+
+const perfectFor = [
+  "Golf courses and resorts",
+  "Events and special occasions",
+  "Private properties and estates",
+  "Rainy or cooler weather days",
+  "All-day transportation needs",
+  "Comfortable leisure rides",
+];
+
+const useCases = [
+  { icon: "fa-golf-ball-tee", title: "Golf Courses & Resorts", body: "Perfect for golf courses and resorts, offering weather protection and comfortable transportation for guests." },
+  { icon: "fa-calendar-star", title: "Events & Special Occasions", body: "Ideal for events and special occasions with reliable performance and weather protection for guests." },
+  { icon: "fa-house", title: "Private Properties", body: "Great for private properties and estates with comfortable seating and dependable power for all-day use." },
+];
+
+const features = [
+  { icon: "fa-cloud-rain", title: "Weather Protection", body: "Fully enclosed design with side curtains" },
+  { icon: "fa-user-friends", title: "Comfortable Seating", body: "Spacious seating for 2 passengers" },
+  { icon: "fa-cogs", title: "Smooth Performance", body: "Reliable gas engine for dependable operation" },
+  { icon: "fa-clock", title: "All-Day Use", body: "Dependable power for extended operation" },
+];
+---
+
+<Layout title="2-Passenger Deluxe Golf Cart Rentals in The Villages | Golf Cart Rentals The Villages FL" description="Fully enclosed 2-passenger gas golf cart rentals in The Villages. Weather-resistant side curtains, weekly and monthly rates. Call (352) 306-4409.">
+  <!-- HERO -->
+  <section class="relative py-24 lg:py-32 bg-slate-50 overflow-hidden">
+    <div class="absolute top-20 right-20 w-64 h-64 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-50 rounded-bl-[100px] -z-10 hidden lg:block"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4">Deluxe 2-Passenger</p>
+      <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight uppercase leading-[1.05] mb-6">
+        2-Passenger Deluxe Golf Cart Rentals <br /><span class="text-brand-600 italic">in The Villages</span>
+      </h1>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        Stay comfortable in any weather with this deluxe 2-passenger gas golf cart, featuring a fully enclosed design ideal for rainy or cooler days. Perfect for golf courses, resorts, events, and private properties, it offers smooth performance, comfortable seating, and dependable power for all-day use. Available for weekly and monthly rentals.
+      </p>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="font-heading font-black text-3xl text-slate-900 uppercase mb-6">2-Passenger Deluxe Gas Golf Cart Rental in The Villages</h2>
+          <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 p-8 mb-8">
+            <div class="text-center mb-8">
+              <a href="tel:+13523064409" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5">
+                <i class="fa-solid fa-phone"></i> Call for Pricing
+              </a>
+              <p class="text-slate-600 text-sm mt-3">Available in weekly and monthly rentals</p>
+            </div>
+            <p class="text-slate-700 mb-6 leading-relaxed">
+              Stay comfortable in any weather with this deluxe 2-passenger gas golf cart, featuring a fully enclosed design ideal for rainy or cooler days. Perfect for golf courses, resorts, events, and private properties, it offers smooth performance, comfortable seating, and dependable power for all-day use.
+            </p>
+            <h3 class="font-heading font-black text-lg text-slate-900 uppercase mb-4">Key Features</h3>
+            <ul class="space-y-3">
+              {keyFeatures.map((f) => (
+                <li class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></div>
+                  <span class="text-slate-700">{f}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="bg-brand-50 border border-brand-200 rounded-2xl p-8">
+            <h3 class="font-heading font-black text-lg text-slate-900 uppercase mb-4">Perfect For</h3>
+            <ul class="grid grid-cols-1 gap-2">
+              {perfectFor.map((p) => (
+                <li class="flex items-center gap-2 text-slate-700"><i class="fa-solid fa-circle-check text-brand-600"></i>{p}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="font-heading font-black text-3xl text-slate-900 uppercase mb-6">2-Passenger Deluxe Gallery</h2>
+          <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden relative">
+            <div class="relative h-96 overflow-hidden bg-slate-100">
+              <div class="absolute top-4 left-4 bg-brand-600 text-white px-3 py-1 rounded-full text-xs font-bold z-10 uppercase tracking-wide shadow-lg shadow-brand-500/30">Deluxe 2-Passenger</div>
+              <img id="slideshow-main-deluxe2" class="w-full h-full object-cover transition-opacity duration-500" src={images[0].src} alt={images[0].alt} />
+            </div>
+            <button id="prev-btn-deluxe2" class="absolute left-4 top-48 -translate-y-1/2 bg-white/90 hover:bg-white text-brand-600 p-3 rounded-full shadow-lg z-10 w-10 h-10 flex items-center justify-center" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+            <button id="next-btn-deluxe2" class="absolute right-4 top-48 -translate-y-1/2 bg-white/90 hover:bg-white text-brand-600 p-3 rounded-full shadow-lg z-10 w-10 h-10 flex items-center justify-center" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+
+            <div class="p-4 bg-slate-50 border-t border-slate-200">
+              <div class="flex gap-2 overflow-x-auto justify-center" id="thumbnails-deluxe2">
+                {images.map((img, i) => (
+                  <button class={`flex-shrink-0 thumbnail-btn${i === 0 ? " active" : ""}`} data-index={i} aria-label={`Show image ${i + 1}`}>
+                    <img class={`w-20 h-20 object-cover rounded-lg border-2 ${i === 0 ? "border-brand-600 opacity-100" : "border-transparent opacity-60 hover:opacity-80"}`} src={img.src} alt={`Thumbnail ${i + 1}`} />
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div class="p-6 border-t border-slate-200">
+              <h3 class="font-heading font-bold text-slate-900 uppercase mb-2" id="image-title-deluxe2">{images[0].title}</h3>
+              <p class="text-slate-600 text-sm leading-relaxed" id="image-desc-deluxe2">{images[0].description}</p>
+            </div>
+          </div>
+
+          <div class="mt-6 bg-slate-50 rounded-2xl p-6 border border-slate-200">
+            <h3 class="font-heading font-black text-lg text-slate-900 uppercase mb-4">Specifications</h3>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+              <div class="bg-white p-4 rounded-xl border border-slate-100"><div class="font-bold text-slate-900">Capacity</div><div class="text-slate-600">2 passengers</div></div>
+              <div class="bg-white p-4 rounded-xl border border-slate-100"><div class="font-bold text-slate-900">Engine</div><div class="text-slate-600">Gas-powered</div></div>
+              <div class="bg-white p-4 rounded-xl border border-slate-100"><div class="font-bold text-slate-900">Top Speed</div><div class="text-slate-600">Up to 25 mph</div></div>
+              <div class="bg-white p-4 rounded-xl border border-slate-100"><div class="font-bold text-slate-900">Range</div><div class="text-slate-600">150+ miles per tank</div></div>
+              <div class="bg-white p-4 rounded-xl border border-slate-100"><div class="font-bold text-slate-900">Design</div><div class="text-slate-600">Weather-protected canopy</div></div>
+              <div class="bg-white p-4 rounded-xl border border-slate-100"><div class="font-bold text-slate-900">Safety</div><div class="text-slate-600">Seat belts &amp; lights</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">All-Weather Transportation</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Perfect for Any Weather</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+        <p class="text-slate-600 mt-6">Stay comfortable and protected in all weather conditions.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {useCases.map((uc) => (
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+            <div class="w-16 h-16 bg-brand-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-brand-500/30">
+              <i class={`fa-solid ${uc.icon} text-white text-2xl`}></i>
+            </div>
+            <h3 class="font-heading font-black text-xl text-slate-900 uppercase mb-3">{uc.title}</h3>
+            <p class="text-slate-600 leading-relaxed">{uc.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Why Choose This Cart</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Why Choose Our Deluxe 2-Passenger Golf Carts?</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+        <p class="text-slate-600 mt-6">Designed for comfort and protection in any weather condition.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {features.map((f) => (
+          <div class="text-center">
+            <div class="w-20 h-20 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-brand-500/30">
+              <i class={`fa-solid ${f.icon} text-white text-2xl`}></i>
+            </div>
+            <h3 class="font-heading font-bold text-slate-900 uppercase text-sm tracking-wide mb-2">{f.title}</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">{f.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- RENTAL PERIODS -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Flexible Rentals</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Available Rental Periods</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+        <p class="text-slate-600 mt-6">Choose the rental period that works best for your needs.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100 text-center">
+          <h3 class="font-heading font-black text-2xl text-slate-900 uppercase mb-2">Weekly</h3>
+          <p class="text-slate-600 mb-6">Great value for extended stays</p>
+          <a href="/weekly-golf-cart-rental-villages" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5">View Details <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100 text-center">
+          <h3 class="font-heading font-black text-2xl text-slate-900 uppercase mb-2">Monthly</h3>
+          <p class="text-slate-600 mb-6">Best rates for long-term stays</p>
+          <a href="/monthly-golf-cart-rental-villages" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5">View Details <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-black text-3xl md:text-5xl text-white uppercase mb-6 leading-tight">Rent a 2-Passenger Deluxe Golf Cart in The Villages Today</h2>
+      <p class="text-xl text-slate-300 mb-10">Perfect for golf courses, resorts, events, and private properties in The Villages, Florida. Available in weekly and monthly rentals. Call us for availability and competitive pricing.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5"><i class="fa-solid fa-phone"></i> Call (352) 306-4409</a>
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-900 font-bold py-4 px-8 rounded-lg shadow-lg transition-all"><i class="fa-solid fa-envelope"></i> Send Message</a>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline define:vars={{ images }}>
+    document.addEventListener("DOMContentLoaded", function () {
+      let currentSlide = 0;
+      const mainImg = document.getElementById("slideshow-main-deluxe2");
+      const titleEl = document.getElementById("image-title-deluxe2");
+      const descEl = document.getElementById("image-desc-deluxe2");
+      const thumbnails = document.querySelectorAll("#thumbnails-deluxe2 .thumbnail-btn");
+      function updateSlide(index) {
+        currentSlide = index;
+        const image = images[currentSlide];
+        if (mainImg) { mainImg.src = image.src; mainImg.alt = image.alt; }
+        if (titleEl) titleEl.textContent = image.title;
+        if (descEl) descEl.textContent = image.description;
+        thumbnails.forEach((btn, i) => {
+          const img = btn.querySelector("img");
+          if (!img) return;
+          if (i === currentSlide) { btn.classList.add("active"); img.classList.remove("border-transparent","opacity-60"); img.classList.add("border-brand-600","opacity-100"); }
+          else { btn.classList.remove("active"); img.classList.remove("border-brand-600","opacity-100"); img.classList.add("border-transparent","opacity-60"); }
+        });
+      }
+      document.getElementById("next-btn-deluxe2")?.addEventListener("click", () => updateSlide((currentSlide + 1) % images.length));
+      document.getElementById("prev-btn-deluxe2")?.addEventListener("click", () => updateSlide((currentSlide - 1 + images.length) % images.length));
+      thumbnails.forEach((btn, index) => btn.addEventListener("click", () => updateSlide(index)));
+    });
+  </script>
+
+  <!-- EXPLORE MORE CARTS -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Need More Space?</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Explore More Cart Options</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/4-passenger-deluxe-golf-cart" class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:-translate-y-1 transition-transform">
+          <div class="h-48 bg-slate-100 overflow-hidden"><img src="/cart-images/4-passenger-1.jpg" alt="4-Passenger Deluxe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-slate-900 uppercase text-sm mb-1">4-Passenger Deluxe</h3>
+            <p class="text-slate-600 text-sm">Most popular — great for families and small groups.</p>
+          </div>
+        </a>
+        <a href="/6-passenger-golf-cart" class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:-translate-y-1 transition-transform">
+          <div class="h-48 bg-slate-100 overflow-hidden"><img src="/cart-images/6-passenger-1.jpg" alt="6-Passenger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-slate-900 uppercase text-sm mb-1">6-Passenger</h3>
+            <p class="text-slate-600 text-sm">Maximum capacity — wedding parties and group outings.</p>
+          </div>
+        </a>
+        <a href="/weekly-golf-cart-rental-villages" class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:-translate-y-1 transition-transform">
+          <div class="h-48 bg-brand-50 flex items-center justify-center"><i class="fa-solid fa-calendar-week text-brand-600 text-6xl"></i></div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-slate-900 uppercase text-sm mb-1">Weekly &amp; Monthly</h3>
+            <p class="text-slate-600 text-sm">See rental period options and pricing structure.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm formName="quote-2pass" hiddenContext={{ "source-page": "2-passenger-deluxe", "cart-interest": "2-Passenger Deluxe" }} />
+</Layout>

@@ -1,0 +1,142 @@
+---
+import Layout from "../layouts/Layout.astro";
+import QuoteForm from "../components/QuoteForm.astro";
+
+const squares = [
+  { name: "Spanish Springs Town Square", body: "The original town square — nightly live music, Katie Belle's, paddock restaurants, and shops in a Spanish-themed setting." },
+  { name: "Lake Sumter Landing", body: "Waterfront square with a working lighthouse, the Sharon Performing Arts Center, and lakefront dining." },
+  { name: "Brownwood Paddock Square", body: "Western-themed square with the Brownwood Hotel & Spa, country dining, and frequent live music." },
+  { name: "Sawgrass Grove", body: "Newest entertainment district along SR-44 — food trucks, outdoor seating, and ongoing entertainment." },
+  { name: "Eastport Square", body: "Beach-themed eastern expansion with waterfront dining and casual live music." },
+];
+
+const dining = ["Lopez Legacy (upscale Mexican)", "Nancy Lopez Legacy (golf-themed)", "Red Sauce (Italian)", "Blue Fin Sushi", "City Fire Brick Oven", "World of Beer", "RJ Gators Bar & Grill", "Brownwood Hotel Spa Restaurant", "TooJay's Deli", "Big Easy Cajun"];
+
+const golf = ["Saddlebrook Executive", "Hacienda Hills Country Club", "Glenview Country Club", "Bonifay Country Club", "Cane Garden Country Club", "Evans Prairie Country Club", "Mira Mesa Executive", "El Diablo Executive", "Southern Star Executive", "Hammock at Fenney"];
+
+const recreation = [
+  { icon: "fa-table-tennis-paddle-ball", title: "Pickleball", body: "Hundreds of courts spread across rec centers — it's basically the official sport here." },
+  { icon: "fa-person-swimming", title: "Swimming Pools", body: "Dozens of community, family, and adult pools at recreation centers everywhere." },
+  { icon: "fa-bicycle", title: "Bike Paths", body: "100+ miles of paved multi-use paths connecting every neighborhood and square." },
+  { icon: "fa-tree", title: "Parks & Trails", body: "Dog parks, nature trails, fitness loops — every village has its own." },
+  { icon: "fa-fish-fins", title: "Fishing", body: "Catch-and-release ponds and Lake Sumter, plus nearby Lake Griffin State Park." },
+  { icon: "fa-music", title: "Live Entertainment", body: "Nightly music on every square plus the Sharon Performing Arts Center calendar." },
+];
+
+const events = [
+  "Veterans Day Parade — November",
+  "Spring Wine & Food Festival",
+  "Bikefest (nearby Leesburg) — late April",
+  "Mardi Gras Festivities — February",
+  "Independence Day Celebrations — July 4",
+  "Holiday Light Displays — December",
+];
+---
+<Layout
+  title="Things to Do in The Villages, FL — Local Guide | GCR Villages"
+  description="Local guide to The Villages, FL: town squares, dining, golf, recreation, and events. Plus how to get around easily with a golf cart rental. Call (352) 306-4409."
+>
+  <section class="relative py-24 lg:py-32 bg-slate-50 overflow-hidden">
+    <div class="absolute top-20 right-20 w-64 h-64 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-50 rounded-bl-[100px] -z-10 hidden lg:block"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4">Local Guide</p>
+      <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight uppercase leading-[1.05] mb-6">
+        Things to Do <span class="text-brand-600 italic">in The Villages</span>
+      </h1>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        Five town squares, world-class golf, hundreds of pickleball courts, lakes, trails, and live music every night. The Villages is built for active retirement and easiest by golf cart. Here&rsquo;s where to start.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Town Squares</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Five Town Squares</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+        <p class="text-slate-600 mt-6 leading-relaxed">Each town square is its own entertainment district with restaurants, shops, and live music. All cart-accessible with dedicated parking.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        {squares.map((s) => (
+          <div class="bg-slate-50 rounded-2xl p-6 shadow-sm border border-slate-100">
+            <h3 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm tracking-wide">{s.name}</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Dining</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Top Restaurants</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+        <div class="grid sm:grid-cols-2 gap-3">
+          {dining.map((d) => (
+            <div class="flex items-start gap-2"><i class="fa-solid fa-utensils text-brand-600 mt-1 text-xs"></i><span class="text-slate-700 text-sm">{d}</span></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Golf</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Championship &amp; Executive Courses</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+        <p class="text-slate-600 mt-6">Over 50 golf courses in and around The Villages — most are reachable by cart paths.</p>
+      </div>
+      <div class="bg-slate-50 rounded-2xl p-8 shadow-sm border border-slate-100">
+        <div class="grid sm:grid-cols-2 gap-3">
+          {golf.map((g) => (
+            <div class="flex items-start gap-2"><i class="fa-solid fa-golf-ball-tee text-brand-600 mt-1 text-xs"></i><span class="text-slate-700 text-sm">{g}</span></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Recreation</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Get Active</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {recreation.map((r) => (
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-4 text-brand-600 text-xl"><i class={`fa-solid ${r.icon}`}></i></div>
+            <h3 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm tracking-wide">{r.title}</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">{r.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Annual Events</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">What&rsquo;s Happening</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <ul class="space-y-3">
+        {events.map((e) => (
+          <li class="flex items-start gap-3 bg-slate-50 rounded-xl p-4"><div class="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 flex-shrink-0"><i class="fa-solid fa-calendar-day text-sm"></i></div><span class="text-slate-700">{e}</span></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <QuoteForm formName="quote-things-to-do" hiddenContext={{ "source-page": "things-to-do" }} id="quote" />
+</Layout>

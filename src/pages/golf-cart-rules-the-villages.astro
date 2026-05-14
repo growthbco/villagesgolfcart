@@ -1,0 +1,116 @@
+---
+import Layout from "../layouts/Layout.astro";
+import QuoteForm from "../components/QuoteForm.astro";
+
+const sections = [
+  {
+    title: "Where You Can Drive",
+    icon: "fa-route",
+    rules: [
+      "Designated multi-modal paths (the painted cart paths) throughout The Villages",
+      "Residential streets within The Villages at posted speeds",
+      "Specific main roads with cart-path crossings (look for signage)",
+      "Most parking lots in town squares and at recreation centers",
+    ],
+  },
+  {
+    title: "Where You Can't Drive",
+    icon: "fa-circle-xmark",
+    rules: [
+      "State highways and roads not marked for cart use",
+      "Sidewalks (carts share the multi-modal paths with bikes and pedestrians)",
+      "Private property without permission",
+      "Off-road and unpaved areas not designated for carts",
+    ],
+  },
+  {
+    title: "Driver Requirements",
+    icon: "fa-id-card",
+    rules: [
+      "Valid driver's license — required for anyone operating a cart on roads",
+      "Minimum age 18 for cart rental customers",
+      "All passengers must be seated — no riders standing or hanging off",
+      "No operating a cart under the influence of alcohol or drugs",
+    ],
+  },
+  {
+    title: "Speed & Safety",
+    icon: "fa-gauge",
+    rules: [
+      "Carts max out at 19.5 mph in most areas (street-legal carts can do 25 mph)",
+      "Follow posted speed limits on cart paths and roads",
+      "Yield to pedestrians on multi-modal paths",
+      "Headlights on after dark — required by Villages rules",
+    ],
+  },
+  {
+    title: "Parking",
+    icon: "fa-square-parking",
+    rules: [
+      "Designated cart parking spots throughout every town square",
+      "Cart-only parking lots at recreation centers and golf courses",
+      "Standard parking spaces are also OK where cart parking isn't available",
+      "Never block walkways, ramps, or accessibility access",
+    ],
+  },
+  {
+    title: "Etiquette",
+    icon: "fa-handshake",
+    rules: [
+      "Wave or nod when passing other carts — it's a Villages tradition",
+      "Pass on the left, slowest cart stays right on multi-use paths",
+      "No music so loud it disturbs neighbors or other cart users",
+      "Be patient — bikers, walkers, and pickleball players all share the paths",
+    ],
+  },
+];
+---
+<Layout
+  title="Golf Cart Rules &amp; Driving Tips — The Villages, FL | GCR Villages"
+  description="Golf cart driving rules, parking, speed limits, and etiquette for The Villages, FL. Everything renters and new residents need to know. Call (352) 306-4409."
+>
+  <section class="relative py-24 lg:py-32 bg-slate-50 overflow-hidden">
+    <div class="absolute top-20 right-20 w-64 h-64 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-50 rounded-bl-[100px] -z-10 hidden lg:block"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4">Driver Guide</p>
+      <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight uppercase leading-[1.05] mb-6">
+        Golf Cart Rules <span class="text-brand-600 italic">in The Villages</span>
+      </h1>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        New to driving a cart in The Villages? Here&rsquo;s a plain-English guide to where you can drive, who can drive, parking rules, and the etiquette that makes life on the paths so easy.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-8">
+        {sections.map((s) => (
+          <div class="bg-slate-50 rounded-2xl p-8">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-12 h-12 bg-brand-600 rounded-xl flex items-center justify-center text-white text-lg"><i class={`fa-solid ${s.icon}`}></i></div>
+              <h2 class="font-heading font-black text-xl text-slate-900 uppercase">{s.title}</h2>
+            </div>
+            <ul class="space-y-2">
+              {s.rules.map((r) => (
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1 text-xs"></i><span class="text-slate-700 text-sm">{r}</span></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-3">Quick Answer</p>
+      <h2 class="font-heading font-black text-2xl sm:text-3xl text-slate-900 uppercase mb-4">What If I Have More Questions?</h2>
+      <p class="text-slate-600 mb-6">Renting from us means you get a quick orientation at delivery — plus a printed map, the rules cheat sheet, and our 7-day support line for anything that comes up.</p>
+      <a href="/faq" class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 border border-slate-200 text-slate-900 font-bold py-3 px-6 rounded-lg transition-all">View FAQ <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <QuoteForm formName="quote-rules" hiddenContext={{ "source-page": "golf-cart-rules" }} id="quote" />
+</Layout>

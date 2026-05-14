@@ -1,0 +1,127 @@
+---
+import Layout from "../layouts/Layout.astro";
+import QuoteForm from "../components/QuoteForm.astro";
+
+const benefits = [
+  { icon: "fa-piggy-bank", title: "Best Per-Day Rate", body: "Monthly and multi-month rentals deliver the lowest cost per day we offer." },
+  { icon: "fa-hand-holding-heart", title: "All-Inclusive", body: "Maintenance, fuel system service, charging, and insurance — bundled in." },
+  { icon: "fa-crown", title: "VIP Support", body: "Priority service line and a dedicated account manager for long-term renters." },
+  { icon: "fa-bolt", title: "Same-Cart Reliability", body: "Keep the same cart for the entire term — no swaps, no surprises." },
+];
+
+const useCases = [
+  { icon: "fa-snowflake", title: "Seasonal Stays", body: "Snowbirds spending 3–6 months in The Villages each winter." },
+  { icon: "fa-house-chimney", title: "Home Search Trials", body: "Renters considering buying — test out Villages life for a few months." },
+  { icon: "fa-heart-pulse", title: "Family Caregiving", body: "Extended visits to support aging parents or post-op recovery." },
+  { icon: "fa-briefcase", title: "Corporate Stays", body: "Long-term business or relocation assignments." },
+];
+
+const faqs = [
+  { q: "How long is &ldquo;long-term&rdquo;?", a: "We typically define long-term as anything over 30 days. We offer monthly contracts with multi-month discounts for 3, 4, 5, and 6+ month commitments." },
+  { q: "Can I extend my long-term rental?", a: "Yes — just call us at least a week before your scheduled return date. Extensions depend on fleet availability but are usually no problem." },
+  { q: "What happens if the cart needs service during a long-term rental?", a: "Call us. We'll dispatch a technician same-day or swap you to a backup cart at no charge. Maintenance is fully included." },
+  { q: "Do you require a deposit for long-term rentals?", a: "We collect a small refundable deposit at delivery. The exact amount depends on cart type and rental length — we'll quote it upfront, no surprises." },
+];
+---
+<Layout
+  title="Long-Term Golf Cart Rental in The Villages, FL | GCR Villages"
+  description="Long-term golf cart rentals in The Villages, FL. 30+ days, multi-month options, all-inclusive pricing with maintenance and insurance. Call (352) 306-4409."
+>
+  <!-- HERO -->
+  <section class="relative py-24 lg:py-32 bg-slate-50 overflow-hidden">
+    <div class="absolute top-20 right-20 w-64 h-64 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-50 rounded-bl-[100px] -z-10 hidden lg:block"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4">Long-Term Rentals</p>
+      <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight uppercase leading-[1.05] mb-6">
+        Long-Term Golf Cart <span class="text-brand-600 italic">Rentals</span>
+      </h1>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        Staying 30+ days in The Villages? Long-term rentals give you the best per-day pricing, full maintenance, insurance, and priority support. Built for snowbirds, extended visitors, and anyone who wants a hassle-free cart for the season.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
+        <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5"><i class="fa-solid fa-bolt"></i> Get a Long-Term Quote</a>
+        <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-900 font-bold py-4 px-8 rounded-lg shadow-lg transition-all"><i class="fa-solid fa-phone"></i> (352) 306-4409</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Why Long-Term</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">What You Get</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {benefits.map((b) => (
+          <div class="bg-slate-50 rounded-2xl p-6 text-center">
+            <div class="w-16 h-16 bg-brand-600 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-5"><i class={`fa-solid ${b.icon}`}></i></div>
+            <h3 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm tracking-wide">{b.title}</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">{b.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Built For</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Who Picks Long-Term</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {useCases.map((u) => (
+          <div class="bg-white rounded-2xl p-6 text-center shadow-sm border border-slate-100">
+            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-brand-600 text-xl"><i class={`fa-solid ${u.icon}`}></i></div>
+            <h3 class="font-heading font-bold text-slate-900 uppercase mb-2 text-sm tracking-wide">{u.title}</h3>
+            <p class="text-slate-600 text-sm">{u.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-3">Term Options</p>
+      <h2 class="font-heading font-black text-2xl sm:text-3xl text-slate-900 uppercase mb-6">Choose Your Term</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/weekly-golf-cart-rental-villages" class="bg-slate-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+          <h3 class="font-heading font-bold text-slate-900 uppercase mb-1">Weekly</h3>
+          <p class="text-slate-600 text-sm">Best for 7–14 day stays</p>
+        </a>
+        <a href="/monthly-golf-cart-rental-villages" class="bg-slate-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+          <h3 class="font-heading font-bold text-slate-900 uppercase mb-1">Monthly</h3>
+          <p class="text-slate-600 text-sm">Best for 30+ day stays</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Common Questions</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Long-Term Rental FAQ</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="space-y-3">
+        {faqs.map((f) => (
+          <details class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 group">
+            <summary class="font-bold text-slate-900 cursor-pointer flex justify-between items-center" set:html={`${f.q} <i class='fa-solid fa-plus group-open:rotate-45 transition-transform text-brand-600'></i>`}></summary>
+            <p class="text-slate-600 mt-3" set:html={f.a}></p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm formName="quote-longterm" hiddenContext={{ "source-page": "long-term", "rental-term": "long-term" }} id="quote" />
+</Layout>
