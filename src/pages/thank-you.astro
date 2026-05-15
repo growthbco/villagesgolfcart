@@ -2,20 +2,20 @@
 import Layout from "../layouts/Layout.astro";
 
 const next = [
-  { icon: "fa-1", title: "We've Got Your Request", body: "Your quote is in our queue. Someone real (not a bot) is reviewing it within minutes during business hours." },
-  { icon: "fa-2", title: "We'll Reach Out", body: "Expect a call, text, or email back within 2 hours — usually much faster. We confirm dates, cart, and delivery." },
-  { icon: "fa-3", title: "Cart at Your Door", body: "On rental day, your cart arrives fully gassed, clean, and ready to roll. Free delivery, no surprises." },
+  { title: "We Got Your Request", body: "Your quote is in our queue. Someone real is already reviewing it." },
+  { title: "We&rsquo;ll Reach Out", body: "Expect a call, text, or email back from us with confirmation, pricing, and next steps." },
+  { title: "Cart at Your Door", body: "On rental day, your cart arrives fully gassed, clean, and ready to roll. Free delivery, no surprises." },
 ];
 
 const testimonials = [
-  { name: "Tom & Betty S.", quote: "Snowbirds for 4 seasons. They take care of everything — saved us a ton this winter!" },
-  { name: "Robert P.", quote: "Rented 4 carts for our daughter's wedding. Stress-free, looked perfect in the photos." },
+  { name: "Tom &amp; Betty S.", quote: "Snowbirds for four seasons. They take care of everything. Saved us a ton this winter!" },
+  { name: "Robert P.", quote: "Rented four carts for our daughter&rsquo;s wedding. Stress-free, looked perfect in the photos." },
   { name: "Jennifer K.", quote: "Two-month corporate stay. Way cheaper than daily, no maintenance worries." },
 ];
 ---
 <Layout
-  title="Thanks — We'll Be in Touch | Golf Cart Rentals The Villages"
-  description="Your quote request is in. We'll get back to you within 2 hours. In the meantime, give us a call at (352) 306-4409 to lock in your dates faster."
+  title="Thanks, We Got Your Request | Golf Cart Rentals The Villages"
+  description="Your quote request is in. Give us a call at (352) 306-4409 to lock in your dates faster."
   noindex={true}
 >
   <!-- HERO -->
@@ -28,10 +28,10 @@ const testimonials = [
       </div>
       <p class="text-white/80 font-bold tracking-widest uppercase text-sm mb-3">Got It</p>
       <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight uppercase leading-[1.05] mb-6">
-        Thanks — We&rsquo;ll Be <span class="text-white italic">in Touch</span>
+        Thanks, We Got <span class="text-white italic">Your Request</span>
       </h1>
       <p class="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed mb-8">
-        Your quote request is in. Someone real is reviewing it now — expect a reply within 2 hours during business hours (often a lot sooner).
+        Your quote request just came through. Someone real is reviewing it now and will reach out to you. In the meantime, want to lock things in faster?
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-brand-700 font-bold py-4 px-8 rounded-lg shadow-2xl transition-all transform hover:-translate-y-0.5 text-lg">
@@ -41,7 +41,6 @@ const testimonials = [
           <i class="fa-solid fa-comment-sms"></i> Text Us
         </a>
       </div>
-      <p class="text-white/70 text-sm mt-6">Open 7 AM – 7 PM daily</p>
     </div>
   </section>
 
@@ -51,7 +50,7 @@ const testimonials = [
       <p class="text-amber-900 font-bold text-lg">
         <i class="fa-solid fa-bolt text-amber-600 mr-1"></i>
         Want to lock in your cart <strong>right now</strong>?
-        <a href="tel:+13523064409" class="text-amber-900 underline decoration-2 underline-offset-2 hover:text-amber-700">Give us a call</a> — we&rsquo;ll have it confirmed in 5 minutes.
+        <a href="tel:+13523064409" class="text-amber-900 underline decoration-2 underline-offset-2 hover:text-amber-700">Give us a call</a> and we&rsquo;ll get it confirmed.
       </p>
     </div>
   </section>
@@ -61,7 +60,7 @@ const testimonials = [
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">What Happens Next</p>
-        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">From Here to Cart-in-Driveway</h2>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">From Here to Cart in Driveway</h2>
         <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
@@ -71,8 +70,8 @@ const testimonials = [
               {i + 1}
             </div>
             <div class="mt-4">
-              <h3 class="font-heading font-bold text-slate-900 uppercase mb-3 tracking-wide">{n.title}</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">{n.body}</p>
+              <h3 class="font-heading font-bold text-slate-900 uppercase mb-3 tracking-wide" set:html={n.title}></h3>
+              <p class="text-slate-600 text-sm leading-relaxed" set:html={n.body}></p>
             </div>
           </div>
         ))}
@@ -95,8 +94,8 @@ const testimonials = [
             <div class="text-brand-500 mb-3">
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
-            <blockquote class="text-slate-700 italic leading-relaxed mb-3">&ldquo;{t.quote}&rdquo;</blockquote>
-            <figcaption class="text-sm font-bold text-slate-900">— {t.name}</figcaption>
+            <blockquote class="text-slate-700 italic leading-relaxed mb-3">&ldquo;<span set:html={t.quote}></span>&rdquo;</blockquote>
+            <figcaption class="text-sm font-bold text-slate-900" set:html={t.name}></figcaption>
           </figure>
         ))}
       </div>
@@ -152,11 +151,11 @@ const testimonials = [
     <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30"></div>
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="font-heading font-black text-3xl md:text-5xl text-white uppercase mb-6 leading-tight">Faster Way to Lock It In</h2>
-      <p class="text-xl text-slate-300 mb-10">Pick up the phone and we&rsquo;ll have your cart confirmed in 5 minutes.</p>
+      <p class="text-xl text-slate-300 mb-10">Pick up the phone and we&rsquo;ll get your cart confirmed.</p>
       <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-5 px-10 rounded-lg shadow-2xl shadow-brand-500/40 transition-all transform hover:-translate-y-0.5 text-xl">
         <i class="fa-solid fa-phone"></i> (352) 306-4409
       </a>
-      <p class="text-slate-400 text-sm mt-6">7 AM – 7 PM daily • We answer our own phones</p>
+      <p class="text-slate-400 text-sm mt-6">We answer our own phones</p>
     </div>
   </section>
 </Layout>
