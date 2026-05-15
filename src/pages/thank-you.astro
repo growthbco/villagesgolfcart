@@ -1,0 +1,162 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const next = [
+  { icon: "fa-1", title: "We've Got Your Request", body: "Your quote is in our queue. Someone real (not a bot) is reviewing it within minutes during business hours." },
+  { icon: "fa-2", title: "We'll Reach Out", body: "Expect a call, text, or email back within 2 hours — usually much faster. We confirm dates, cart, and delivery." },
+  { icon: "fa-3", title: "Cart at Your Door", body: "On rental day, your cart arrives fully gassed, clean, and ready to roll. Free delivery, no surprises." },
+];
+
+const testimonials = [
+  { name: "Tom & Betty S.", quote: "Snowbirds for 4 seasons. They take care of everything — saved us a ton this winter!" },
+  { name: "Robert P.", quote: "Rented 4 carts for our daughter's wedding. Stress-free, looked perfect in the photos." },
+  { name: "Jennifer K.", quote: "Two-month corporate stay. Way cheaper than daily, no maintenance worries." },
+];
+---
+<Layout
+  title="Thanks — We'll Be in Touch | Golf Cart Rentals The Villages"
+  description="Your quote request is in. We'll get back to you within 2 hours. In the meantime, give us a call at (352) 306-4409 to lock in your dates faster."
+  noindex={true}
+>
+  <!-- HERO -->
+  <section class="relative py-20 lg:py-28 bg-gradient-to-br from-brand-600 to-brand-700 text-white overflow-hidden">
+    <div class="absolute top-10 right-10 w-72 h-72 bg-white rounded-full mix-blend-overlay opacity-10"></div>
+    <div class="absolute bottom-10 left-10 w-64 h-64 bg-white rounded-full mix-blend-overlay opacity-10"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur rounded-full mb-6 shadow-lg">
+        <i class="fa-solid fa-check text-white text-4xl"></i>
+      </div>
+      <p class="text-white/80 font-bold tracking-widest uppercase text-sm mb-3">Got It</p>
+      <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight uppercase leading-[1.05] mb-6">
+        Thanks — We&rsquo;ll Be <span class="text-white italic">in Touch</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed mb-8">
+        Your quote request is in. Someone real is reviewing it now — expect a reply within 2 hours during business hours (often a lot sooner).
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-brand-700 font-bold py-4 px-8 rounded-lg shadow-2xl transition-all transform hover:-translate-y-0.5 text-lg">
+          <i class="fa-solid fa-phone"></i> Call Now: (352) 306-4409
+        </a>
+        <a href="sms:+13523064409" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur border-2 border-white text-white font-bold py-4 px-8 rounded-lg transition-all">
+          <i class="fa-solid fa-comment-sms"></i> Text Us
+        </a>
+      </div>
+      <p class="text-white/70 text-sm mt-6">Open 7 AM – 7 PM daily</p>
+    </div>
+  </section>
+
+  <!-- CALL CTA URGENCY -->
+  <section class="py-12 bg-amber-50 border-y-2 border-amber-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-amber-900 font-bold text-lg">
+        <i class="fa-solid fa-bolt text-amber-600 mr-1"></i>
+        Want to lock in your cart <strong>right now</strong>?
+        <a href="tel:+13523064409" class="text-amber-900 underline decoration-2 underline-offset-2 hover:text-amber-700">Give us a call</a> — we&rsquo;ll have it confirmed in 5 minutes.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHAT HAPPENS NEXT -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">What Happens Next</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">From Here to Cart-in-Driveway</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        {next.map((n, i) => (
+          <div class="bg-slate-50 rounded-2xl p-8 text-center relative">
+            <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-12 bg-brand-600 text-white rounded-full flex items-center justify-center font-heading font-black text-xl shadow-lg shadow-brand-500/30">
+              {i + 1}
+            </div>
+            <div class="mt-4">
+              <h3 class="font-heading font-bold text-slate-900 uppercase mb-3 tracking-wide">{n.title}</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">{n.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Reviews</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">You&rsquo;re in Good Company</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+        <p class="text-slate-600 mt-6">A few words from people who&rsquo;ve been right where you are.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        {testimonials.map((t) => (
+          <figure class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+            <div class="text-brand-500 mb-3">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <blockquote class="text-slate-700 italic leading-relaxed mb-3">&ldquo;{t.quote}&rdquo;</blockquote>
+            <figcaption class="text-sm font-bold text-slate-900">— {t.name}</figcaption>
+          </figure>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a href="/reviews" class="inline-flex items-center gap-2 text-brand-700 font-bold hover:underline">Read more reviews <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HELPFUL LINKS -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">While You Wait</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Worth a Look</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="/2-passenger-deluxe-golf-cart" class="group bg-slate-50 rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform">
+          <div class="h-40 overflow-hidden"><img src="/cart-images/2-passenger-1.jpg" alt="2-Passenger Deluxe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-slate-900 uppercase text-sm mb-1">2-Passenger</h3>
+            <p class="text-slate-600 text-xs">For couples and shoppers</p>
+          </div>
+        </a>
+        <a href="/4-passenger-deluxe-golf-cart" class="group bg-slate-50 rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform">
+          <div class="h-40 overflow-hidden"><img src="/cart-images/4-passenger-1.jpg" alt="4-Passenger Deluxe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-slate-900 uppercase text-sm mb-1">4-Passenger</h3>
+            <p class="text-slate-600 text-xs">Our most popular pick</p>
+          </div>
+        </a>
+        <a href="/things-to-do-the-villages" class="group bg-slate-50 rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform">
+          <div class="h-40 bg-brand-50 flex items-center justify-center"><i class="fa-solid fa-map-location-dot text-brand-600 text-5xl"></i></div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-slate-900 uppercase text-sm mb-1">Things to Do</h3>
+            <p class="text-slate-600 text-xs">Local Villages guide</p>
+          </div>
+        </a>
+        <a href="/faq" class="group bg-slate-50 rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform">
+          <div class="h-40 bg-brand-50 flex items-center justify-center"><i class="fa-solid fa-circle-question text-brand-600 text-5xl"></i></div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-slate-900 uppercase text-sm mb-1">FAQ</h3>
+            <p class="text-slate-600 text-xs">Common rental questions</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-30"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-black text-3xl md:text-5xl text-white uppercase mb-6 leading-tight">Faster Way to Lock It In</h2>
+      <p class="text-xl text-slate-300 mb-10">Pick up the phone and we&rsquo;ll have your cart confirmed in 5 minutes.</p>
+      <a href="tel:+13523064409" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-5 px-10 rounded-lg shadow-2xl shadow-brand-500/40 transition-all transform hover:-translate-y-0.5 text-xl">
+        <i class="fa-solid fa-phone"></i> (352) 306-4409
+      </a>
+      <p class="text-slate-400 text-sm mt-6">7 AM – 7 PM daily • We answer our own phones</p>
+    </div>
+  </section>
+</Layout>

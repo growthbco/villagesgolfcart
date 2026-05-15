@@ -52,7 +52,7 @@ const faqs = [
           <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-100 relative">
             <div class="absolute -top-4 -right-4 bg-brand-100 text-brand-700 font-bold px-4 py-1 rounded-full text-sm shadow-sm border border-brand-200">Get Quote Today!</div>
             <h3 class="text-xl font-bold text-slate-900 mb-6 font-heading uppercase">Find Your Perfect Cart</h3>
-            <form name="hero-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+            <form name="hero-quote" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
               <input type="hidden" name="form-name" value="hero-quote" />
               <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -349,7 +349,7 @@ const faqs = [
           <h3 class="font-heading font-black text-lg text-slate-900 uppercase mb-1">Get Your Quote</h3>
           <p class="text-sm text-slate-600 mb-5">Fill out the form — we'll get back to you within 2 hours.</p>
 
-          <form name="bottom-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-3">
+          <form name="bottom-quote" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" class="space-y-3">
             <input type="hidden" name="form-name" value="bottom-quote" />
             <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
