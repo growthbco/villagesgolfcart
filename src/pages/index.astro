@@ -52,7 +52,7 @@ const faqs = [
           <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-100 relative">
             <div class="absolute -top-4 -right-4 bg-brand-100 text-brand-700 font-bold px-4 py-1 rounded-full text-sm shadow-sm border border-brand-200">Get Quote Today!</div>
             <h3 class="text-xl font-bold text-slate-900 mb-6 font-heading uppercase">Find Your Perfect Cart</h3>
-            <form name="hero-quote" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+            <form name="hero-quote" method="POST" action="/thank-you" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" class="space-y-4">
               <input type="hidden" name="form-name" value="hero-quote" />
               <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
               <div>
@@ -70,21 +70,21 @@ const faqs = [
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label class="block text-sm font-medium text-slate-700 mb-1" for="fname">First Name</label>
-                  <input id="fname" name="first-name" type="text" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" placeholder="John" />
+                  <label class="block text-sm font-medium text-slate-700 mb-1" for="fname">First Name *</label>
+                  <input id="fname" name="first-name" type="text" required class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" placeholder="John" />
                 </div>
                 <div>
-                  <label class="block text-sm font-medium text-slate-700 mb-1" for="lname">Last Name</label>
-                  <input id="lname" name="last-name" type="text" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" placeholder="Doe" />
+                  <label class="block text-sm font-medium text-slate-700 mb-1" for="lname">Last Name *</label>
+                  <input id="lname" name="last-name" type="text" required class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" placeholder="Doe" />
                 </div>
               </div>
               <div>
-                <label class="block text-sm font-medium text-slate-700 mb-1" for="email">Email Address</label>
-                <input id="email" name="email" type="email" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" placeholder="john@example.com" />
+                <label class="block text-sm font-medium text-slate-700 mb-1" for="email">Email Address *</label>
+                <input id="email" name="email" type="email" required class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" placeholder="john@example.com" />
               </div>
               <div>
-                <label class="block text-sm font-medium text-slate-700 mb-1" for="phone">Phone Number</label>
-                <input id="phone" name="phone" type="tel" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" placeholder="(352) 123-4567" />
+                <label class="block text-sm font-medium text-slate-700 mb-1" for="phone">Phone Number *</label>
+                <input id="phone" name="phone" type="tel" required class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" placeholder="(352) 123-4567" />
               </div>
               <div>
                 <label class="block text-sm font-medium text-slate-700 mb-1" for="hero-quantity">How Many Carts?</label>
@@ -96,6 +96,7 @@ const faqs = [
                   <option value="6-plus">6 or more</option>
                 </select>
               </div>
+              <div data-netlify-recaptcha="true"></div>
               <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-6 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5 flex justify-center items-center gap-2 text-lg">
                 <i class="fa-solid fa-bolt"></i> Get Availability &amp; Pricing
               </button>
@@ -372,7 +373,7 @@ const faqs = [
           <h3 class="font-heading font-black text-lg text-slate-900 uppercase mb-1">Get Your Quote</h3>
           <p class="text-sm text-slate-600 mb-5">Fill out the form and we'll get right back to you.</p>
 
-          <form name="bottom-quote" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" class="space-y-3">
+          <form name="bottom-quote" method="POST" action="/thank-you" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" class="space-y-3">
             <input type="hidden" name="form-name" value="bottom-quote" />
             <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
@@ -388,10 +389,13 @@ const faqs = [
             </select>
 
             <div class="grid sm:grid-cols-2 gap-3">
-              <input id="b-name" name="name" type="text" required placeholder="Name *" class="w-full px-3 py-2 text-sm rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+              <input id="b-first-name" name="first-name" type="text" required placeholder="First Name *" class="w-full px-3 py-2 text-sm rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+              <input id="b-last-name" name="last-name" type="text" required placeholder="Last Name *" class="w-full px-3 py-2 text-sm rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <input id="b-email" name="email" type="email" required placeholder="Email *" class="w-full px-3 py-2 text-sm rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
               <input id="b-phone" name="phone" type="tel" required placeholder="Phone *" class="w-full px-3 py-2 text-sm rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
             </div>
-            <input id="b-email" name="email" type="email" required placeholder="Email *" class="w-full px-3 py-2 text-sm rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all" />
             <div class="grid sm:grid-cols-2 gap-3">
               <select id="b-cart" name="cart-type" class="w-full px-3 py-2 text-sm rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all">
                 <option value="">Cart type...</option>
@@ -421,6 +425,7 @@ const faqs = [
               <input type="checkbox" name="sms-consent" class="mt-0.5" />
               <span>I agree to receive text messages for booking and follow-up. Reply STOP to opt out.</span>
             </label>
+            <div data-netlify-recaptcha="true"></div>
             <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5 flex justify-center items-center gap-2">
               <i class="fa-solid fa-bolt"></i> Get My Quote
             </button>
