@@ -35,13 +35,6 @@ const included = [
     "Brake adjustments",
     "Emergency roadside assistance",
   ]},
-  { heading: "Fuel &amp; Coverage", icon: "fa-gas-pump", items: [
-    "Full tank of gas at delivery",
-    "No mileage surcharges",
-    "Comprehensive insurance",
-    "No deposit on most rentals",
-    "Free delivery and pickup",
-  ]},
   { heading: "Support", icon: "fa-headset", items: [
     "7-days-a-week customer line",
     "Same-day replacement if needed",
@@ -60,7 +53,7 @@ const included = [
 ---
 <Layout
   title="Weekly Golf Cart Rentals in The Villages, FL - Extended Vacation Value | GCR Villages"
-  description="Weekly golf cart rentals in The Villages, FL. Perfect for week-long stays, family vacations, and groups. All maintenance and insurance included. Call (352) 306-4409."
+  description="Weekly golf cart rentals in The Villages, FL. Perfect for week-long stays, family vacations, and groups. All maintenance included. Call (352) 306-4409."
 >
   <!-- HERO -->
   <section class="relative py-24 lg:py-32 bg-slate-50 overflow-hidden">
@@ -73,7 +66,7 @@ const included = [
       </h1>
       <p class="text-lg sm:text-xl text-slate-700 max-w-3xl mx-auto font-semibold mb-3">Perfect for Week-Long Stays</p>
       <p class="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-        Planning a week-long vacation in The Villages? Our weekly rentals offer unbeatable value for extended stays, family vacations, and anyone staying 7+ days. Free delivery, insurance, and full maintenance included.
+        Planning a week-long vacation in The Villages? Our weekly rentals offer unbeatable value for extended stays, family vacations, and anyone staying 7+ days. Free delivery and full maintenance included.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
         <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5">
@@ -180,7 +173,7 @@ const included = [
         <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">What&rsquo;s Included in Your Weekly Rental</h2>
         <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {included.map((g) => (
           <div class="bg-slate-50 rounded-2xl p-6">
             <h3 class="font-heading font-bold text-brand-700 uppercase mb-4 text-sm tracking-wide flex items-center gap-2" set:html={`<i class='fa-solid ${g.icon}'></i> ${g.heading}`}></h3>
