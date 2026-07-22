@@ -43,13 +43,6 @@ const included = [
     "Brake adjustments",
     "Emergency roadside assistance",
   ]},
-  { heading: "Fuel &amp; Utilities", icon: "fa-gas-pump", items: [
-    "All charging costs covered",
-    "No fuel surcharges",
-    "Charger delivery &amp; pickup",
-    "Extension cords provided",
-    "Energy-efficient operation",
-  ]},
   { heading: "Support &amp; Service", icon: "fa-headset", items: [
     "Dedicated monthly customer line",
     "Priority service appointments",
@@ -75,7 +68,7 @@ const testimonials = [
 ---
 <Layout
   title="Monthly Golf Cart Rentals in The Villages, FL - Extended Stay Value | GCR Villages"
-  description="Monthly golf cart rentals in The Villages, FL. Perfect for seasonal residents and snowbirds. Maintenance, charging, and priority support all included. Call (352) 306-4409."
+  description="Monthly golf cart rentals in The Villages, FL. Perfect for seasonal residents and snowbirds. Maintenance and priority support all included. Call (352) 306-4409."
 >
   <!-- HERO -->
   <section class="relative py-24 lg:py-32 bg-slate-50 overflow-hidden">
@@ -88,7 +81,7 @@ const testimonials = [
       </h1>
       <p class="text-lg sm:text-xl text-slate-700 max-w-3xl mx-auto font-semibold mb-3">Perfect for Seasonal Living</p>
       <p class="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-        Planning an extended stay in The Villages? Our monthly rentals offer unbeatable value for seasonal residents, extended visitors, and anyone staying 30+ days. Free delivery, charging covered, priority service.
+        Planning an extended stay in The Villages? Our monthly rentals offer unbeatable value for seasonal residents, extended visitors, and anyone staying 30+ days. Free delivery and priority service.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
         <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5">
@@ -208,7 +201,7 @@ const testimonials = [
         <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">What&rsquo;s Included in Your Monthly Rental</h2>
         <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {included.map((g) => (
           <div class="bg-white rounded-2xl p-6">
             <h3 class="font-heading font-bold text-brand-700 uppercase mb-4 text-sm tracking-wide flex items-center gap-2" set:html={`<i class='fa-solid ${g.icon}'></i> ${g.heading}`}></h3>
