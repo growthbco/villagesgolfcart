@@ -1,0 +1,7 @@
+[astro] Unable to load your Astro config
+
+Tsconfig not found astro/tsconfigs/strict
+  Stack trace:
+    at async EnvironmentPluginContainer.resolveId (file:///Users/garysanchez/.npm/_npx/aa98e6899c6baff3/node_modules/vite/dist/node/chunks/node.js:30767:19)
+    at async file:///Users/garysanchez/.npm/_npx/aa98e6899c6baff3/node_modules/vite/dist/node/chunks/node.js:34849:36
+    at async handleInvoke (file:///Users/garysanchez/.npm/_npx/aa98e6899c6baff3/node_modules/vite/dist/node/chunks/node.js:26817:21)
