@@ -25,7 +25,7 @@ const {
       <p class="text-slate-600 mt-4">{intro}</p>
     </div>
     <div class="bg-slate-50 rounded-3xl shadow-xl p-8">
-      <form name={formName} method="POST" action="/thank-you" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" class="space-y-4">
+      <form name={formName} method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
         <input type="hidden" name="form-name" value={formName} />
         {Object.entries(hiddenContext).map(([k, v]) => (
           <input type="hidden" name={k} value={v} />
@@ -124,7 +124,7 @@ const {
           <span>I agree to receive text messages for booking and follow-up. Reply STOP to opt out.</span>
         </label>
 
-        <div data-netlify-recaptcha="true"></div>
+        <div></div>
 
         <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-6 rounded-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5 flex justify-center items-center gap-2">
           <i class="fa-solid fa-bolt"></i> Get My Quote
