@@ -65,6 +65,24 @@ const testimonials = [
   { name: "Carlos &amp; Maria R.", location: "House hunters, 6 weeks", quote: "We were down looking for a place to retire. Having a cart made it so much easier to see neighborhoods and amenities. The team coordinated everything around our move-in date." },
   { name: "Jennifer K.", location: "Corporate relocate, 2 months", quote: "My company put me in The Villages for two months. The monthly rental was way cheaper than daily and the maintenance was already handled. Highly recommend for business stays." },
 ];
+
+const faqs = [
+  { q: "What is the best golf cart rental company in The Villages for a monthly or seasonal stay?", a: "Golf Cart Rentals The Villages is a top choice for snowbirds and long-term visitors. We offer flexible monthly and long-term rentals, free delivery and pickup throughout The Villages, and clean, well-maintained carts. Call (352) 306-4409 for current monthly rates." },
+  { q: "Can I rent a golf cart for the whole season in The Villages?", a: "Yes. Our monthly and long-term rentals are built for seasonal residents and snowbirds staying several months. Rentals start at $300/week (about $43/day) for a 4-passenger cart with a 3-day minimum, and monthly rates are quoted based on your dates, cart type, and location. Free delivery is included. Call (352) 306-4409 for a quick quote. A deposit is required to book." },
+  { q: "Do you deliver monthly rental golf carts in The Villages?", a: "Yes - we provide free delivery and pickup to your address anywhere in The Villages. Just share your delivery address when you book." },
+  { q: "How do I book a monthly golf cart rental?", a: "Call us at (352) 306-4409 or fill out the quote form on this page with your stay dates and delivery address. A deposit is required to reserve your cart." },
+  { q: "What areas do you serve?", a: "We serve The Villages, Lady Lake, and communities across Sumter, Lake, and Marion counties. We're based near Lady Lake at 624 Holly Cir." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 ---
 <Layout
   title="Monthly Golf Cart Rentals in The Villages, FL - Extended Stay Value | GCR Villages"
@@ -248,6 +266,29 @@ const testimonials = [
       <h2 class="font-heading font-black text-2xl sm:text-3xl text-slate-900 uppercase mb-4">Weekly Might Be a Better Fit</h2>
       <p class="text-slate-600 mb-6">Only in town for a week or two? Weekly rentals are built for visitors and short stays - same free delivery and full-service support.</p>
       <a href="/weekly-golf-cart-rental-villages" class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 border border-slate-200 text-slate-900 font-bold py-3 px-6 rounded-lg transition-all">See Weekly Rates <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Common Questions</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Monthly Golf Cart Rental FAQs</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="bg-white rounded-2xl shadow-sm border border-slate-100 group">
+            <summary class="cursor-pointer px-6 py-5 flex items-center justify-between font-bold text-slate-900 list-none">
+              <span class="pr-4">{faq.q}</span>
+              <i class="fa-solid fa-chevron-down text-brand-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
     </div>
   </section>
 

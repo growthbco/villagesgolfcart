@@ -49,6 +49,24 @@ const included = [
     "Flexible pickup &amp; delivery",
   ]},
 ];
+
+const faqs = [
+  { q: "What is the best golf cart rental company in The Villages for a weekly rental?", a: "Golf Cart Rentals The Villages is a top choice for week-long visitors and vacationers. We offer free delivery and pickup throughout The Villages, a range of 2, 4, and 6-passenger carts, and clean, well-maintained vehicles. Call (352) 306-4409 for current weekly rates." },
+  { q: "Can I rent a golf cart for a week in The Villages?", a: "Yes. Our weekly rentals are ideal for week-long stays, family vacations, and groups visiting The Villages. Weekly golf cart rentals start at $300/week (about $43/day) for a 4-passenger cart, with a 3-day minimum. Exact rates vary by cart type, rental length, and location, and free delivery is included. Call (352) 306-4409 for a quick quote. A deposit is required to book." },
+  { q: "Do you deliver weekly rental golf carts in The Villages?", a: "Yes - we offer free delivery and pickup to your address throughout The Villages. Share your delivery address when you book and we'll bring the cart to you." },
+  { q: "How do I book a weekly golf cart rental?", a: "Call (352) 306-4409 or complete the quote form on this page with your dates and delivery address. A deposit is required to reserve your cart." },
+  { q: "What areas do you serve?", a: "We serve The Villages, Lady Lake, and the surrounding Sumter, Lake, and Marion county communities. We're based near Lady Lake at 624 Holly Cir." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 ---
 <Layout
   title="Weekly Golf Cart Rentals in The Villages, FL - Extended Vacation Value | GCR Villages"
@@ -194,6 +212,29 @@ const included = [
       <h2 class="font-heading font-black text-2xl sm:text-3xl text-slate-900 uppercase mb-4">Monthly Could Save You More</h2>
       <p class="text-slate-600 mb-6">Staying 30+ days? Monthly rentals give you priority service, all utilities, and even better per-day pricing.</p>
       <a href="/monthly-golf-cart-rental-villages" class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 border border-slate-200 text-slate-900 font-bold py-3 px-6 rounded-lg transition-all">See Monthly Rates <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Common Questions</p>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 uppercase">Weekly Golf Cart Rental FAQs</h2>
+        <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+      </div>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="bg-white rounded-2xl shadow-sm border border-slate-100 group">
+            <summary class="cursor-pointer px-6 py-5 flex items-center justify-between font-bold text-slate-900 list-none">
+              <span class="pr-4">{faq.q}</span>
+              <i class="fa-solid fa-chevron-down text-brand-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
     </div>
   </section>
 
