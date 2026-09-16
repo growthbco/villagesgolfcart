@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+const serviceSchema = {"@context": "https://schema.org", "@type": "Service", "name": "Lithium battery replacement for golf carts in The Villages", "serviceType": "Golf cart lithium battery replacement and lead-acid-to-lithium conversion", "url": "https://golfcartrentalthevillagesfl.com/lithium-golf-cart-batteries-the-villages/", "provider": {"@type": "LocalBusiness", "name": "Masters Golf Cars", "address": {"@type": "PostalAddress", "streetAddress": "12885 S US Hwy 441", "addressLocality": "Belleview", "addressRegion": "FL", "postalCode": "34420", "addressCountry": "US"}}};
+---
+<Layout title="Lithium Golf Cart Batteries in The Villages | BOLT Service" description="BOLT lithium battery replacement and lead-acid golf cart conversion for The Villages. Service at our Belleview workshop; pickup and delivery available.">
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <article class="battery-service">
+    <header><p class="eyebrow">BOLT lithium battery service</p><h1>Lithium battery replacement for golf carts in The Villages</h1><p class="intro">Arrange BOLT lithium battery replacement or a lead-acid-to-lithium conversion for your own golf cart. Our team can coordinate service at the Masters Golf Cars workshop in Belleview, with pickup and delivery available for Villages residents.</p><a class="call" href="tel:+13523064409">Call (352) 306-4409 for a quote</a></header>
+    <div class="service-content"><section><h2>Plan service around your stay</h2><p>Whether you live in The Villages year-round or return for the season, contact us with the dates you need your cart. Ask about service availability before arranging transport. Turnaround depends on your cart and the work required, so confirm timing with your quote.</p></section>
+<section><h2>Already lithium, or ready to convert?</h2><p>Tell us whether your cart has an existing lithium battery or a bank of lead-acid batteries. Replacement and conversion are different jobs. Provide the make, model, year, and battery-label details so the team can discuss the BOLT setup appropriate for your cart.</p></section>
+<section><h2>Pickup, delivery, and the workshop location</h2><p>Battery installation is performed at the Belleview shop at 12885 S US Hwy 441, Belleview, FL 34420. Pickup and delivery are available; provide your Villages address and any access instructions so the team can confirm arrangements and transport charges.</p></section>
+<section><h2>Make the quote fit your everyday use</h2><p>Explain how you use the cart, how many passengers you usually carry, and where you charge it. Ask about the proposed battery, charger compatibility, installation work, and warranty terms. Confirm the complete installed cost rather than comparing battery-only prices.</p></section>
+      <section class="next-step"><h2>Ready to discuss your cart?</h2><p>Call (352) 306-4409 with your cart details and preferred service dates. Confirm battery selection, installed pricing, pickup and delivery, and warranty terms before booking.</p><nav aria-label="Battery service next steps"><a href="/contact/">Request a battery service quote</a><a href="/weekly-golf-cart-rental-villages/">Check weekly rental options</a></nav></section>
+    </div>
+  </article>
+</Layout>
+<style>
+.battery-service { color:#172b24; background:#fff; }
+.battery-service header { background:#edf5ef; padding:4rem max(1.25rem,calc((100% - 1080px)/2)); }
+.eyebrow { color:#245638; font-weight:700; text-transform:uppercase; letter-spacing:.08em; font-size:.85rem; }
+h1 { font-size:clamp(2rem,5vw,3.5rem); line-height:1.12; font-weight:800; max-width:950px; margin:1rem 0 1.5rem; }
+p { line-height:1.8; font-size:1.1rem; }
+.intro { max-width:850px; }
+.call { display:inline-block; background:#185936; color:white; padding:1rem 1.4rem; border-radius:.5rem; margin-top:1.5rem; font-weight:700; }
+.service-content { max-width:1080px; padding:1rem 1.25rem 4rem; margin:auto; }
+section { margin-top:2.75rem; max-width:900px; }
+h2 { font-size:1.7rem; line-height:1.3; font-weight:700; margin-bottom:1rem; }
+.next-step { background:#f2f6f3; padding:1.5rem; border-radius:.75rem; }
+nav { display:flex; flex-wrap:wrap; gap:1rem 2rem; margin-top:1rem; }
+nav a { color:#185936; text-decoration:underline; font-weight:700; }
+a:focus-visible { outline:3px solid #b17d11; outline-offset:4px; }
+</style>

@@ -5,6 +5,7 @@ const SITE = "https://golfcartrentalthevillagesfl.com";
 const routes: { path: string; priority: string; changefreq: string }[] = [
   { path: "/", priority: "1.0", changefreq: "weekly" },
   { path: "/about-us", priority: "0.7", changefreq: "monthly" },
+  { path: "/lithium-golf-cart-batteries-the-villages", priority: "0.8", changefreq: "monthly" },
   { path: "/services", priority: "0.8", changefreq: "monthly" },
   { path: "/pricing", priority: "0.8", changefreq: "monthly" },
   { path: "/gallery", priority: "0.6", changefreq: "monthly" },
@@ -38,13 +39,14 @@ const routes: { path: string; priority: string; changefreq: string }[] = [
 ];
 
 export const GET: APIRoute = () => {
-  const lastmod = new Date().toISOString().split("T")[0];
+  // Match the trailing-slash canonical URLs served by the static site.
+  // Omit lastmod until actual per-page content modification dates are available.
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${routes
   .map(
     (r) =>
-      `  <url>\n    <loc>${SITE}${r.path}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${r.changefreq}</changefreq>\n    <priority>${r.priority}</priority>\n  </url>`
+      `  <url>\n    <loc>${SITE}${r.path === "/" ? "/" : `${r.path}/`}</loc>\n    <changefreq>${r.changefreq}</changefreq>\n    <priority>${r.priority}</priority>\n  </url>`
   )
   .join("\n")}
 </urlset>`;
