@@ -2,6 +2,7 @@
 import "../styles/global.css";
 
 interface Props {
+  modern?: boolean;
   title?: string;
   description?: string;
   ogImage?: string;
@@ -67,6 +68,7 @@ const localBusinessSchema = {
     "https://pinterest.com/gcrvillages",
   ],
 };
+const modern = Astro.props.modern ?? false;
 ---
 
 <!doctype html>
@@ -132,7 +134,9 @@ const localBusinessSchema = {
 
     <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
   </head>
-  <body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-brand-500 selection:text-white">
+  <body data-modern={modern ? "true" : undefined} class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-brand-500 selection:text-white">
+{modern && <div class="modern-nav"><a class="modern-brand" href="/">Golf Cart Rentals<span>The Villages, Florida</span></a><nav aria-label="Main navigation"><a href="/pricing/">Rentals &amp; pricing</a><a href="/contact/">Contact</a><a class="modern-phone" href="tel:+13523064409">(352) 306-4409 <span aria-hidden="true">↗</span></a></nav></div>}
+
     <!-- HEADER -->
     <header class="fixed w-full top-0 bg-slate-900/95 backdrop-blur-md z-50 border-b border-slate-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -562,3 +566,7 @@ const localBusinessSchema = {
 
   </body>
 </html>
+
+<style is:global>
+body[data-modern="true"]>header,body[data-modern="true"]>#mobile-menu{display:none!important}body[data-modern="true"]>main{padding-top:0!important}.modern-nav{min-height:92px;background:#fbfaf6;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px max(24px,calc((100% - 1200px)/2));border-bottom:1px solid #d8ddd5;color:#193b30}.modern-brand{font-size:23px;font-weight:800;letter-spacing:-.06em;line-height:1.1}.modern-brand span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.18em;margin-top:8px;font-weight:600}.modern-nav nav{display:flex;align-items:center;gap:30px;font-size:14px;font-weight:600}.modern-phone{white-space:nowrap;flex-shrink:0;background:#193b30;color:#fff;padding:13px 18px;border-radius:6px}.modern-phone span{margin-left:14px}.modern-nav a:focus-visible{outline:3px solid #af781c;outline-offset:5px}@media(max-width:650px){.modern-nav{padding:18px 20px;min-height:88px}.modern-brand{font-size:20px}.modern-nav nav{gap:14px}.modern-nav nav>a:first-child{display:none}.modern-phone{font-size:0;padding:12px}.modern-phone:before{content:'Call us';font-size:14px}.modern-phone span{font-size:18px;margin-left:8px}}
+</style><style is:global>body[data-modern="true"]>footer{background:#112e25!important;border-top:1px solid #3c5547;box-shadow:none}body[data-modern="true"]>footer h4{letter-spacing:.1em;font-size:12px}body[data-modern="true"] .modern-nav a{transition:color .15s}body[data-modern="true"] .modern-nav a:hover{color:#789251}body[data-modern="true"] .modern-nav .modern-phone:hover{color:#fff}</style>
