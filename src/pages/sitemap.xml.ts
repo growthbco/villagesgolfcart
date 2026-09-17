@@ -6,6 +6,7 @@ const routes: { path: string; priority: string; changefreq: string }[] = [
   { path: "/", priority: "1.0", changefreq: "weekly" },
   { path: "/about-us", priority: "0.7", changefreq: "monthly" },
   { path: "/lithium-golf-cart-batteries-the-villages", priority: "0.8", changefreq: "monthly" },
+  { path: "/golf-cart-repairs-the-villages", priority: "0.8", changefreq: "monthly" },
   { path: "/services", priority: "0.8", changefreq: "monthly" },
   { path: "/pricing", priority: "0.8", changefreq: "monthly" },
   { path: "/gallery", priority: "0.6", changefreq: "monthly" },

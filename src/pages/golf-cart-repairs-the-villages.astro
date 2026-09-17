@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+const serviceSchema = {"@context": "https://schema.org", "@type": "Service", "name": "Golf cart repairs and maintenance for The Villages", "url": "https://golfcartrentalthevillagesfl.com/golf-cart-repairs-the-villages/", "provider": {"@type": "LocalBusiness", "name": "Masters Golf Cars", "address": {"@type": "PostalAddress", "streetAddress": "12885 S US Hwy 441", "addressLocality": "Belleview", "addressRegion": "FL", "postalCode": "34420", "addressCountry": "US"}}, "areaServed": "The Villages"};
+---
+<Layout title="Golf Cart Repairs & Service in The Villages | Belleview Shop" description="Golf cart repairs and maintenance for The Villages. Belleview workshop, pickup and delivery. Most repairs completed within 24 hours. Call (352) 306-4409.">
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+<article class="battery-service">
+<header><p class="eyebrow">Service for the cart you own</p><h1>Golf cart repairs &amp; maintenance for The Villages</h1><p class="intro">Keep your own golf cart ready for everyday trips around The Villages. Arrange repairs and maintenance at the Masters Golf Cars workshop in Belleview, with pickup and delivery available for residents who need transport.</p><a class="call" href="tel:+13523064409">Call (352) 306-4409 to arrange service</a></header>
+<div class="service-content">
+<section><h2>Gas and electric golf cart service</h2><p>Whether your cart needs routine maintenance or help with a new problem, start by telling us its make, model, and what has changed. Describe starting trouble, reduced run time, unusual sounds, charging issues, or concerns about braking and steering so the team can discuss the next step.</p><p>A service visit is also a chance to discuss the maintenance appropriate for your cart and how you use it. Bring any available service history and details of recent battery or electrical changes.</p></section>
+<section><h2>Most repairs completed within 24 hours</h2><p>Masters Golf Cars completes most repairs within 24 hours. The timing for your cart depends on the diagnosis, required parts, and work involved. Confirm the expected schedule when arranging service; the 24-hour statement is not a guarantee for every repair or battery conversion.</p></section>
+<section><h2>Belleview workshop with pickup and delivery</h2><p>Repairs are carried out at <strong>12885 S US Hwy 441, Belleview, FL 34420</strong>. Pickup and delivery are available. Confirm dates and any transport charges when booking.</p><p>If you are returning for the season, contact us before your arrival to discuss service dates. For pickup, share your village, address, access instructions, and whether the cart is driveable.</p></section>
+<section><h2>Battery replacement or lithium conversion?</h2><p>If you are considering a battery upgrade, explore our <a href="/lithium-golf-cart-batteries-the-villages/">BOLT lithium battery replacement and lead-acid conversion service</a>. Share your current battery setup and charger details when requesting a quote. A charging or run-time problem should be assessed before assuming a replacement is needed.</p></section>
+<section><h2>What to have ready when you call</h2><ul><li>Your cart make, model, and approximate year.</li><li>Whether it is gas or electric, plus battery details if relevant.</li><li>The symptoms, when they started, and any recent work.</li><li>Your address, preferred dates, and whether you need pickup.</li></ul></section>
+<section class="next-step"><h2>Arrange your repair or maintenance visit</h2><p>Call (352) 306-4409 to discuss your cart, availability, and transport. Ask for the proposed work and estimate before approving repairs.</p><nav aria-label="Service next steps"><a href="tel:+13523064409">Call the service team</a><a href="https://mastersgolfcars.com/schedule-golf-cart-service/">Send a service request to Masters Golf Cars</a><a href="/lithium-golf-cart-batteries-the-villages/">Explore BOLT battery service</a></nav></section>
+</div></article></Layout>
+<style>
+.battery-service { color:#172b24; background:#fff; }
+.battery-service header { background:#edf5ef; padding:4rem max(1.25rem,calc((100% - 1080px)/2)); }
+.eyebrow { color:#245638; font-weight:700; text-transform:uppercase; letter-spacing:.08em; font-size:.85rem; }
+h1 { font-size:clamp(2rem,5vw,3.5rem); line-height:1.12; font-weight:800; max-width:950px; margin:1rem 0 1.5rem; }
+p { line-height:1.8; font-size:1.1rem; }
+.intro { max-width:850px; }
+.call { display:inline-block; background:#185936; color:white; padding:1rem 1.4rem; border-radius:.5rem; margin-top:1.5rem; font-weight:700; }
+.service-content { max-width:1080px; padding:1rem 1.25rem 4rem; margin:auto; }
+section { margin-top:2.75rem; max-width:900px; }
+h2 { font-size:1.7rem; line-height:1.3; font-weight:700; margin-bottom:1rem; }
+.next-step { background:#f2f6f3; padding:1.5rem; border-radius:.75rem; }
+nav { display:flex; flex-wrap:wrap; gap:1rem 2rem; margin-top:1rem; }
+nav a { color:#185936; text-decoration:underline; font-weight:700; }
+a:focus-visible { outline:3px solid #b17d11; outline-offset:4px; }
+</style>
