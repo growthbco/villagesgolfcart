@@ -534,21 +534,26 @@ const modern = true;
   			}));
   		}
   	} catch (e) {}
-  	document.addEventListener('submit', function (ev) {
+  	document.addEventListener('submit', async function (ev) {
       var form = ev.target;
       if (!form || !form.querySelector) return;
       if (!form.hasAttribute('data-netlify') && !form.querySelector('input[name="form-name"]')) return;
-      // Take over the submit: Netlify's endpoint was silently rejecting
-      // real visitors (reCAPTCHA 400s) and losing leads. We post to the
-      // Masters system AND to Netlify, then always land the visitor on
-      // the thank-you page. Honeypot: bots that fill bot-field get the
-      // thank-you page too, but nothing is sent anywhere.
       ev.preventDefault();
       var done = form.getAttribute('action') || '/thank-you';
+      if (form.dataset.submitting === 'true') return;
+      var error = form.querySelector('[data-submit-error]');
+      if (!error) { error = document.createElement('p'); error.setAttribute('data-submit-error', ''); error.setAttribute('role', 'alert'); error.style.color = '#b91c1c'; form.appendChild(error); }
+      error.textContent = '';
+      var submit = form.querySelector('button[type="submit"]');
       try {
       	var fd = new FormData(form);
       	if ((fd.get('bot-field') || '').toString().trim()) { window.location.href = done; return; }
-      	var data = {};
+      	if (!fd.get('g-recaptcha-response')) { error.textContent = 'Please complete the verification before sending. If it does not load, call (352) 306-4409.'; return; }
+        form.dataset.submitting = 'true';
+        if (submit) submit.disabled = true;
+        var response = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(fd).toString() });
+        if (!response.ok) throw new Error('Submission rejected');
+        var data = {};
       	fd.forEach(function (v, k) { if (typeof v === 'string') data[k] = v; });
       	var attr = {};
       	try { attr = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
@@ -557,9 +562,11 @@ const modern = true;
       	data.key = 'vkdYkinefZkT80UYkY6MpllZ1FqeybAv';
       	var payload = JSON.stringify(data);
       	fetch('https://us-central1-masters-saas.cloudfunctions.net/websiteLeadInbound', { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: payload, keepalive: true }).catch(function () {});
-      	fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(fd).toString(), keepalive: true }).catch(function () {});
-      } catch (e) {}
-      window.location.href = done;
+
+        window.location.href = done;
+      } catch (e) {
+        error.textContent = 'Your request could not be sent. Please refresh, complete verification and try again, or call (352) 306-4409.';
+      } finally { delete form.dataset.submitting; if (submit) submit.disabled = false; }
     }, true);
   })();
   </script>
